@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<IDSs><IDS name="plasma_profiles">
+  <field name="get_operation" data_type="structure">
+    <field name="library" data_type="struct_array">
+      <field name="name" data_type="STR_0D"/>
+    </field>
+  </field>
+  <field name="t_i_average_fit" data_type="structure">
+    <field name="time_measurement_slice_method" data_type="structure">
+      <field name="method" data_type="STR_0D"/>
+    </field>
+  </field>
+  <field name="object" data_type="structure">
+    <field name="boundary" data_type="struct_array">
+      <field name="type" data_type="STR_0D"/>
+    </field>
+  </field>
+</IDS>
+   </IDSs>

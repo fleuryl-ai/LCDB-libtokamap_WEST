@@ -1,0 +1,3232 @@
+{
+  "ids_properties": {
+    "comment": "dummy_string",
+    "name": "dummy_string",
+    "homogeneous_time": 17,
+    "occurrence_type": {
+      "name": "dummy_string",
+      "index": 3,
+      "description": "dummy_string"
+    },
+    "provider": "dummy_string",
+    "creation_date": "dummy_string",
+    "version_put": {
+      "data_dictionary": "dummy_string",
+      "access_layer": "dummy_string",
+      "access_layer_language": "dummy_string"
+    },
+    "provenance": {
+      "node": [
+        {
+          "path": "dummy_string",
+          "reference": [
+            {
+              "name": "dummy_string",
+              "timestamp": "dummy_string"
+            },
+            {
+              "name": "dummy_string",
+              "timestamp": "dummy_string"
+            }
+          ],
+          "put_operation": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ],
+          "readback": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ],
+          "get_operation": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "dummy_string",
+          "reference": [
+            {
+              "name": "dummy_string",
+              "timestamp": "dummy_string"
+            },
+            {
+              "name": "dummy_string",
+              "timestamp": "dummy_string"
+            }
+          ],
+          "put_operation": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ],
+          "readback": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ],
+          "get_operation": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "plugins": {
+      "node": [
+        {
+          "path": "dummy_string",
+          "reference": [
+            {
+              "name": "dummy_string",
+              "timestamp": "dummy_string"
+            },
+            {
+              "name": "dummy_string",
+              "timestamp": "dummy_string"
+            }
+          ],
+          "put_operation": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ],
+          "readback": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ],
+          "get_operation": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "dummy_string",
+          "reference": [
+            {
+              "name": "dummy_string",
+              "timestamp": "dummy_string"
+            },
+            {
+              "name": "dummy_string",
+              "timestamp": "dummy_string"
+            }
+          ],
+          "put_operation": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ],
+          "readback": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ],
+          "get_operation": [
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            },
+            {
+              "name": "dummy_string",
+              "description": "dummy_string",
+              "commit": "dummy_string",
+              "version": "dummy_string",
+              "repository": "dummy_string",
+              "parameters": "dummy_string",
+              "library": [
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                },
+                {
+                  "name": "dummy_string",
+                  "description": "dummy_string",
+                  "commit": "dummy_string",
+                  "version": "dummy_string",
+                  "repository": "dummy_string",
+                  "parameters": "dummy_string"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "infrastructure_put": {
+        "name": "dummy_string",
+        "description": "dummy_string",
+        "commit": "dummy_string",
+        "version": "dummy_string",
+        "repository": "dummy_string"
+      },
+      "infrastructure_get": {
+        "name": "dummy_string",
+        "description": "dummy_string",
+        "commit": "dummy_string",
+        "version": "dummy_string",
+        "repository": "dummy_string"
+      }
+    }
+  },
+  "flux_loop": [
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "type": {
+        "name": "dummy_string",
+        "index": 64,
+        "description": "dummy_string"
+      },
+      "position": [
+        {
+          "r": 75.7937,
+          "r_error_upper": 4.5863,
+          "r_error_lower": 48.988,
+          "phi": 58.3429,
+          "phi_error_upper": 43.8403,
+          "phi_error_lower": 68.0371,
+          "z": 5.593,
+          "z_error_upper": 96.3402,
+          "z_error_lower": 31.3452,
+          "first_point": {
+            "r": 21.6361,
+            "r_error_upper": 93.474,
+            "r_error_lower": 60.7051,
+            "z": 43.4333,
+            "z_error_upper": 17.5878,
+            "z_error_lower": 53.9546
+          },
+          "second_point": {
+            "r": 94.5657,
+            "r_error_upper": 43.743,
+            "r_error_lower": 63.323,
+            "z": 21.0025,
+            "z_error_upper": 96.4528,
+            "z_error_lower": 39.9933
+          }
+        },
+        {
+          "r": 75.7937,
+          "r_error_upper": 4.5863,
+          "r_error_lower": 48.988,
+          "phi": 58.3429,
+          "phi_error_upper": 43.8403,
+          "phi_error_lower": 68.0371,
+          "z": 5.593,
+          "z_error_upper": 96.3402,
+          "z_error_lower": 31.3452,
+          "first_point": {
+            "r": 21.6361,
+            "r_error_upper": 93.474,
+            "r_error_lower": 60.7051,
+            "z": 43.4333,
+            "z_error_upper": 17.5878,
+            "z_error_lower": 53.9546
+          },
+          "second_point": {
+            "r": 94.5657,
+            "r_error_upper": 43.743,
+            "r_error_lower": 63.323,
+            "z": 21.0025,
+            "z_error_upper": 96.4528,
+            "z_error_lower": 39.9933
+          }
+        }
+      ],
+      "indices_differential": [
+        37,
+        98,
+        67,
+        10,
+        49,
+        4,
+        93,
+        77,
+        100,
+        31
+      ],
+      "area": 59.4917,
+      "area_error_upper": 6.2772,
+      "area_error_lower": 24.9563,
+      "gm9": 60.7061,
+      "gm9_error_upper": 55.9254,
+      "gm9_error_lower": 51.1252,
+      "flux": {
+        "data": [
+          80.2803,
+          98.0541,
+          0.7887,
+          91.1358,
+          87.1922,
+          65.7126,
+          2.2325,
+          2.0073,
+          32.0582,
+          73.1708
+        ],
+        "data_error_upper": [
+          30.2919,
+          92.7848,
+          66.2586,
+          38.698,
+          32.7961,
+          33.8328,
+          61.6602,
+          42.2759,
+          79.6199,
+          13.3042
+        ],
+        "data_error_lower": [
+          44.9921,
+          48.297,
+          50.9458,
+          51.3001,
+          65.0962,
+          95.5057,
+          29.75,
+          31.7013,
+          10.6675,
+          76.9072
+        ],
+        "validity_timed": [
+          75,
+          5,
+          29,
+          77,
+          12,
+          93,
+          58,
+          19,
+          51,
+          47
+        ],
+        "validity": 21,
+        "time": [
+          40.0228,
+          87.9937,
+          14.6431,
+          46.2322,
+          55.7786,
+          75.1788,
+          87.1197,
+          26.3693,
+          23.6568,
+          26.1536
+        ]
+      },
+      "voltage": {
+        "data": [
+          93.1804,
+          25.8355,
+          18.266,
+          30.5377,
+          85.4344,
+          53.5058,
+          81.363,
+          12.3438,
+          42.9362,
+          84.6368
+        ],
+        "data_error_upper": [
+          0.7004,
+          15.532,
+          4.7818,
+          70.908,
+          62.4728,
+          0.4632,
+          3.4329,
+          84.8435,
+          30.7507,
+          17.3053
+        ],
+        "data_error_lower": [
+          66.6384,
+          43.1692,
+          75.2771,
+          46.0298,
+          86.2838,
+          47.8925,
+          75.538,
+          43.612,
+          9.2016,
+          69.1612
+        ],
+        "validity_timed": [
+          42,
+          12,
+          79,
+          57,
+          83,
+          16,
+          98,
+          63,
+          79,
+          78
+        ],
+        "validity": 37,
+        "time": [
+          79.0018,
+          44.4024,
+          43.3519,
+          25.7629,
+          43.906,
+          76.8357,
+          19.8173,
+          91.6014,
+          52.0841,
+          85.82
+        ]
+      }
+    },
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "type": {
+        "name": "dummy_string",
+        "index": 64,
+        "description": "dummy_string"
+      },
+      "position": [
+        {
+          "r": 75.7937,
+          "r_error_upper": 4.5863,
+          "r_error_lower": 48.988,
+          "phi": 58.3429,
+          "phi_error_upper": 43.8403,
+          "phi_error_lower": 68.0371,
+          "z": 5.593,
+          "z_error_upper": 96.3402,
+          "z_error_lower": 31.3452,
+          "first_point": {
+            "r": 21.6361,
+            "r_error_upper": 93.474,
+            "r_error_lower": 60.7051,
+            "z": 43.4333,
+            "z_error_upper": 17.5878,
+            "z_error_lower": 53.9546
+          },
+          "second_point": {
+            "r": 94.5657,
+            "r_error_upper": 43.743,
+            "r_error_lower": 63.323,
+            "z": 21.0025,
+            "z_error_upper": 96.4528,
+            "z_error_lower": 39.9933
+          }
+        },
+        {
+          "r": 75.7937,
+          "r_error_upper": 4.5863,
+          "r_error_lower": 48.988,
+          "phi": 58.3429,
+          "phi_error_upper": 43.8403,
+          "phi_error_lower": 68.0371,
+          "z": 5.593,
+          "z_error_upper": 96.3402,
+          "z_error_lower": 31.3452,
+          "first_point": {
+            "r": 21.6361,
+            "r_error_upper": 93.474,
+            "r_error_lower": 60.7051,
+            "z": 43.4333,
+            "z_error_upper": 17.5878,
+            "z_error_lower": 53.9546
+          },
+          "second_point": {
+            "r": 94.5657,
+            "r_error_upper": 43.743,
+            "r_error_lower": 63.323,
+            "z": 21.0025,
+            "z_error_upper": 96.4528,
+            "z_error_lower": 39.9933
+          }
+        }
+      ],
+      "indices_differential": [
+        37,
+        98,
+        67,
+        10,
+        49,
+        4,
+        93,
+        77,
+        100,
+        31
+      ],
+      "area": 59.4917,
+      "area_error_upper": 6.2772,
+      "area_error_lower": 24.9563,
+      "gm9": 60.7061,
+      "gm9_error_upper": 55.9254,
+      "gm9_error_lower": 51.1252,
+      "flux": {
+        "data": [
+          80.2803,
+          98.0541,
+          0.7887,
+          91.1358,
+          87.1922,
+          65.7126,
+          2.2325,
+          2.0073,
+          32.0582,
+          73.1708
+        ],
+        "data_error_upper": [
+          30.2919,
+          92.7848,
+          66.2586,
+          38.698,
+          32.7961,
+          33.8328,
+          61.6602,
+          42.2759,
+          79.6199,
+          13.3042
+        ],
+        "data_error_lower": [
+          44.9921,
+          48.297,
+          50.9458,
+          51.3001,
+          65.0962,
+          95.5057,
+          29.75,
+          31.7013,
+          10.6675,
+          76.9072
+        ],
+        "validity_timed": [
+          75,
+          5,
+          29,
+          77,
+          12,
+          93,
+          58,
+          19,
+          51,
+          47
+        ],
+        "validity": 21,
+        "time": [
+          40.0228,
+          87.9937,
+          14.6431,
+          46.2322,
+          55.7786,
+          75.1788,
+          87.1197,
+          26.3693,
+          23.6568,
+          26.1536
+        ]
+      },
+      "voltage": {
+        "data": [
+          93.1804,
+          25.8355,
+          18.266,
+          30.5377,
+          85.4344,
+          53.5058,
+          81.363,
+          12.3438,
+          42.9362,
+          84.6368
+        ],
+        "data_error_upper": [
+          0.7004,
+          15.532,
+          4.7818,
+          70.908,
+          62.4728,
+          0.4632,
+          3.4329,
+          84.8435,
+          30.7507,
+          17.3053
+        ],
+        "data_error_lower": [
+          66.6384,
+          43.1692,
+          75.2771,
+          46.0298,
+          86.2838,
+          47.8925,
+          75.538,
+          43.612,
+          9.2016,
+          69.1612
+        ],
+        "validity_timed": [
+          42,
+          12,
+          79,
+          57,
+          83,
+          16,
+          98,
+          63,
+          79,
+          78
+        ],
+        "validity": 37,
+        "time": [
+          79.0018,
+          44.4024,
+          43.3519,
+          25.7629,
+          43.906,
+          76.8357,
+          19.8173,
+          91.6014,
+          52.0841,
+          85.82
+        ]
+      }
+    }
+  ],
+  "b_field_pol_probe": [
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "type": {
+        "name": "dummy_string",
+        "index": 37,
+        "description": "dummy_string"
+      },
+      "position": {
+        "r": 63.7043,
+        "r_error_upper": 99.3376,
+        "r_error_lower": 61.1349,
+        "phi": 38.783,
+        "phi_error_upper": 19.5759,
+        "phi_error_lower": 61.2532,
+        "z": 50.8474,
+        "z_error_upper": 52.2483,
+        "z_error_lower": 63.5578,
+        "first_point": {
+          "r": 45.7108,
+          "r_error_upper": 72.5455,
+          "r_error_lower": 17.4279,
+          "z": 32.2999,
+          "z_error_upper": 21.4478,
+          "z_error_lower": 68.2111
+        },
+        "second_point": {
+          "r": 83.5987,
+          "r_error_upper": 48.4719,
+          "r_error_lower": 41.8071,
+          "z": 83.8499,
+          "z_error_upper": 64.035,
+          "z_error_lower": 62.8789
+        }
+      },
+      "poloidal_angle": 68.2253,
+      "poloidal_angle_error_upper": 75.0393,
+      "poloidal_angle_error_lower": 29.5057,
+      "toroidal_angle": 46.9782,
+      "toroidal_angle_error_upper": 70.0703,
+      "toroidal_angle_error_lower": 28.0514,
+      "indices_differential": [
+        52,
+        30,
+        21,
+        89,
+        96,
+        73,
+        16,
+        18,
+        24,
+        47
+      ],
+      "bandwidth_3db": [
+        28.5288,
+        49.0157,
+        76.154,
+        19.7373,
+        51.7331,
+        82.7618,
+        38.7541,
+        5.2821,
+        74.6677,
+        50.0375
+      ],
+      "bandwidth_3db_error_upper": [
+        32.0032,
+        20.6509,
+        57.4564,
+        0.9605,
+        94.1971,
+        74.6383,
+        45.6389,
+        75.8737,
+        65.0985,
+        93.4274
+      ],
+      "bandwidth_3db_error_lower": [
+        9.3326,
+        88.8849,
+        57.3524,
+        96.3134,
+        71.5969,
+        37.2949,
+        88.7207,
+        24.0491,
+        24.2398,
+        72.8836
+      ],
+      "area": 80.0686,
+      "area_error_upper": 66.3185,
+      "area_error_lower": 17.8916,
+      "length": 69.2489,
+      "length_error_upper": 80.357,
+      "length_error_lower": 26.2981,
+      "turns": 31,
+      "field": {
+        "data": [
+          93.241,
+          19.9772,
+          10.9005,
+          72.4466,
+          43.5087,
+          94.0862,
+          77.2713,
+          22.8794,
+          31.3364,
+          50.0824
+        ],
+        "data_error_upper": [
+          75.5328,
+          64.0479,
+          95.5917,
+          85.7535,
+          68.7309,
+          43.26,
+          62.8837,
+          28.3661,
+          22.3919,
+          1.9481
+        ],
+        "data_error_lower": [
+          73.2679,
+          85.2522,
+          34.7256,
+          85.722,
+          59.227,
+          96.3149,
+          82.9902,
+          59.5193,
+          38.4578,
+          40.0478
+        ],
+        "validity_timed": [
+          8,
+          94,
+          54,
+          70,
+          32,
+          22,
+          94,
+          23,
+          87,
+          86
+        ],
+        "validity": 42,
+        "time": [
+          69.926,
+          67.1967,
+          92.6555,
+          10.8314,
+          95.1384,
+          4.3217,
+          45.7578,
+          4.8811,
+          62.6188,
+          47.3423
+        ]
+      },
+      "voltage": {
+        "data": [
+          83.6073,
+          96.2228,
+          37.3003,
+          57.2219,
+          59.4041,
+          55.1207,
+          12.4288,
+          22.8473,
+          89.4282,
+          98.3962
+        ],
+        "data_error_upper": [
+          49.9946,
+          47.8443,
+          75.0806,
+          78.8985,
+          29.1931,
+          7.7227,
+          11.4807,
+          12.449,
+          10.0891,
+          30.5842
+        ],
+        "data_error_lower": [
+          59.3494,
+          52.2496,
+          30.8335,
+          43.7629,
+          88.6958,
+          74.4834,
+          24.4216,
+          23.3318,
+          95.7525,
+          26.05
+        ],
+        "validity_timed": [
+          50,
+          9,
+          17,
+          56,
+          2,
+          14,
+          96,
+          54,
+          93,
+          43
+        ],
+        "validity": 10,
+        "time": [
+          67.4783,
+          6.6574,
+          24.5632,
+          12.3344,
+          8.7551,
+          20.1847,
+          61.8598,
+          24.5828,
+          20.065,
+          21.5472
+        ]
+      },
+      "non_linear_response": {
+        "b_field_linear": [
+          73.7027,
+          32.4763,
+          12.1308,
+          94.776,
+          44.8306,
+          70.3062,
+          37.6932,
+          1.4409,
+          4.3579,
+          11.2786
+        ],
+        "b_field_linear_error_upper": [
+          12.1419,
+          86.2937,
+          46.9139,
+          82.168,
+          92.3637,
+          78.2014,
+          68.5718,
+          16.5486,
+          16.605,
+          30.8434
+        ],
+        "b_field_linear_error_lower": [
+          0.1503,
+          68.6543,
+          5.3502,
+          23.4677,
+          33.2336,
+          29.6917,
+          86.1028,
+          62.6016,
+          5.1615,
+          85.8084
+        ],
+        "b_field_non_linear": [
+          70.9298,
+          42.7651,
+          9.0209,
+          84.067,
+          88.7646,
+          48.076,
+          19.4312,
+          91.4883,
+          77.6828,
+          43.63
+        ],
+        "b_field_non_linear_error_upper": [
+          44.1597,
+          83.3516,
+          80.6044,
+          98.1377,
+          69.2839,
+          18.7357,
+          44.0131,
+          40.1295,
+          9.6517,
+          23.6271
+        ],
+        "b_field_non_linear_error_lower": [
+          87.0746,
+          96.8956,
+          52.5376,
+          11.8957,
+          81.4935,
+          90.8097,
+          95.6232,
+          8.0905,
+          39.0713,
+          78.6104
+        ]
+      }
+    },
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "type": {
+        "name": "dummy_string",
+        "index": 37,
+        "description": "dummy_string"
+      },
+      "position": {
+        "r": 63.7043,
+        "r_error_upper": 99.3376,
+        "r_error_lower": 61.1349,
+        "phi": 38.783,
+        "phi_error_upper": 19.5759,
+        "phi_error_lower": 61.2532,
+        "z": 50.8474,
+        "z_error_upper": 52.2483,
+        "z_error_lower": 63.5578,
+        "first_point": {
+          "r": 45.7108,
+          "r_error_upper": 72.5455,
+          "r_error_lower": 17.4279,
+          "z": 32.2999,
+          "z_error_upper": 21.4478,
+          "z_error_lower": 68.2111
+        },
+        "second_point": {
+          "r": 83.5987,
+          "r_error_upper": 48.4719,
+          "r_error_lower": 41.8071,
+          "z": 83.8499,
+          "z_error_upper": 64.035,
+          "z_error_lower": 62.8789
+        }
+      },
+      "poloidal_angle": 68.2253,
+      "poloidal_angle_error_upper": 75.0393,
+      "poloidal_angle_error_lower": 29.5057,
+      "toroidal_angle": 46.9782,
+      "toroidal_angle_error_upper": 70.0703,
+      "toroidal_angle_error_lower": 28.0514,
+      "indices_differential": [
+        52,
+        30,
+        21,
+        89,
+        96,
+        73,
+        16,
+        18,
+        24,
+        47
+      ],
+      "bandwidth_3db": [
+        28.5288,
+        49.0157,
+        76.154,
+        19.7373,
+        51.7331,
+        82.7618,
+        38.7541,
+        5.2821,
+        74.6677,
+        50.0375
+      ],
+      "bandwidth_3db_error_upper": [
+        32.0032,
+        20.6509,
+        57.4564,
+        0.9605,
+        94.1971,
+        74.6383,
+        45.6389,
+        75.8737,
+        65.0985,
+        93.4274
+      ],
+      "bandwidth_3db_error_lower": [
+        9.3326,
+        88.8849,
+        57.3524,
+        96.3134,
+        71.5969,
+        37.2949,
+        88.7207,
+        24.0491,
+        24.2398,
+        72.8836
+      ],
+      "area": 80.0686,
+      "area_error_upper": 66.3185,
+      "area_error_lower": 17.8916,
+      "length": 69.2489,
+      "length_error_upper": 80.357,
+      "length_error_lower": 26.2981,
+      "turns": 31,
+      "field": {
+        "data": [
+          93.241,
+          19.9772,
+          10.9005,
+          72.4466,
+          43.5087,
+          94.0862,
+          77.2713,
+          22.8794,
+          31.3364,
+          50.0824
+        ],
+        "data_error_upper": [
+          75.5328,
+          64.0479,
+          95.5917,
+          85.7535,
+          68.7309,
+          43.26,
+          62.8837,
+          28.3661,
+          22.3919,
+          1.9481
+        ],
+        "data_error_lower": [
+          73.2679,
+          85.2522,
+          34.7256,
+          85.722,
+          59.227,
+          96.3149,
+          82.9902,
+          59.5193,
+          38.4578,
+          40.0478
+        ],
+        "validity_timed": [
+          8,
+          94,
+          54,
+          70,
+          32,
+          22,
+          94,
+          23,
+          87,
+          86
+        ],
+        "validity": 42,
+        "time": [
+          69.926,
+          67.1967,
+          92.6555,
+          10.8314,
+          95.1384,
+          4.3217,
+          45.7578,
+          4.8811,
+          62.6188,
+          47.3423
+        ]
+      },
+      "voltage": {
+        "data": [
+          83.6073,
+          96.2228,
+          37.3003,
+          57.2219,
+          59.4041,
+          55.1207,
+          12.4288,
+          22.8473,
+          89.4282,
+          98.3962
+        ],
+        "data_error_upper": [
+          49.9946,
+          47.8443,
+          75.0806,
+          78.8985,
+          29.1931,
+          7.7227,
+          11.4807,
+          12.449,
+          10.0891,
+          30.5842
+        ],
+        "data_error_lower": [
+          59.3494,
+          52.2496,
+          30.8335,
+          43.7629,
+          88.6958,
+          74.4834,
+          24.4216,
+          23.3318,
+          95.7525,
+          26.05
+        ],
+        "validity_timed": [
+          50,
+          9,
+          17,
+          56,
+          2,
+          14,
+          96,
+          54,
+          93,
+          43
+        ],
+        "validity": 10,
+        "time": [
+          67.4783,
+          6.6574,
+          24.5632,
+          12.3344,
+          8.7551,
+          20.1847,
+          61.8598,
+          24.5828,
+          20.065,
+          21.5472
+        ]
+      },
+      "non_linear_response": {
+        "b_field_linear": [
+          73.7027,
+          32.4763,
+          12.1308,
+          94.776,
+          44.8306,
+          70.3062,
+          37.6932,
+          1.4409,
+          4.3579,
+          11.2786
+        ],
+        "b_field_linear_error_upper": [
+          12.1419,
+          86.2937,
+          46.9139,
+          82.168,
+          92.3637,
+          78.2014,
+          68.5718,
+          16.5486,
+          16.605,
+          30.8434
+        ],
+        "b_field_linear_error_lower": [
+          0.1503,
+          68.6543,
+          5.3502,
+          23.4677,
+          33.2336,
+          29.6917,
+          86.1028,
+          62.6016,
+          5.1615,
+          85.8084
+        ],
+        "b_field_non_linear": [
+          70.9298,
+          42.7651,
+          9.0209,
+          84.067,
+          88.7646,
+          48.076,
+          19.4312,
+          91.4883,
+          77.6828,
+          43.63
+        ],
+        "b_field_non_linear_error_upper": [
+          44.1597,
+          83.3516,
+          80.6044,
+          98.1377,
+          69.2839,
+          18.7357,
+          44.0131,
+          40.1295,
+          9.6517,
+          23.6271
+        ],
+        "b_field_non_linear_error_lower": [
+          87.0746,
+          96.8956,
+          52.5376,
+          11.8957,
+          81.4935,
+          90.8097,
+          95.6232,
+          8.0905,
+          39.0713,
+          78.6104
+        ]
+      }
+    }
+  ],
+  "b_field_pol_probe_equivalent": [
+    [
+      76,
+      50,
+      46,
+      16,
+      6,
+      42,
+      3,
+      55,
+      75,
+      9
+    ],
+    [
+      38,
+      26,
+      29,
+      61,
+      54,
+      38,
+      86,
+      57,
+      28,
+      37
+    ],
+    [
+      66,
+      41,
+      40,
+      68,
+      31,
+      26,
+      82,
+      93,
+      48,
+      13
+    ],
+    [
+      44,
+      59,
+      26,
+      13,
+      48,
+      54,
+      92,
+      77,
+      13,
+      60
+    ],
+    [
+      53,
+      9,
+      100,
+      11,
+      73,
+      61,
+      94,
+      50,
+      99,
+      82
+    ],
+    [
+      69,
+      8,
+      37,
+      4,
+      61,
+      4,
+      81,
+      79,
+      62,
+      53
+    ],
+    [
+      93,
+      94,
+      100,
+      80,
+      40,
+      5,
+      76,
+      7,
+      35,
+      98
+    ],
+    [
+      22,
+      87,
+      35,
+      79,
+      62,
+      23,
+      12,
+      81,
+      40,
+      82
+    ],
+    [
+      71,
+      18,
+      20,
+      82,
+      52,
+      27,
+      35,
+      52,
+      41,
+      70
+    ],
+    [
+      42,
+      5,
+      93,
+      35,
+      38,
+      13,
+      16,
+      1,
+      23,
+      14
+    ]
+  ],
+  "b_field_phi_probe": [
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "type": {
+        "name": "dummy_string",
+        "index": 39,
+        "description": "dummy_string"
+      },
+      "position": {
+        "r": 17.2805,
+        "r_error_upper": 26.6253,
+        "r_error_lower": 12.9871,
+        "phi": 16.3342,
+        "phi_error_upper": 1.415,
+        "phi_error_lower": 18.9683,
+        "z": 23.6965,
+        "z_error_upper": 17.6048,
+        "z_error_lower": 90.2335,
+        "first_point": {
+          "r": 35.7828,
+          "r_error_upper": 37.4348,
+          "r_error_lower": 5.771,
+          "z": 37.3996,
+          "z_error_upper": 46.6431,
+          "z_error_lower": 67.4778
+        },
+        "second_point": {
+          "r": 62.9105,
+          "r_error_upper": 6.6008,
+          "r_error_lower": 29.2248,
+          "z": 25.6535,
+          "z_error_upper": 23.1996,
+          "z_error_lower": 84.3795
+        }
+      },
+      "poloidal_angle": 17.4544,
+      "poloidal_angle_error_upper": 93.1488,
+      "poloidal_angle_error_lower": 70.2246,
+      "toroidal_angle": 98.2158,
+      "toroidal_angle_error_upper": 80.4842,
+      "toroidal_angle_error_lower": 35.3066,
+      "indices_differential": [
+        74,
+        80,
+        81,
+        37,
+        94,
+        94,
+        27,
+        56,
+        70,
+        12
+      ],
+      "bandwidth_3db": [
+        21.4322,
+        92.9235,
+        33.996,
+        81.9316,
+        14.608,
+        97.0022,
+        2.2432,
+        15.6042,
+        72.4828,
+        1.0163
+      ],
+      "bandwidth_3db_error_upper": [
+        97.8922,
+        26.1273,
+        5.434,
+        45.1984,
+        22.4735,
+        5.4258,
+        78.7811,
+        55.9841,
+        10.3241,
+        91.0629
+      ],
+      "bandwidth_3db_error_lower": [
+        18.1202,
+        79.3,
+        15.6703,
+        63.6026,
+        58.723,
+        9.746,
+        45.8346,
+        26.5466,
+        61.8557,
+        89.5624
+      ],
+      "area": 85.0733,
+      "area_error_upper": 94.2982,
+      "area_error_lower": 28.0883,
+      "length": 73.7467,
+      "length_error_upper": 22.3572,
+      "length_error_lower": 5.6746,
+      "turns": 92,
+      "field": {
+        "data": [
+          85.4541,
+          7.4298,
+          24.8669,
+          2.6614,
+          93.5946,
+          31.8704,
+          97.1095,
+          23.4285,
+          88.1436,
+          47.1381
+        ],
+        "data_error_upper": [
+          69.4673,
+          32.2512,
+          13.2936,
+          22.784,
+          78.3334,
+          16.4319,
+          98.137,
+          18.9392,
+          0.3603,
+          54.4216
+        ],
+        "data_error_lower": [
+          71.2539,
+          60.4531,
+          33.3584,
+          58.8811,
+          87.6938,
+          51.5395,
+          9.9222,
+          78.3528,
+          82.7452,
+          24.8369
+        ],
+        "validity_timed": [
+          90,
+          7,
+          4,
+          8,
+          82,
+          14,
+          25,
+          13,
+          39,
+          66
+        ],
+        "validity": 61,
+        "time": [
+          12.1947,
+          51.6857,
+          82.4766,
+          23.1727,
+          31.4997,
+          64.0244,
+          76.2954,
+          20.7799,
+          62.2857,
+          91.5417
+        ]
+      },
+      "voltage": {
+        "data": [
+          81.2359,
+          72.408,
+          33.8882,
+          21.6018,
+          29.5631,
+          88.8121,
+          43.5292,
+          58.4245,
+          97.6487,
+          20.5984
+        ],
+        "data_error_upper": [
+          88.9766,
+          18.2591,
+          94.8611,
+          99.4522,
+          61.01,
+          51.7521,
+          93.817,
+          85.2967,
+          71.5787,
+          40.1983
+        ],
+        "data_error_lower": [
+          49.4359,
+          27.4576,
+          95.703,
+          38.3731,
+          79.6077,
+          7.165,
+          55.3653,
+          21.5498,
+          92.2064,
+          38.7412
+        ],
+        "validity_timed": [
+          66,
+          2,
+          85,
+          78,
+          65,
+          55,
+          21,
+          99,
+          94,
+          96
+        ],
+        "validity": 94,
+        "time": [
+          72.9659,
+          69.2189,
+          7.7681,
+          19.5519,
+          22.1365,
+          88.4202,
+          26.512,
+          41.9646,
+          13.4202,
+          66.7273
+        ]
+      },
+      "non_linear_response": {
+        "b_field_linear": [
+          57.7015,
+          80.7279,
+          11.0278,
+          43.2648,
+          51.3921,
+          28.3431,
+          98.7629,
+          79.6643,
+          45.5152,
+          70.3333
+        ],
+        "b_field_linear_error_upper": [
+          74.704,
+          14.2326,
+          15.477,
+          1.4601,
+          88.1578,
+          76.2281,
+          32.2453,
+          74.4165,
+          28.991,
+          73.4333
+        ],
+        "b_field_linear_error_lower": [
+          88.9844,
+          76.3065,
+          59.8326,
+          71.2782,
+          70.7769,
+          70.7175,
+          2.7997,
+          62.9874,
+          41.6835,
+          36.3983
+        ],
+        "b_field_non_linear": [
+          71.1023,
+          60.2413,
+          82.5993,
+          50.9452,
+          17.3844,
+          79.4891,
+          4.4034,
+          5.1727,
+          71.3604,
+          1.897
+        ],
+        "b_field_non_linear_error_upper": [
+          94.3262,
+          56.2671,
+          64.6886,
+          10.1908,
+          17.6052,
+          20.6296,
+          8.2779,
+          51.7164,
+          76.2843,
+          58.8876
+        ],
+        "b_field_non_linear_error_lower": [
+          32.8891,
+          65.2614,
+          93.5974,
+          3.0129,
+          8.4257,
+          16.9276,
+          13.8862,
+          78.9357,
+          68.2712,
+          88.3098
+        ]
+      }
+    },
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "type": {
+        "name": "dummy_string",
+        "index": 39,
+        "description": "dummy_string"
+      },
+      "position": {
+        "r": 17.2805,
+        "r_error_upper": 26.6253,
+        "r_error_lower": 12.9871,
+        "phi": 16.3342,
+        "phi_error_upper": 1.415,
+        "phi_error_lower": 18.9683,
+        "z": 23.6965,
+        "z_error_upper": 17.6048,
+        "z_error_lower": 90.2335,
+        "first_point": {
+          "r": 35.7828,
+          "r_error_upper": 37.4348,
+          "r_error_lower": 5.771,
+          "z": 37.3996,
+          "z_error_upper": 46.6431,
+          "z_error_lower": 67.4778
+        },
+        "second_point": {
+          "r": 62.9105,
+          "r_error_upper": 6.6008,
+          "r_error_lower": 29.2248,
+          "z": 25.6535,
+          "z_error_upper": 23.1996,
+          "z_error_lower": 84.3795
+        }
+      },
+      "poloidal_angle": 17.4544,
+      "poloidal_angle_error_upper": 93.1488,
+      "poloidal_angle_error_lower": 70.2246,
+      "toroidal_angle": 98.2158,
+      "toroidal_angle_error_upper": 80.4842,
+      "toroidal_angle_error_lower": 35.3066,
+      "indices_differential": [
+        74,
+        80,
+        81,
+        37,
+        94,
+        94,
+        27,
+        56,
+        70,
+        12
+      ],
+      "bandwidth_3db": [
+        21.4322,
+        92.9235,
+        33.996,
+        81.9316,
+        14.608,
+        97.0022,
+        2.2432,
+        15.6042,
+        72.4828,
+        1.0163
+      ],
+      "bandwidth_3db_error_upper": [
+        97.8922,
+        26.1273,
+        5.434,
+        45.1984,
+        22.4735,
+        5.4258,
+        78.7811,
+        55.9841,
+        10.3241,
+        91.0629
+      ],
+      "bandwidth_3db_error_lower": [
+        18.1202,
+        79.3,
+        15.6703,
+        63.6026,
+        58.723,
+        9.746,
+        45.8346,
+        26.5466,
+        61.8557,
+        89.5624
+      ],
+      "area": 85.0733,
+      "area_error_upper": 94.2982,
+      "area_error_lower": 28.0883,
+      "length": 73.7467,
+      "length_error_upper": 22.3572,
+      "length_error_lower": 5.6746,
+      "turns": 92,
+      "field": {
+        "data": [
+          85.4541,
+          7.4298,
+          24.8669,
+          2.6614,
+          93.5946,
+          31.8704,
+          97.1095,
+          23.4285,
+          88.1436,
+          47.1381
+        ],
+        "data_error_upper": [
+          69.4673,
+          32.2512,
+          13.2936,
+          22.784,
+          78.3334,
+          16.4319,
+          98.137,
+          18.9392,
+          0.3603,
+          54.4216
+        ],
+        "data_error_lower": [
+          71.2539,
+          60.4531,
+          33.3584,
+          58.8811,
+          87.6938,
+          51.5395,
+          9.9222,
+          78.3528,
+          82.7452,
+          24.8369
+        ],
+        "validity_timed": [
+          90,
+          7,
+          4,
+          8,
+          82,
+          14,
+          25,
+          13,
+          39,
+          66
+        ],
+        "validity": 61,
+        "time": [
+          12.1947,
+          51.6857,
+          82.4766,
+          23.1727,
+          31.4997,
+          64.0244,
+          76.2954,
+          20.7799,
+          62.2857,
+          91.5417
+        ]
+      },
+      "voltage": {
+        "data": [
+          81.2359,
+          72.408,
+          33.8882,
+          21.6018,
+          29.5631,
+          88.8121,
+          43.5292,
+          58.4245,
+          97.6487,
+          20.5984
+        ],
+        "data_error_upper": [
+          88.9766,
+          18.2591,
+          94.8611,
+          99.4522,
+          61.01,
+          51.7521,
+          93.817,
+          85.2967,
+          71.5787,
+          40.1983
+        ],
+        "data_error_lower": [
+          49.4359,
+          27.4576,
+          95.703,
+          38.3731,
+          79.6077,
+          7.165,
+          55.3653,
+          21.5498,
+          92.2064,
+          38.7412
+        ],
+        "validity_timed": [
+          66,
+          2,
+          85,
+          78,
+          65,
+          55,
+          21,
+          99,
+          94,
+          96
+        ],
+        "validity": 94,
+        "time": [
+          72.9659,
+          69.2189,
+          7.7681,
+          19.5519,
+          22.1365,
+          88.4202,
+          26.512,
+          41.9646,
+          13.4202,
+          66.7273
+        ]
+      },
+      "non_linear_response": {
+        "b_field_linear": [
+          57.7015,
+          80.7279,
+          11.0278,
+          43.2648,
+          51.3921,
+          28.3431,
+          98.7629,
+          79.6643,
+          45.5152,
+          70.3333
+        ],
+        "b_field_linear_error_upper": [
+          74.704,
+          14.2326,
+          15.477,
+          1.4601,
+          88.1578,
+          76.2281,
+          32.2453,
+          74.4165,
+          28.991,
+          73.4333
+        ],
+        "b_field_linear_error_lower": [
+          88.9844,
+          76.3065,
+          59.8326,
+          71.2782,
+          70.7769,
+          70.7175,
+          2.7997,
+          62.9874,
+          41.6835,
+          36.3983
+        ],
+        "b_field_non_linear": [
+          71.1023,
+          60.2413,
+          82.5993,
+          50.9452,
+          17.3844,
+          79.4891,
+          4.4034,
+          5.1727,
+          71.3604,
+          1.897
+        ],
+        "b_field_non_linear_error_upper": [
+          94.3262,
+          56.2671,
+          64.6886,
+          10.1908,
+          17.6052,
+          20.6296,
+          8.2779,
+          51.7164,
+          76.2843,
+          58.8876
+        ],
+        "b_field_non_linear_error_lower": [
+          32.8891,
+          65.2614,
+          93.5974,
+          3.0129,
+          8.4257,
+          16.9276,
+          13.8862,
+          78.9357,
+          68.2712,
+          88.3098
+        ]
+      }
+    }
+  ],
+  "rogowski_coil": [
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "measured_quantity": {
+        "name": "dummy_string",
+        "index": 90,
+        "description": "dummy_string"
+      },
+      "position": [
+        {
+          "r": 64.6134,
+          "r_error_upper": 50.1192,
+          "r_error_lower": 5.7352,
+          "phi": 10.6244,
+          "phi_error_upper": 73.2551,
+          "phi_error_lower": 43.5266,
+          "z": 52.4348,
+          "z_error_upper": 65.1602,
+          "z_error_lower": 44.3729,
+          "first_point": {
+            "r": 87.2692,
+            "r_error_upper": 91.8608,
+            "r_error_lower": 38.8821,
+            "z": 31.7496,
+            "z_error_upper": 27.5093,
+            "z_error_lower": 79.1782
+          },
+          "second_point": {
+            "r": 22.0266,
+            "r_error_upper": 47.7749,
+            "r_error_lower": 21.6305,
+            "z": 40.9259,
+            "z_error_upper": 42.9768,
+            "z_error_lower": 69.7259
+          }
+        },
+        {
+          "r": 64.6134,
+          "r_error_upper": 50.1192,
+          "r_error_lower": 5.7352,
+          "phi": 10.6244,
+          "phi_error_upper": 73.2551,
+          "phi_error_lower": 43.5266,
+          "z": 52.4348,
+          "z_error_upper": 65.1602,
+          "z_error_lower": 44.3729,
+          "first_point": {
+            "r": 87.2692,
+            "r_error_upper": 91.8608,
+            "r_error_lower": 38.8821,
+            "z": 31.7496,
+            "z_error_upper": 27.5093,
+            "z_error_lower": 79.1782
+          },
+          "second_point": {
+            "r": 22.0266,
+            "r_error_upper": 47.7749,
+            "r_error_lower": 21.6305,
+            "z": 40.9259,
+            "z_error_upper": 42.9768,
+            "z_error_lower": 69.7259
+          }
+        }
+      ],
+      "indices_compound": [
+        46,
+        84,
+        0,
+        14,
+        49,
+        21,
+        55,
+        5,
+        9,
+        58
+      ],
+      "area": 87.607,
+      "area_error_upper": 68.2618,
+      "area_error_lower": 35.1581,
+      "turns_per_metre": 95.6022,
+      "turns_per_metre_error_upper": 26.6687,
+      "turns_per_metre_error_lower": 23.0136,
+      "current": {
+        "data": [
+          56.5321,
+          95.5199,
+          54.648,
+          74.6369,
+          70.5706,
+          87.8084,
+          47.8649,
+          45.8767,
+          85.0691,
+          56.7774
+        ],
+        "data_error_upper": [
+          58.4146,
+          31.2474,
+          58.6475,
+          68.3295,
+          6.2633,
+          82.5137,
+          7.0612,
+          52.3958,
+          36.3042,
+          75.7468
+        ],
+        "data_error_lower": [
+          16.8186,
+          6.2943,
+          28.7789,
+          42.891,
+          82.3611,
+          59.8082,
+          80.0205,
+          58.2122,
+          33.2816,
+          50.9883
+        ],
+        "validity_timed": [
+          86,
+          12,
+          99,
+          88,
+          93,
+          19,
+          42,
+          8,
+          9,
+          89
+        ],
+        "validity": 44,
+        "time": [
+          5.0484,
+          89.0364,
+          71.9459,
+          85.2254,
+          92.4263,
+          93.3134,
+          97.6427,
+          63.952,
+          73.1118,
+          17.0395
+        ]
+      }
+    },
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "measured_quantity": {
+        "name": "dummy_string",
+        "index": 90,
+        "description": "dummy_string"
+      },
+      "position": [
+        {
+          "r": 64.6134,
+          "r_error_upper": 50.1192,
+          "r_error_lower": 5.7352,
+          "phi": 10.6244,
+          "phi_error_upper": 73.2551,
+          "phi_error_lower": 43.5266,
+          "z": 52.4348,
+          "z_error_upper": 65.1602,
+          "z_error_lower": 44.3729,
+          "first_point": {
+            "r": 87.2692,
+            "r_error_upper": 91.8608,
+            "r_error_lower": 38.8821,
+            "z": 31.7496,
+            "z_error_upper": 27.5093,
+            "z_error_lower": 79.1782
+          },
+          "second_point": {
+            "r": 22.0266,
+            "r_error_upper": 47.7749,
+            "r_error_lower": 21.6305,
+            "z": 40.9259,
+            "z_error_upper": 42.9768,
+            "z_error_lower": 69.7259
+          }
+        },
+        {
+          "r": 64.6134,
+          "r_error_upper": 50.1192,
+          "r_error_lower": 5.7352,
+          "phi": 10.6244,
+          "phi_error_upper": 73.2551,
+          "phi_error_lower": 43.5266,
+          "z": 52.4348,
+          "z_error_upper": 65.1602,
+          "z_error_lower": 44.3729,
+          "first_point": {
+            "r": 87.2692,
+            "r_error_upper": 91.8608,
+            "r_error_lower": 38.8821,
+            "z": 31.7496,
+            "z_error_upper": 27.5093,
+            "z_error_lower": 79.1782
+          },
+          "second_point": {
+            "r": 22.0266,
+            "r_error_upper": 47.7749,
+            "r_error_lower": 21.6305,
+            "z": 40.9259,
+            "z_error_upper": 42.9768,
+            "z_error_lower": 69.7259
+          }
+        }
+      ],
+      "indices_compound": [
+        46,
+        84,
+        0,
+        14,
+        49,
+        21,
+        55,
+        5,
+        9,
+        58
+      ],
+      "area": 87.607,
+      "area_error_upper": 68.2618,
+      "area_error_lower": 35.1581,
+      "turns_per_metre": 95.6022,
+      "turns_per_metre_error_upper": 26.6687,
+      "turns_per_metre_error_lower": 23.0136,
+      "current": {
+        "data": [
+          56.5321,
+          95.5199,
+          54.648,
+          74.6369,
+          70.5706,
+          87.8084,
+          47.8649,
+          45.8767,
+          85.0691,
+          56.7774
+        ],
+        "data_error_upper": [
+          58.4146,
+          31.2474,
+          58.6475,
+          68.3295,
+          6.2633,
+          82.5137,
+          7.0612,
+          52.3958,
+          36.3042,
+          75.7468
+        ],
+        "data_error_lower": [
+          16.8186,
+          6.2943,
+          28.7789,
+          42.891,
+          82.3611,
+          59.8082,
+          80.0205,
+          58.2122,
+          33.2816,
+          50.9883
+        ],
+        "validity_timed": [
+          86,
+          12,
+          99,
+          88,
+          93,
+          19,
+          42,
+          8,
+          9,
+          89
+        ],
+        "validity": 44,
+        "time": [
+          5.0484,
+          89.0364,
+          71.9459,
+          85.2254,
+          92.4263,
+          93.3134,
+          97.6427,
+          63.952,
+          73.1118,
+          17.0395
+        ]
+      }
+    }
+  ],
+  "shunt": [
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "position": {
+        "r": 10.676,
+        "r_error_upper": 36.0712,
+        "r_error_lower": 62.7468,
+        "phi": 34.6735,
+        "phi_error_upper": 6.4217,
+        "phi_error_lower": 69.391,
+        "z": 94.023,
+        "z_error_upper": 43.2986,
+        "z_error_lower": 99.0153,
+        "first_point": {
+          "r": 80.3376,
+          "r_error_upper": 43.8547,
+          "r_error_lower": 35.3186,
+          "z": 9.2484,
+          "z_error_upper": 82.2074,
+          "z_error_lower": 70.1824
+        },
+        "second_point": {
+          "r": 22.5292,
+          "r_error_upper": 95.1118,
+          "r_error_lower": 72.1211,
+          "z": 96.8233,
+          "z_error_upper": 51.6124,
+          "z_error_lower": 57.9406
+        }
+      },
+      "resistance": 41.439,
+      "resistance_error_upper": 70.6763,
+      "resistance_error_lower": 54.494,
+      "voltage": {
+        "data": [
+          32.0605,
+          76.8644,
+          53.6234,
+          83.5001,
+          28.0667,
+          21.7054,
+          19.136,
+          52.4143,
+          84.0142,
+          31.6523
+        ],
+        "data_error_upper": [
+          97.8112,
+          97.4339,
+          82.4684,
+          5.1263,
+          99.7233,
+          22.7569,
+          54.7921,
+          13.5452,
+          71.8192,
+          28.4209
+        ],
+        "data_error_lower": [
+          20.955,
+          31.5753,
+          94.7734,
+          12.3444,
+          87.9419,
+          33.2781,
+          36.4639,
+          14.6719,
+          81.4444,
+          2.7995
+        ],
+        "validity_timed": [
+          11,
+          67,
+          31,
+          62,
+          97,
+          16,
+          53,
+          62,
+          44,
+          59
+        ],
+        "validity": 84,
+        "time": [
+          2.7764,
+          59.0034,
+          46.6624,
+          26.8729,
+          8.7353,
+          18.1248,
+          81.2365,
+          69.8647,
+          76.6178,
+          1.7511
+        ]
+      },
+      "divertor_index": 35,
+      "target_index": 95,
+      "tile_index": 98
+    },
+    {
+      "name": "dummy_string",
+      "description": "dummy_string",
+      "position": {
+        "r": 10.676,
+        "r_error_upper": 36.0712,
+        "r_error_lower": 62.7468,
+        "phi": 34.6735,
+        "phi_error_upper": 6.4217,
+        "phi_error_lower": 69.391,
+        "z": 94.023,
+        "z_error_upper": 43.2986,
+        "z_error_lower": 99.0153,
+        "first_point": {
+          "r": 80.3376,
+          "r_error_upper": 43.8547,
+          "r_error_lower": 35.3186,
+          "z": 9.2484,
+          "z_error_upper": 82.2074,
+          "z_error_lower": 70.1824
+        },
+        "second_point": {
+          "r": 22.5292,
+          "r_error_upper": 95.1118,
+          "r_error_lower": 72.1211,
+          "z": 96.8233,
+          "z_error_upper": 51.6124,
+          "z_error_lower": 57.9406
+        }
+      },
+      "resistance": 41.439,
+      "resistance_error_upper": 70.6763,
+      "resistance_error_lower": 54.494,
+      "voltage": {
+        "data": [
+          32.0605,
+          76.8644,
+          53.6234,
+          83.5001,
+          28.0667,
+          21.7054,
+          19.136,
+          52.4143,
+          84.0142,
+          31.6523
+        ],
+        "data_error_upper": [
+          97.8112,
+          97.4339,
+          82.4684,
+          5.1263,
+          99.7233,
+          22.7569,
+          54.7921,
+          13.5452,
+          71.8192,
+          28.4209
+        ],
+        "data_error_lower": [
+          20.955,
+          31.5753,
+          94.7734,
+          12.3444,
+          87.9419,
+          33.2781,
+          36.4639,
+          14.6719,
+          81.4444,
+          2.7995
+        ],
+        "validity_timed": [
+          11,
+          67,
+          31,
+          62,
+          97,
+          16,
+          53,
+          62,
+          44,
+          59
+        ],
+        "validity": 84,
+        "time": [
+          2.7764,
+          59.0034,
+          46.6624,
+          26.8729,
+          8.7353,
+          18.1248,
+          81.2365,
+          69.8647,
+          76.6178,
+          1.7511
+        ]
+      },
+      "divertor_index": 35,
+      "target_index": 95,
+      "tile_index": 98
+    }
+  ],
+  "ip": [
+    {
+      "method_name": "dummy_string",
+      "data": [
+        19.1326,
+        58.8538,
+        55.2174,
+        50.8713,
+        44.4152,
+        22.3914,
+        83.7212,
+        37.5116,
+        79.077,
+        58.6346
+      ],
+      "data_error_upper": [
+        57.0911,
+        69.2659,
+        13.1379,
+        14.5489,
+        59.4875,
+        92.7518,
+        76.7083,
+        92.6078,
+        84.9496,
+        30.0023
+      ],
+      "data_error_lower": [
+        69.0808,
+        18.0053,
+        97.7093,
+        19.9564,
+        42.6028,
+        17.6042,
+        41.5379,
+        15.6785,
+        12.671,
+        16.3947
+      ],
+      "time": [
+        90.6685,
+        88.3022,
+        46.3687,
+        93.632,
+        9.615,
+        6.2443,
+        47.0267,
+        24.0445,
+        86.8804,
+        85.8716
+      ]
+    },
+    {
+      "method_name": "dummy_string",
+      "data": [
+        19.1326,
+        58.8538,
+        55.2174,
+        50.8713,
+        44.4152,
+        22.3914,
+        83.7212,
+        37.5116,
+        79.077,
+        58.6346
+      ],
+      "data_error_upper": [
+        57.0911,
+        69.2659,
+        13.1379,
+        14.5489,
+        59.4875,
+        92.7518,
+        76.7083,
+        92.6078,
+        84.9496,
+        30.0023
+      ],
+      "data_error_lower": [
+        69.0808,
+        18.0053,
+        97.7093,
+        19.9564,
+        42.6028,
+        17.6042,
+        41.5379,
+        15.6785,
+        12.671,
+        16.3947
+      ],
+      "time": [
+        90.6685,
+        88.3022,
+        46.3687,
+        93.632,
+        9.615,
+        6.2443,
+        47.0267,
+        24.0445,
+        86.8804,
+        85.8716
+      ]
+    }
+  ],
+  "diamagnetic_flux": [
+    {
+      "method_name": "dummy_string",
+      "data": [
+        47.2841,
+        78.3923,
+        70.2661,
+        3.0626,
+        85.9671,
+        37.4078,
+        57.7646,
+        37.7713,
+        43.2935,
+        57.4448
+      ],
+      "data_error_upper": [
+        57.9036,
+        77.3928,
+        43.3766,
+        92.867,
+        27.0093,
+        87.5515,
+        80.4988,
+        59.9866,
+        60.1256,
+        9.9607
+      ],
+      "data_error_lower": [
+        18.9204,
+        81.3015,
+        86.3144,
+        21.801,
+        51.9597,
+        52.4962,
+        32.3435,
+        91.1784,
+        16.4541,
+        13.6608
+      ],
+      "time": [
+        83.6266,
+        15.4884,
+        43.3596,
+        83.9019,
+        67.0582,
+        68.0833,
+        24.2093,
+        50.7566,
+        18.2768,
+        62.6843
+      ]
+    },
+    {
+      "method_name": "dummy_string",
+      "data": [
+        47.2841,
+        78.3923,
+        70.2661,
+        3.0626,
+        85.9671,
+        37.4078,
+        57.7646,
+        37.7713,
+        43.2935,
+        57.4448
+      ],
+      "data_error_upper": [
+        57.9036,
+        77.3928,
+        43.3766,
+        92.867,
+        27.0093,
+        87.5515,
+        80.4988,
+        59.9866,
+        60.1256,
+        9.9607
+      ],
+      "data_error_lower": [
+        18.9204,
+        81.3015,
+        86.3144,
+        21.801,
+        51.9597,
+        52.4962,
+        32.3435,
+        91.1784,
+        16.4541,
+        13.6608
+      ],
+      "time": [
+        83.6266,
+        15.4884,
+        43.3596,
+        83.9019,
+        67.0582,
+        68.0833,
+        24.2093,
+        50.7566,
+        18.2768,
+        62.6843
+      ]
+    }
+  ],
+  "latency": 69.2314,
+  "latency_error_upper": 10.4463,
+  "latency_error_lower": 19.6573,
+  "code": {
+    "name": "dummy_string",
+    "description": "dummy_string",
+    "commit": "dummy_string",
+    "version": "dummy_string",
+    "repository": "dummy_string",
+    "parameters": "dummy_string",
+    "output_flag": [
+      22,
+      13,
+      51,
+      54,
+      24,
+      57,
+      58,
+      60,
+      19,
+      95
+    ],
+    "library": [
+      {
+        "name": "dummy_string",
+        "description": "dummy_string",
+        "commit": "dummy_string",
+        "version": "dummy_string",
+        "repository": "dummy_string",
+        "parameters": "dummy_string"
+      },
+      {
+        "name": "dummy_string",
+        "description": "dummy_string",
+        "commit": "dummy_string",
+        "version": "dummy_string",
+        "repository": "dummy_string",
+        "parameters": "dummy_string"
+      }
+    ]
+  },
+  "time": [
+    88.6184,
+    89.2484,
+    43.7404,
+    94.9591,
+    90.9212,
+    88.1928,
+    0.3088,
+    16.9503,
+    60.0065,
+    28.6603
+  ]
+}

@@ -1,0 +1,2761 @@
+{
+  "version": "1.0.0",
+  "ids_properties/comment": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/comment"
+    }
+  },
+  "ids_properties/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/name"
+    }
+  },
+  "ids_properties/homogeneous_time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/homogeneous_time"
+    }
+  },
+  "ids_properties/occurrence_type/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/occurrence_type/name"
+    }
+  },
+  "ids_properties/occurrence_type/index": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/occurrence_type/index"
+    }
+  },
+  "ids_properties/occurrence_type/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/occurrence_type/description"
+    }
+  },
+  "ids_properties/provider": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provider"
+    }
+  },
+  "ids_properties/creation_date": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/creation_date"
+    }
+  },
+  "ids_properties/version_put/data_dictionary": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/version_put/data_dictionary"
+    }
+  },
+  "ids_properties/version_put/access_layer": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/version_put/access_layer"
+    }
+  },
+  "ids_properties/version_put/access_layer_language": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/version_put/access_layer_language"
+    }
+  },
+  "ids_properties/provenance/node": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node"
+    }
+  },
+  "ids_properties/provenance/node[#]/path": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/path"
+    }
+  },
+  "ids_properties/provenance/node[#]/reference": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/reference"
+    }
+  },
+  "ids_properties/provenance/node[#]/reference[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/reference/{{ #1 }}/name"
+    }
+  },
+  "ids_properties/provenance/node[#]/reference[#]/timestamp": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/reference/{{ #1 }}/timestamp"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/name"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/description"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/commit"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/version"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/repository"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/parameters"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/library": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/library"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/library[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/name"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/library[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/description"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/library[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/commit"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/library[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/version"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/library[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/repository"
+    }
+  },
+  "ids_properties/provenance/node[#]/put_operation[#]/library[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/parameters"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/name"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/description"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/commit"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/version"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/repository"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/parameters"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/library": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/library"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/library[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/name"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/library[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/description"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/library[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/commit"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/library[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/version"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/library[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/repository"
+    }
+  },
+  "ids_properties/provenance/node[#]/readback[#]/library[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/parameters"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/name"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/description"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/commit"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/version"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/repository"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/parameters"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/library": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/library"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/library[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/name"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/library[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/description"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/library[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/commit"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/library[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/version"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/library[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/repository"
+    }
+  },
+  "ids_properties/provenance/node[#]/get_operation[#]/library[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/provenance/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/parameters"
+    }
+  },
+  "ids_properties/plugins/node": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node"
+    }
+  },
+  "ids_properties/plugins/node[#]/path": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/path"
+    }
+  },
+  "ids_properties/plugins/node[#]/reference": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/reference"
+    }
+  },
+  "ids_properties/plugins/node[#]/reference[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/reference/{{ #1 }}/name"
+    }
+  },
+  "ids_properties/plugins/node[#]/reference[#]/timestamp": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/reference/{{ #1 }}/timestamp"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/name"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/description"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/commit"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/version"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/repository"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/parameters"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/library": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/library"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/library[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/name"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/library[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/description"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/library[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/commit"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/library[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/version"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/library[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/repository"
+    }
+  },
+  "ids_properties/plugins/node[#]/put_operation[#]/library[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/put_operation/{{ #1 }}/library/{{ #2 }}/parameters"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/name"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/description"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/commit"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/version"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/repository"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/parameters"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/library": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/library"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/library[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/name"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/library[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/description"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/library[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/commit"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/library[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/version"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/library[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/repository"
+    }
+  },
+  "ids_properties/plugins/node[#]/readback[#]/library[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/readback/{{ #1 }}/library/{{ #2 }}/parameters"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/name"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/description"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/commit"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/version"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/repository"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/parameters"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/library": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/library"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/library[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/name"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/library[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/description"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/library[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/commit"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/library[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/version"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/library[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/repository"
+    }
+  },
+  "ids_properties/plugins/node[#]/get_operation[#]/library[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/node/{{ #0 }}/get_operation/{{ #1 }}/library/{{ #2 }}/parameters"
+    }
+  },
+  "ids_properties/plugins/infrastructure_put/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_put/name"
+    }
+  },
+  "ids_properties/plugins/infrastructure_put/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_put/description"
+    }
+  },
+  "ids_properties/plugins/infrastructure_put/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_put/commit"
+    }
+  },
+  "ids_properties/plugins/infrastructure_put/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_put/version"
+    }
+  },
+  "ids_properties/plugins/infrastructure_put/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_put/repository"
+    }
+  },
+  "ids_properties/plugins/infrastructure_get/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_get/name"
+    }
+  },
+  "ids_properties/plugins/infrastructure_get/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_get/description"
+    }
+  },
+  "ids_properties/plugins/infrastructure_get/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_get/commit"
+    }
+  },
+  "ids_properties/plugins/infrastructure_get/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_get/version"
+    }
+  },
+  "ids_properties/plugins/infrastructure_get/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ids_properties/plugins/infrastructure_get/repository"
+    }
+  },
+  "flux_loop": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop"
+    }
+  },
+  "flux_loop[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/name"
+    }
+  },
+  "flux_loop[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/description"
+    }
+  },
+  "flux_loop[#]/type/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/type/name"
+    }
+  },
+  "flux_loop[#]/type/index": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/type/index"
+    }
+  },
+  "flux_loop[#]/type/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/type/description"
+    }
+  },
+  "flux_loop[#]/position": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position"
+    }
+  },
+  "flux_loop[#]/position[#]/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/r"
+    }
+  },
+  "flux_loop[#]/position[#]/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/r_error_upper"
+    }
+  },
+  "flux_loop[#]/position[#]/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/r_error_lower"
+    }
+  },
+  "flux_loop[#]/position[#]/phi": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/phi"
+    }
+  },
+  "flux_loop[#]/position[#]/phi_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/phi_error_upper"
+    }
+  },
+  "flux_loop[#]/position[#]/phi_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/phi_error_lower"
+    }
+  },
+  "flux_loop[#]/position[#]/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/z"
+    }
+  },
+  "flux_loop[#]/position[#]/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/z_error_upper"
+    }
+  },
+  "flux_loop[#]/position[#]/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/z_error_lower"
+    }
+  },
+  "flux_loop[#]/position[#]/first_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/first_point/r"
+    }
+  },
+  "flux_loop[#]/position[#]/first_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/first_point/r_error_upper"
+    }
+  },
+  "flux_loop[#]/position[#]/first_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/first_point/r_error_lower"
+    }
+  },
+  "flux_loop[#]/position[#]/first_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/first_point/z"
+    }
+  },
+  "flux_loop[#]/position[#]/first_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/first_point/z_error_upper"
+    }
+  },
+  "flux_loop[#]/position[#]/first_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/first_point/z_error_lower"
+    }
+  },
+  "flux_loop[#]/position[#]/second_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/second_point/r"
+    }
+  },
+  "flux_loop[#]/position[#]/second_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/second_point/r_error_upper"
+    }
+  },
+  "flux_loop[#]/position[#]/second_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/second_point/r_error_lower"
+    }
+  },
+  "flux_loop[#]/position[#]/second_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/second_point/z"
+    }
+  },
+  "flux_loop[#]/position[#]/second_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/second_point/z_error_upper"
+    }
+  },
+  "flux_loop[#]/position[#]/second_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/position/{{ #1 }}/second_point/z_error_lower"
+    }
+  },
+  "flux_loop[#]/indices_differential": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/indices_differential"
+    }
+  },
+  "flux_loop[#]/area": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/area"
+    }
+  },
+  "flux_loop[#]/area_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/area_error_upper"
+    }
+  },
+  "flux_loop[#]/area_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/area_error_lower"
+    }
+  },
+  "flux_loop[#]/gm9": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/gm9"
+    }
+  },
+  "flux_loop[#]/gm9_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/gm9_error_upper"
+    }
+  },
+  "flux_loop[#]/gm9_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/gm9_error_lower"
+    }
+  },
+  "flux_loop[#]/flux/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/flux/data"
+    }
+  },
+  "flux_loop[#]/flux/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/flux/data_error_upper"
+    }
+  },
+  "flux_loop[#]/flux/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/flux/data_error_lower"
+    }
+  },
+  "flux_loop[#]/flux/validity_timed": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/flux/validity_timed"
+    }
+  },
+  "flux_loop[#]/flux/validity": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/flux/validity"
+    }
+  },
+  "flux_loop[#]/flux/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/flux/time"
+    }
+  },
+  "flux_loop[#]/voltage/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/voltage/data"
+    }
+  },
+  "flux_loop[#]/voltage/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/voltage/data_error_upper"
+    }
+  },
+  "flux_loop[#]/voltage/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/voltage/data_error_lower"
+    }
+  },
+  "flux_loop[#]/voltage/validity_timed": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/voltage/validity_timed"
+    }
+  },
+  "flux_loop[#]/voltage/validity": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/voltage/validity"
+    }
+  },
+  "flux_loop[#]/voltage/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "flux_loop/{{ #0 }}/voltage/time"
+    }
+  },
+  "b_field_pol_probe": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe"
+    }
+  },
+  "b_field_pol_probe[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/name"
+    }
+  },
+  "b_field_pol_probe[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/description"
+    }
+  },
+  "b_field_pol_probe[#]/type/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/type/name"
+    }
+  },
+  "b_field_pol_probe[#]/type/index": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/type/index"
+    }
+  },
+  "b_field_pol_probe[#]/type/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/type/description"
+    }
+  },
+  "b_field_pol_probe[#]/position/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/r"
+    }
+  },
+  "b_field_pol_probe[#]/position/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/r_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/position/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/r_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/position/phi": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/phi"
+    }
+  },
+  "b_field_pol_probe[#]/position/phi_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/phi_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/position/phi_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/phi_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/position/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/z"
+    }
+  },
+  "b_field_pol_probe[#]/position/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/z_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/position/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/z_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/position/first_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/first_point/r"
+    }
+  },
+  "b_field_pol_probe[#]/position/first_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/first_point/r_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/position/first_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/first_point/r_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/position/first_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/first_point/z"
+    }
+  },
+  "b_field_pol_probe[#]/position/first_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/first_point/z_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/position/first_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/first_point/z_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/position/second_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/second_point/r"
+    }
+  },
+  "b_field_pol_probe[#]/position/second_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/second_point/r_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/position/second_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/second_point/r_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/position/second_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/second_point/z"
+    }
+  },
+  "b_field_pol_probe[#]/position/second_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/second_point/z_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/position/second_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/position/second_point/z_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/poloidal_angle": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/poloidal_angle"
+    }
+  },
+  "b_field_pol_probe[#]/poloidal_angle_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/poloidal_angle_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/poloidal_angle_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/poloidal_angle_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/toroidal_angle": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/toroidal_angle"
+    }
+  },
+  "b_field_pol_probe[#]/toroidal_angle_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/toroidal_angle_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/toroidal_angle_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/toroidal_angle_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/indices_differential": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/indices_differential"
+    }
+  },
+  "b_field_pol_probe[#]/bandwidth_3db": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/bandwidth_3db"
+    }
+  },
+  "b_field_pol_probe[#]/bandwidth_3db_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/bandwidth_3db_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/bandwidth_3db_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/bandwidth_3db_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/area": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/area"
+    }
+  },
+  "b_field_pol_probe[#]/area_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/area_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/area_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/area_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/length": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/length"
+    }
+  },
+  "b_field_pol_probe[#]/length_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/length_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/length_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/length_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/turns": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/turns"
+    }
+  },
+  "b_field_pol_probe[#]/field/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/field/data"
+    }
+  },
+  "b_field_pol_probe[#]/field/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/field/data_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/field/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/field/data_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/field/validity_timed": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/field/validity_timed"
+    }
+  },
+  "b_field_pol_probe[#]/field/validity": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/field/validity"
+    }
+  },
+  "b_field_pol_probe[#]/field/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/field/time"
+    }
+  },
+  "b_field_pol_probe[#]/voltage/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/voltage/data"
+    }
+  },
+  "b_field_pol_probe[#]/voltage/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/voltage/data_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/voltage/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/voltage/data_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/voltage/validity_timed": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/voltage/validity_timed"
+    }
+  },
+  "b_field_pol_probe[#]/voltage/validity": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/voltage/validity"
+    }
+  },
+  "b_field_pol_probe[#]/voltage/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/voltage/time"
+    }
+  },
+  "b_field_pol_probe[#]/non_linear_response/b_field_linear": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/non_linear_response/b_field_linear"
+    }
+  },
+  "b_field_pol_probe[#]/non_linear_response/b_field_linear_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/non_linear_response/b_field_linear_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/non_linear_response/b_field_linear_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/non_linear_response/b_field_linear_error_lower"
+    }
+  },
+  "b_field_pol_probe[#]/non_linear_response/b_field_non_linear": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/non_linear_response/b_field_non_linear"
+    }
+  },
+  "b_field_pol_probe[#]/non_linear_response/b_field_non_linear_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/non_linear_response/b_field_non_linear_error_upper"
+    }
+  },
+  "b_field_pol_probe[#]/non_linear_response/b_field_non_linear_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe/{{ #0 }}/non_linear_response/b_field_non_linear_error_lower"
+    }
+  },
+  "b_field_pol_probe_equivalent": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_pol_probe_equivalent"
+    }
+  },
+  "b_field_phi_probe": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe"
+    }
+  },
+  "b_field_phi_probe[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/name"
+    }
+  },
+  "b_field_phi_probe[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/description"
+    }
+  },
+  "b_field_phi_probe[#]/type/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/type/name"
+    }
+  },
+  "b_field_phi_probe[#]/type/index": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/type/index"
+    }
+  },
+  "b_field_phi_probe[#]/type/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/type/description"
+    }
+  },
+  "b_field_phi_probe[#]/position/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/r"
+    }
+  },
+  "b_field_phi_probe[#]/position/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/r_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/position/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/r_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/position/phi": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/phi"
+    }
+  },
+  "b_field_phi_probe[#]/position/phi_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/phi_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/position/phi_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/phi_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/position/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/z"
+    }
+  },
+  "b_field_phi_probe[#]/position/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/z_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/position/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/z_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/position/first_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/first_point/r"
+    }
+  },
+  "b_field_phi_probe[#]/position/first_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/first_point/r_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/position/first_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/first_point/r_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/position/first_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/first_point/z"
+    }
+  },
+  "b_field_phi_probe[#]/position/first_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/first_point/z_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/position/first_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/first_point/z_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/position/second_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/second_point/r"
+    }
+  },
+  "b_field_phi_probe[#]/position/second_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/second_point/r_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/position/second_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/second_point/r_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/position/second_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/second_point/z"
+    }
+  },
+  "b_field_phi_probe[#]/position/second_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/second_point/z_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/position/second_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/position/second_point/z_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/poloidal_angle": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/poloidal_angle"
+    }
+  },
+  "b_field_phi_probe[#]/poloidal_angle_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/poloidal_angle_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/poloidal_angle_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/poloidal_angle_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/toroidal_angle": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/toroidal_angle"
+    }
+  },
+  "b_field_phi_probe[#]/toroidal_angle_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/toroidal_angle_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/toroidal_angle_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/toroidal_angle_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/indices_differential": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/indices_differential"
+    }
+  },
+  "b_field_phi_probe[#]/bandwidth_3db": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/bandwidth_3db"
+    }
+  },
+  "b_field_phi_probe[#]/bandwidth_3db_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/bandwidth_3db_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/bandwidth_3db_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/bandwidth_3db_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/area": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/area"
+    }
+  },
+  "b_field_phi_probe[#]/area_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/area_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/area_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/area_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/length": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/length"
+    }
+  },
+  "b_field_phi_probe[#]/length_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/length_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/length_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/length_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/turns": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/turns"
+    }
+  },
+  "b_field_phi_probe[#]/field/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/field/data"
+    }
+  },
+  "b_field_phi_probe[#]/field/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/field/data_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/field/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/field/data_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/field/validity_timed": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/field/validity_timed"
+    }
+  },
+  "b_field_phi_probe[#]/field/validity": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/field/validity"
+    }
+  },
+  "b_field_phi_probe[#]/field/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/field/time"
+    }
+  },
+  "b_field_phi_probe[#]/voltage/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/voltage/data"
+    }
+  },
+  "b_field_phi_probe[#]/voltage/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/voltage/data_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/voltage/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/voltage/data_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/voltage/validity_timed": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/voltage/validity_timed"
+    }
+  },
+  "b_field_phi_probe[#]/voltage/validity": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/voltage/validity"
+    }
+  },
+  "b_field_phi_probe[#]/voltage/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/voltage/time"
+    }
+  },
+  "b_field_phi_probe[#]/non_linear_response/b_field_linear": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/non_linear_response/b_field_linear"
+    }
+  },
+  "b_field_phi_probe[#]/non_linear_response/b_field_linear_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/non_linear_response/b_field_linear_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/non_linear_response/b_field_linear_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/non_linear_response/b_field_linear_error_lower"
+    }
+  },
+  "b_field_phi_probe[#]/non_linear_response/b_field_non_linear": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/non_linear_response/b_field_non_linear"
+    }
+  },
+  "b_field_phi_probe[#]/non_linear_response/b_field_non_linear_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/non_linear_response/b_field_non_linear_error_upper"
+    }
+  },
+  "b_field_phi_probe[#]/non_linear_response/b_field_non_linear_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "b_field_phi_probe/{{ #0 }}/non_linear_response/b_field_non_linear_error_lower"
+    }
+  },
+  "rogowski_coil": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil"
+    }
+  },
+  "rogowski_coil[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/name"
+    }
+  },
+  "rogowski_coil[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/description"
+    }
+  },
+  "rogowski_coil[#]/measured_quantity/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/measured_quantity/name"
+    }
+  },
+  "rogowski_coil[#]/measured_quantity/index": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/measured_quantity/index"
+    }
+  },
+  "rogowski_coil[#]/measured_quantity/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/measured_quantity/description"
+    }
+  },
+  "rogowski_coil[#]/position": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position"
+    }
+  },
+  "rogowski_coil[#]/position[#]/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/r"
+    }
+  },
+  "rogowski_coil[#]/position[#]/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/r_error_upper"
+    }
+  },
+  "rogowski_coil[#]/position[#]/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/r_error_lower"
+    }
+  },
+  "rogowski_coil[#]/position[#]/phi": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/phi"
+    }
+  },
+  "rogowski_coil[#]/position[#]/phi_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/phi_error_upper"
+    }
+  },
+  "rogowski_coil[#]/position[#]/phi_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/phi_error_lower"
+    }
+  },
+  "rogowski_coil[#]/position[#]/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/z"
+    }
+  },
+  "rogowski_coil[#]/position[#]/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/z_error_upper"
+    }
+  },
+  "rogowski_coil[#]/position[#]/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/z_error_lower"
+    }
+  },
+  "rogowski_coil[#]/position[#]/first_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/first_point/r"
+    }
+  },
+  "rogowski_coil[#]/position[#]/first_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/first_point/r_error_upper"
+    }
+  },
+  "rogowski_coil[#]/position[#]/first_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/first_point/r_error_lower"
+    }
+  },
+  "rogowski_coil[#]/position[#]/first_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/first_point/z"
+    }
+  },
+  "rogowski_coil[#]/position[#]/first_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/first_point/z_error_upper"
+    }
+  },
+  "rogowski_coil[#]/position[#]/first_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/first_point/z_error_lower"
+    }
+  },
+  "rogowski_coil[#]/position[#]/second_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/second_point/r"
+    }
+  },
+  "rogowski_coil[#]/position[#]/second_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/second_point/r_error_upper"
+    }
+  },
+  "rogowski_coil[#]/position[#]/second_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/second_point/r_error_lower"
+    }
+  },
+  "rogowski_coil[#]/position[#]/second_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/second_point/z"
+    }
+  },
+  "rogowski_coil[#]/position[#]/second_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/second_point/z_error_upper"
+    }
+  },
+  "rogowski_coil[#]/position[#]/second_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/position/{{ #1 }}/second_point/z_error_lower"
+    }
+  },
+  "rogowski_coil[#]/indices_compound": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/indices_compound"
+    }
+  },
+  "rogowski_coil[#]/area": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/area"
+    }
+  },
+  "rogowski_coil[#]/area_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/area_error_upper"
+    }
+  },
+  "rogowski_coil[#]/area_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/area_error_lower"
+    }
+  },
+  "rogowski_coil[#]/turns_per_metre": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/turns_per_metre"
+    }
+  },
+  "rogowski_coil[#]/turns_per_metre_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/turns_per_metre_error_upper"
+    }
+  },
+  "rogowski_coil[#]/turns_per_metre_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/turns_per_metre_error_lower"
+    }
+  },
+  "rogowski_coil[#]/current/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/current/data"
+    }
+  },
+  "rogowski_coil[#]/current/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/current/data_error_upper"
+    }
+  },
+  "rogowski_coil[#]/current/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/current/data_error_lower"
+    }
+  },
+  "rogowski_coil[#]/current/validity_timed": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/current/validity_timed"
+    }
+  },
+  "rogowski_coil[#]/current/validity": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/current/validity"
+    }
+  },
+  "rogowski_coil[#]/current/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "rogowski_coil/{{ #0 }}/current/time"
+    }
+  },
+  "shunt": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt"
+    }
+  },
+  "shunt[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/name"
+    }
+  },
+  "shunt[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/description"
+    }
+  },
+  "shunt[#]/position/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/r"
+    }
+  },
+  "shunt[#]/position/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/r_error_upper"
+    }
+  },
+  "shunt[#]/position/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/r_error_lower"
+    }
+  },
+  "shunt[#]/position/phi": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/phi"
+    }
+  },
+  "shunt[#]/position/phi_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/phi_error_upper"
+    }
+  },
+  "shunt[#]/position/phi_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/phi_error_lower"
+    }
+  },
+  "shunt[#]/position/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/z"
+    }
+  },
+  "shunt[#]/position/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/z_error_upper"
+    }
+  },
+  "shunt[#]/position/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/z_error_lower"
+    }
+  },
+  "shunt[#]/position/first_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/first_point/r"
+    }
+  },
+  "shunt[#]/position/first_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/first_point/r_error_upper"
+    }
+  },
+  "shunt[#]/position/first_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/first_point/r_error_lower"
+    }
+  },
+  "shunt[#]/position/first_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/first_point/z"
+    }
+  },
+  "shunt[#]/position/first_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/first_point/z_error_upper"
+    }
+  },
+  "shunt[#]/position/first_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/first_point/z_error_lower"
+    }
+  },
+  "shunt[#]/position/second_point/r": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/second_point/r"
+    }
+  },
+  "shunt[#]/position/second_point/r_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/second_point/r_error_upper"
+    }
+  },
+  "shunt[#]/position/second_point/r_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/second_point/r_error_lower"
+    }
+  },
+  "shunt[#]/position/second_point/z": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/second_point/z"
+    }
+  },
+  "shunt[#]/position/second_point/z_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/second_point/z_error_upper"
+    }
+  },
+  "shunt[#]/position/second_point/z_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/position/second_point/z_error_lower"
+    }
+  },
+  "shunt[#]/resistance": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/resistance"
+    }
+  },
+  "shunt[#]/resistance_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/resistance_error_upper"
+    }
+  },
+  "shunt[#]/resistance_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/resistance_error_lower"
+    }
+  },
+  "shunt[#]/voltage/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/voltage/data"
+    }
+  },
+  "shunt[#]/voltage/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/voltage/data_error_upper"
+    }
+  },
+  "shunt[#]/voltage/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/voltage/data_error_lower"
+    }
+  },
+  "shunt[#]/voltage/validity_timed": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/voltage/validity_timed"
+    }
+  },
+  "shunt[#]/voltage/validity": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/voltage/validity"
+    }
+  },
+  "shunt[#]/voltage/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/voltage/time"
+    }
+  },
+  "shunt[#]/divertor_index": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/divertor_index"
+    }
+  },
+  "shunt[#]/target_index": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/target_index"
+    }
+  },
+  "shunt[#]/tile_index": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "shunt/{{ #0 }}/tile_index"
+    }
+  },
+  "ip": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ip"
+    }
+  },
+  "ip[#]/method_name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ip/{{ #0 }}/method_name"
+    }
+  },
+  "ip[#]/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ip/{{ #0 }}/data"
+    }
+  },
+  "ip[#]/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ip/{{ #0 }}/data_error_upper"
+    }
+  },
+  "ip[#]/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ip/{{ #0 }}/data_error_lower"
+    }
+  },
+  "ip[#]/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "ip/{{ #0 }}/time"
+    }
+  },
+  "diamagnetic_flux": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "diamagnetic_flux"
+    }
+  },
+  "diamagnetic_flux[#]/method_name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "diamagnetic_flux/{{ #0 }}/method_name"
+    }
+  },
+  "diamagnetic_flux[#]/data": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "diamagnetic_flux/{{ #0 }}/data"
+    }
+  },
+  "diamagnetic_flux[#]/data_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "diamagnetic_flux/{{ #0 }}/data_error_upper"
+    }
+  },
+  "diamagnetic_flux[#]/data_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "diamagnetic_flux/{{ #0 }}/data_error_lower"
+    }
+  },
+  "diamagnetic_flux[#]/time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "diamagnetic_flux/{{ #0 }}/time"
+    }
+  },
+  "latency": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "latency"
+    }
+  },
+  "latency_error_upper": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "latency_error_upper"
+    }
+  },
+  "latency_error_lower": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "latency_error_lower"
+    }
+  },
+  "code/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/name"
+    }
+  },
+  "code/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/description"
+    }
+  },
+  "code/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/commit"
+    }
+  },
+  "code/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/version"
+    }
+  },
+  "code/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/repository"
+    }
+  },
+  "code/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/parameters"
+    }
+  },
+  "code/output_flag": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/output_flag"
+    }
+  },
+  "code/library": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/library"
+    }
+  },
+  "code/library[#]/name": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/library/{{ #0 }}/name"
+    }
+  },
+  "code/library[#]/description": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/library/{{ #0 }}/description"
+    }
+  },
+  "code/library[#]/commit": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/library/{{ #0 }}/commit"
+    }
+  },
+  "code/library[#]/version": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/library/{{ #0 }}/version"
+    }
+  },
+  "code/library[#]/repository": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/library/{{ #0 }}/repository"
+    }
+  },
+  "code/library[#]/parameters": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "code/library/{{ #0 }}/parameters"
+    }
+  },
+  "time": {
+    "MAP_TYPE": "DATA_SOURCE",
+    "DATA_SOURCE": "WEST",
+    "ARGS": {
+      "signal": "time"
+    }
+  }
+}

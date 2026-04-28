@@ -1,0 +1,1521 @@
+#include "west_xml.h"
+
+#include <string.h>
+#include <stdio.h>
+#include <assert.h>
+
+#include <west_logging.h>
+
+#include "ts_rqparam.h"
+#include "west_utilities.h"
+#include "west_static_data_utilities.h"
+
+#include "west_pf_passive.h"
+#include "west_pf_active.h"
+#include "west_soft_x_rays.h"
+#include "west_summary.h"
+#include "west_lh_antennas.h"
+#include "west_barometry.h"
+#include "west_ic_antennas.h"
+#include "west_polaro_interf.h"
+#include "west_magnetics.h"
+
+char* setBuffer(Longint data_type, const char* value);
+Longint getShapeOf(const char* command, Longint shotNumber, Longint* nb_val, Longint option);
+Longint shape_of_tsmat_collect(Longint shotNumber, char* TOP_collections_parameters, DATA_BLOCK* data_block);
+Longint shape_of_tsmat_collect2(Longint shotNumber, char* TOP_collections_parameters, DATA_BLOCK* data_block);
+
+Longint execute(const char* mapfun, Longint shotNumber, DATA_BLOCK* data_block, Longint* nodeIndices);
+// Longint execute_tsmat_collect(const char* TOP_collections_parameters, char* attributes,
+// 		Longint shotNumber, DATA_BLOCK* data_block, Longint* nodeIndices,
+// 		char* normalizationAttributes);
+Longint execute_tsmat_collect_for_poloidal_angle(const char* TOP_collections_parameters, char* attributes,
+		Longint shotNumber, DATA_BLOCK* data_block, Longint* nodeIndices,
+		char* normalizationAttributes);
+Longint execute_tsmat_without_idam_index(const char* command, char* attributes,
+		Longint shotNumber, DATA_BLOCK* data_block, char* normalizationAttributes);
+void execute_setchannels_validity(Longint* unvalid_channels_list, Longint unvalid_channels_size, char* attributes,
+		Longint shotNumber, DATA_BLOCK* data_block, Longint* nodeIndices);
+void setStatic1DValue(Longint data_type, DATA_BLOCK* data_block, char* value, Longint val_nb, Double normalizationFactor);
+void setPatchedStaticValue(DATA_BLOCK* data_block, char* object_name, Longint data_type, char* value, Longint searchedArrayIndex, Double  normalizationFactor);
+
+Longint GetStaticData(Longint shotNumber, const char* mapfun, DATA_BLOCK* data_block, Longint* nodeIndices)
+{
+	UDA_LOG(UDA_LOG_DEBUG, "Calling GetStaticData() from WEST plugin\n");
+
+	assert(mapfun); //Mandatory function to get WEST data
+
+	UDA_LOG(UDA_LOG_DEBUG, "Calling execute() from WEST plugin for mapfun: %s\n", mapfun);
+	Longint status = execute(mapfun, shotNumber, data_block, nodeIndices);
+
+	if (status != 0) {
+		//UDA_LOG(UDA_LOG_ERROR, "WEST:ERROR: error while getting static data\n");
+		addIdamError(UDA_CODE_ERROR_TYPE, __func__, -900, "WEST:ERROR: error while getting static data\n");
+	}
+
+	return 0;
+}
+
+Longint execute(const char* mapfun, Longint shotNumber, DATA_BLOCK* data_block, Longint* nodeIndices)
+{
+	char* fun_name = NULL; //Shape_of, tsmat_collect, tsbase
+	char* TOP_collections_parameters = NULL; //example : TOP_collections_parameters = DMAG:GMAG_BNORM:PosR, DMAG:GMAG_BTANG:PosR, ...
+	char* attributes = NULL; //example : attributes = rank:Double:#1 (rank=0,1 , type = Double, #1 = second IDAM index)
+	char* normalizationAttributes = NULL; //example : multiply:cste:3     (multiply value by constant factor equals to 3)
+
+	getFunName(mapfun, &fun_name);
+	UDA_LOG(UDA_LOG_DEBUG, "C function name found in mapping file: %s\n", fun_name);
+
+	Longint fun = -1;
+
+	if (strcmp(fun_name, "tsmat_collect") == 0) {
+		//returns a static parameter (rank = 0) from a collection of static data (Top objects).
+		//Given the list of all static data in the collection, the element returned in the data_block is list(idam index)
+		fun = 0;
+	} else if (strcmp(fun_name, "tsmat_collect_for_poloidal_angle") == 0) {
+		//returns a static parameter (rank = 0) from a collection of static data (Top objects).
+		//Given the list of all static data in the collection, the element returned in the data_block is list(idam index)
+		fun = 800;
+	} else if (strcmp(fun_name, "shape_of_tsmat_collect") == 0) {
+		//Returns the list size of all static data in the collection
+		fun = 1;
+	} else if (strcmp(fun_name, "set_value") == 0) {
+		//returns a static value (rank = 0)
+		fun = 2;
+	} else if (strcmp(fun_name, "tsmat") == 0) {
+		//returns a static parameter (rank = 0 or 1) from a Top object
+		fun = 3;
+	} else if (strcmp(fun_name, "set_value_collect") == 0) {
+		//returns a static value according to the position of the element in the collection (rank = 0)
+		fun = 4;
+	} else if (strcmp(fun_name, "set_channels_validity") == 0) {
+		//returns a static value according to the position of the element in the collection (rank = 0)
+		fun = 5;
+	}  else if (strcmp(fun_name, "tsmat_collect_poloidal_angle") == 0) {
+		fun = 6;
+	} else if (strcmp(fun_name, "shape_of_tsmat_collect2") == 0) {
+		//Returns the list size of all static data in the collection
+		fun = 50;
+	}
+
+	//------------------pf_passive----------------------------------
+	else if (strcmp(fun_name, "pf_passive_loop_name") == 0) {
+		fun = 100;
+	} else if (strcmp(fun_name, "pf_passive_loop_identifier") == 0) {
+		fun = 101;
+	} else if (strcmp(fun_name, "pf_passive_element_name") == 0) {
+		fun = 102;
+	} else if (strcmp(fun_name, "pf_passive_element_identifier") == 0) {
+		fun = 103;
+	} else if (strcmp(fun_name, "pf_passive_loops_shapeOf") == 0) {
+		fun = 104;
+	} else if (strcmp(fun_name, "pf_passive_turns") == 0) {
+		fun = 105;
+	} else if (strcmp(fun_name, "pf_passive_elements_shapeOf") == 0) {
+		fun = 106;
+	} else if (strcmp(fun_name, "pf_passive_R") == 0) {
+		fun = 107;
+	} else if (strcmp(fun_name, "pf_passive_Z") == 0) {
+		fun = 108;
+	} else if (strcmp(fun_name, "pf_passive_current_data") == 0) {
+		fun = 109;
+	} else if (strcmp(fun_name, "pf_passive_current_time") == 0) {
+		fun = 110;
+	}
+
+	//------------------pf_active----------------------------------
+	else if (strcmp(fun_name, "pf_active_elements_shapeOf") == 0) {
+		fun = 140;
+	} else if (strcmp(fun_name, "pf_active_coils_shapeOf") == 0) {
+		fun = 141;
+	} else if (strcmp(fun_name, "pf_active_R") == 0) {
+		fun = 142;
+	} else if (strcmp(fun_name, "pf_active_Z") == 0) {
+		fun = 143;
+	} else if (strcmp(fun_name, "pf_active_element_identifier") == 0) {
+		fun = 144;
+	} else if (strcmp(fun_name, "pf_active_element_name") == 0) {
+		fun = 145;
+	} else if (strcmp(fun_name, "pf_active_coil_identifier") == 0) {
+		fun = 146;
+	} else if (strcmp(fun_name, "pf_active_coil_name") == 0) {
+		fun = 147;
+	} else if (strcmp(fun_name, "pf_active_turns") == 0) {
+		fun = 148;
+	} else if (strcmp(fun_name, "pf_active_H") == 0) {
+		fun = 149;
+	} else if (strcmp(fun_name, "pf_active_W") == 0) {
+		fun = 150;
+	}
+
+	//------------------soft_x_rays----------------------------------
+	else if (strcmp(fun_name, "soft_x_rays_idsproperties_comment") == 0) {
+		fun = 200;
+	}
+	else if (strcmp(fun_name, "soft_x_rays_channels_shapeof") == 0) {
+		fun = 201;
+	}
+	else if (strcmp(fun_name, "channel_line_of_sight_first_point_r") == 0) {
+		fun = 202;
+	}
+	else if (strcmp(fun_name, "channel_line_of_sight_first_point_z") == 0) {
+		fun = 203;
+	}
+	else if (strcmp(fun_name, "channel_line_of_sight_first_point_phi") == 0) {
+		fun = 204;
+	}
+	else if (strcmp(fun_name, "channel_line_of_sight_second_point_r") == 0) {
+		fun = 205;
+	}
+	else if (strcmp(fun_name, "channel_line_of_sight_second_point_z") == 0) {
+		fun = 206;
+	}
+	else if (strcmp(fun_name, "channel_line_of_sight_second_point_phi") == 0) {
+		fun = 207;
+	}
+	else if (strcmp(fun_name, "soft_x_rays_channels_energy_band_shapeof") == 0) {
+		fun = 208;
+	}
+	else if (strcmp(fun_name, "soft_x_rays_channels_energy_band_lower_bound") == 0) {
+		fun = 209;
+	}
+	else if (strcmp(fun_name, "soft_x_rays_channels_energy_band_upper_bound") == 0) {
+		fun = 210;
+	}
+	else if (strcmp(fun_name, "summary_global_quantities_r0_value") == 0) {
+		fun = 300;
+	}
+	else if (strcmp(fun_name, "summary_heating_current_drive_ec_power_source") == 0) {
+		fun = 301;
+	}
+	else if (strcmp(fun_name, "lh_antennas_position_definition") == 0) {
+		fun = 400;
+	}
+	else if (strcmp(fun_name, "barometry_gauge_name") == 0) {
+		fun = 500;
+	}
+	else if (strcmp(fun_name, "barometry_gauge_type_name") == 0) {
+		fun = 501;
+	}
+	else if (strcmp(fun_name, "barometry_gauge_type_index") == 0) {
+		fun = 502;
+	}
+	else if (strcmp(fun_name, "barometry_gauge_type_description") == 0) {
+		fun = 503;
+	}
+	else if (strcmp(fun_name, "barometry_gauge_calibration_coefficient") == 0) {
+		fun = 504;
+	}
+	else if (strcmp(fun_name, "polarimeter_interferometer_channel_name") == 0) {
+		fun = 505;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_identifier") == 0) {
+		fun = 506;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_line_of_sight_first_point_r") == 0) {
+		fun = 510;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_line_of_sight_first_point_z") == 0) {
+		fun = 511;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_line_of_sight_first_point_phi") == 0) {
+		fun = 512;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_line_of_sight_second_point_r") == 0) {
+		fun = 513;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_line_of_sight_second_point_z") == 0) {
+		fun = 514;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_line_of_sight_second_point_phi") == 0) {
+		fun = 515;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_line_of_sight_third_point_r") == 0) {
+		fun = 516;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_line_of_sight_third_point_z") == 0) {
+		fun = 517;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_line_of_sight_third_point_phi") == 0) {
+		fun = 518;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_faraday_angle_data") == 0) {
+		fun = 519;
+	}
+	else if (strcmp(fun_name, "polarimeter_channel_faraday_angle_time") == 0) {
+		fun = 520;
+	}
+	else if (strcmp(fun_name, "interferometer_channel_n_e_line_data") == 0) {
+		fun = 521;
+	}
+	else if (strcmp(fun_name, "interferometer_channel_n_e_line_time") == 0) {
+		fun = 522;
+	}
+
+
+	//------------------ic_antennas----------------------------------
+	else if (strcmp(fun_name, "ic_antennas_modules_strap_outline_r") == 0) {
+		fun = 600;
+	}
+	else if (strcmp(fun_name, "ic_antennas_modules_strap_outline_phi") == 0) {
+		fun = 601;
+	}
+	else if (strcmp(fun_name, "ic_antennas_modules_strap_width_tor") == 0) {
+		fun = 602;
+	}
+	else if (strcmp(fun_name, "ic_antennas_modules_strap_distance_to_conductor") == 0) {
+		fun = 603;
+	}
+	else if (strcmp(fun_name, "ic_antennas_ids_properties_comment") == 0) {
+		fun = 604;
+	}
+	else if (strcmp(fun_name, "ic_antennas_name") == 0) {
+		fun = 605;
+	}
+	else if (strcmp(fun_name, "ic_antennas_identifier") == 0) {
+		fun = 606;
+	}
+	else if (strcmp(fun_name, "ic_antennas_module_name") == 0) {
+		fun = 607;
+	}
+	else if (strcmp(fun_name, "ic_antennas_module_identifier") == 0) {
+		fun = 608;
+	}
+	else if (strcmp(fun_name, "ic_antennas_module_matching_element_name") == 0) {
+		fun = 609;
+	}
+	else if (strcmp(fun_name, "ic_antennas_module_matching_element_identifier") == 0) {
+		fun = 610;
+	}
+	else if (strcmp(fun_name, "ic_antennas_module_pressure_name") == 0) {
+		fun = 611;
+	}
+	else if (strcmp(fun_name, "ic_antennas_module_pressure_identifier") == 0) {
+		fun = 612;
+	}
+	else if (strcmp(fun_name, "ic_antennas_modules_strap_outline_z") == 0) {
+		fun = 613;
+	}
+	// ------ LH_ANTENNAS
+	else if (strcmp(fun_name, "lh_antennas_ids_properties_comment") == 0) {
+		fun = 700;
+	}
+	// ------ MAGNETICS
+	else if (strcmp(fun_name, "magnetics_bpol_probe_area") == 0) {
+		fun = 900;
+	}
+	else if (strcmp(fun_name, "magnetics_bpol_probe_length") == 0) {
+		fun = 901;
+	}
+	else if (strcmp(fun_name, "magnetics_bpol_probe_turns") == 0) {
+		fun = 902;
+	}
+	else if (strcmp(fun_name, "interferometer_channel_line_of_sight_first_point_r") == 0) {
+		fun = 903;
+	}
+
+	UDA_LOG(UDA_LOG_DEBUG, "Case: %ld", fun);
+	Longint status = -1;
+
+	if (fun == -1) {
+		UDA_LOG(UDA_LOG_DEBUG, "WEST:ERROR no function mapped to %s\n", fun_name);
+		int err = 901;
+		//UDA_LOG(UDA_LOG_ERROR, "WEST:ERROR: no C function mapped for %s!", fun_name);
+		addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: no C function mapped for %s!", err, fun_name);
+		return status;
+	}
+
+	switch (fun) {
+	case 0: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of tsmat_collect from WEST plugin\n");
+		tokenizeFunParameters(mapfun, &TOP_collections_parameters, &attributes, &normalizationAttributes);
+		status = execute_tsmat_collect(TOP_collections_parameters, attributes, shotNumber, nodeIndices,
+				normalizationAttributes);
+
+		break;
+	}
+
+	case 800: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of tsmat_collect from WEST plugin\n");
+		tokenizeFunParameters(mapfun, &TOP_collections_parameters, &attributes, &normalizationAttributes);
+		status = execute_tsmat_collect_for_poloidal_angle(TOP_collections_parameters, attributes, shotNumber, data_block, nodeIndices,
+				normalizationAttributes);
+
+		break;
+	}
+
+	case 1: {
+
+		UDA_LOG(UDA_LOG_DEBUG, "Case of shape_of_tsmat_collect from WEST plugin\n");
+		tokenizeFunParameters(mapfun, &TOP_collections_parameters, &attributes, &normalizationAttributes);
+		status = shape_of_tsmat_collect(shotNumber, TOP_collections_parameters, data_block);
+		break;
+	}
+
+	case 2: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of set_value from WEST plugin\n");
+		char* value = NULL;
+		tokenizeFunParameters(mapfun, &value, &attributes, &normalizationAttributes);
+
+		Longint data_type;
+		status = getReturnType(attributes, &data_type);
+
+		if (status == 0) {
+			char* buffer = setBuffer(data_type, value);
+			Double normalizationFactor = 1;
+			status = getNormalizationFactor(&normalizationFactor, normalizationAttributes);
+			if (status == 0) {
+				setStaticValue(data_type, data_block, buffer, 0, normalizationFactor); //index is always 0 in this case
+			}
+			free(buffer);
+		}
+		free(value);
+
+		break;
+	}
+
+	case 3: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of tsmat from WEST plugin\n");
+		tokenizeFunParameters(mapfun, &TOP_collections_parameters, &attributes, &normalizationAttributes);
+		status = execute_tsmat_without_idam_index(TOP_collections_parameters, attributes, shotNumber, data_block,
+				normalizationAttributes);
+		break;
+	}
+
+	case 4: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of set_value_collect from WEST plugin\n");
+		tokenizeFunParameters(mapfun, &TOP_collections_parameters, &attributes, &normalizationAttributes);
+		UDA_LOG(UDA_LOG_DEBUG, "attributes: %s\n", attributes);
+		status = execute_setvalue_collect(TOP_collections_parameters, attributes, shotNumber, nodeIndices,
+				normalizationAttributes);
+		break;
+	}
+
+	case 5: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of set_channels_validity from WEST plugin\n");
+		char* unvalid_channels_request = NULL; //used for interfero_polarimeter IDS, example : invalid_channels:2:1,2
+		Longint unvalid_channels_size;
+		Longint* unvalid_channels_list = NULL;
+		UDA_LOG(UDA_LOG_DEBUG, "Calling tokenize_set_channels_validity() from WEST plugin\n");
+		tokenize_set_channels_validity(mapfun, &unvalid_channels_request, &attributes);
+
+		getUnvalidChannelsSize(unvalid_channels_request, &unvalid_channels_size);
+		unvalid_channels_list = (Longint*)malloc(sizeof(Longint) * unvalid_channels_size);
+
+		getUnvalidChannels(unvalid_channels_request, unvalid_channels_list);
+		execute_setchannels_validity(unvalid_channels_list, unvalid_channels_size, attributes, shotNumber,
+				data_block, nodeIndices);
+
+		free(unvalid_channels_request);
+		free(unvalid_channels_list);
+		return 0;
+
+		break;
+	}
+	case 6: {
+		/*UDA_LOG(UDA_LOG_DEBUG, "Case of tsmat_collect_poloidal_angle from WEST plugin\n");
+		tokenizeFunParameters(mapfun, &TOP_collections_parameters, &attributes, &normalizationAttributes);
+		execute_tsmat_collect_poloidal_angle(TOP_collections_parameters, attributes, shotNumber, data_block, nodeIndices,
+				normalizationAttributes);*/
+		break;
+	}
+	
+	case 50: {
+
+		UDA_LOG(UDA_LOG_DEBUG, "Case of shape_of_tsmat_collect2 from WEST plugin\n");
+		tokenizeFunParameters(mapfun, &TOP_collections_parameters, &attributes, &normalizationAttributes);
+		status = shape_of_tsmat_collect2(shotNumber, TOP_collections_parameters, data_block);
+		break;
+	}
+
+	case 100: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_loop_name from WEST plugin\n");
+		status = pf_passive_loop_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 101: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_loop_identifier from WEST plugin\n");
+		status = pf_passive_loop_identifier(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 102: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_element_name from WEST plugin\n");
+		status = pf_passive_element_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 103: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_element_identifier from WEST plugin\n");
+		status = pf_passive_element_identifier(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 104: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_loops_shapeOf from WEST plugin\n");
+		status = pf_passive_loops_shapeOf(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 105: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_turns from WEST plugin\n");
+		status = pf_passive_turns(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 106: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_elements_shapeOf from WEST plugin\n");
+		status = pf_passive_elements_shapeOf(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 107: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_R from WEST plugin\n");
+		status = pf_passive_R(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 108: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_Z from WEST plugin\n");
+		status = pf_passive_Z(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 109: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_current_data from WEST plugin\n");
+		status = pf_passive_current_data(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 110: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_passive_current_time from WEST plugin\n");
+		status = pf_passive_current_time(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 140: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_elements_shapeOf from WEST plugin\n");
+		status = pf_active_elements_shapeOf(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 141: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_coils_shapeOf from WEST plugin\n");
+		status = pf_active_coils_shapeOf(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 142: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_R from WEST plugin\n");
+		status = pf_active_R(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 143: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_Z from WEST plugin\n");
+		status = pf_active_Z(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 144: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_element_identifier from WEST plugin\n");
+		status = pf_active_element_identifier(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 145: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_element_name from WEST plugin\n");
+		status = pf_active_element_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 146: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_coil_identifier from WEST plugin\n");
+		status = pf_active_coil_identifier(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 147: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_coil_name from WEST plugin\n");
+		status = pf_active_coil_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 148: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_turns from WEST plugin\n");
+		status = pf_active_turns(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 149: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_H from WEST plugin\n");
+		status = pf_active_H(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 150: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of pf_active_W from WEST plugin\n");
+		status = pf_active_W(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 200: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of soft_x_rays_idsproperties_comment from WEST plugin\n");
+		status = soft_x_rays_idsproperties_comment(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 201: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of soft_x_rays_channels_shapeof from WEST plugin\n");
+		status = soft_x_rays_channels_shapeof(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 202: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of channel_line_of_sight_first_point_r from WEST plugin\n");
+		status = channel_line_of_sight_first_point_r(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 203: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of channel_line_of_sight_first_point_z from WEST plugin\n");
+		status = channel_line_of_sight_first_point_z(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 204: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of channel_line_of_sight_first_point_phi from WEST plugin\n");
+		status = channel_line_of_sight_first_point_phi(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 205: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of channel_line_of_sight_second_point_r from WEST plugin\n");
+		status = channel_line_of_sight_second_point_r(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 206: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of channel_line_of_sight_second_point_z from WEST plugin\n");
+		status = channel_line_of_sight_second_point_z(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 207: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of channel_line_of_sight_second_point_phi from WEST plugin\n");
+		status = channel_line_of_sight_second_point_phi(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 208: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of soft_x_rays_channels_energy_band_shapeof from WEST plugin\n");
+		status = soft_x_rays_channels_energy_band_shapeof(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 209: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of soft_x_rays_channels_energy_band_lower_bound from WEST plugin\n");
+		status = soft_x_rays_channels_energy_band_lower_bound(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 210: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of soft_x_rays_channels_energy_band_upper_bound from WEST plugin\n");
+		status = soft_x_rays_channels_energy_band_upper_bound(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 300: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of summary_global_quantities_r0_value from WEST plugin\n");
+		status = summary_global_quantities_r0_value(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 301: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of summary_heating_current_drive_ec_power_source from WEST plugin\n");
+		status = summary_heating_current_drive_ec_power_source(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 400: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of lh_antennas_position_definition from WEST plugin\n");
+		status = lh_antennas_position_definition(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 500: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of barometry_gauge_name from WEST plugin\n");
+		status = barometry_gauge_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 501: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of barometry_gauge_type_name from WEST plugin\n");
+		status = barometry_gauge_type_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 502: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of barometry_gauge_type_index from WEST plugin\n");
+		status = barometry_gauge_type_index(shotNumber, data_block, nodeIndices);
+		break;
+
+	}
+	case 503: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of barometry_gauge_type_description from WEST plugin\n");
+		status = barometry_gauge_type_description(shotNumber, data_block, nodeIndices);
+		break;
+
+	}
+	case 504: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of barometry_gauge_calibration_coefficient from WEST plugin\n");
+		status = barometry_gauge_calibration_coefficient(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 505: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_name from WEST plugin\n");
+		status = polaro_or_interfero_channel_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 506: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_identifier from WEST plugin\n");
+		status = polarimeter_channel_identifier(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 510: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_line_of_sight_first_point_r from WEST plugin\n");
+		status = polarimeter_channel_line_of_sight_first_point_r(shotNumber, data_block, nodeIndices);
+		break;
+	}	
+	case 511: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_line_of_sight_first_point_z from WEST plugin\n");
+		status = polarimeter_channel_line_of_sight_first_point_z(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 512: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_line_of_sight_first_point_phi from WEST plugin\n");
+		status = polarimeter_channel_line_of_sight_first_point_phi(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 513: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_line_of_sight_second_point_r from WEST plugin\n");
+		status = polarimeter_channel_line_of_sight_second_point_r(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 514: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_line_of_sight_second_point_z from WEST plugin\n");
+		status = polarimeter_channel_line_of_sight_second_point_z(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 515: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_line_of_sight_second_point_phi from WEST plugin\n");
+		status = polarimeter_channel_line_of_sight_second_point_phi(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 516: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_line_of_sight_third_point_r from WEST plugin\n");
+		status = polarimeter_channel_line_of_sight_third_point_r(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	
+	case 517: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_line_of_sight_third_point_z from WEST plugin\n");
+		status = polarimeter_channel_line_of_sight_third_point_z(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 518: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_line_of_sight_third_point_phi from WEST plugin\n");
+		status = polarimeter_channel_line_of_sight_third_point_phi(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 519: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_wavelength from WEST plugin\n");
+		status = polarimeter_channel_faraday_angle_data(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 520: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of polarimeter_interferometer_channel_faraday_angle_time from WEST plugin\n");
+		status = polarimeter_channel_faraday_angle_time(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 521: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of interferometer_channel_n_e_line_data from WEST plugin\n");
+		status = interferometer_channel_n_e_line_data(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 522: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of interferometer_channel_n_e_line_time from WEST plugin\n");
+		status = interferometer_channel_n_e_line_time(shotNumber, data_block, nodeIndices);
+		break;
+	}
+
+	case 600: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_modules_strap_outline_r from WEST plugin\n");
+		status = ic_antennas_modules_strap_outline_r(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	
+	case 601: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_modules_strap_outline_phi from WEST plugin\n");
+		status = ic_antennas_modules_strap_outline_phi(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 602: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_modules_strap_width_tor from WEST plugin\n");
+		status = ic_antennas_modules_strap_width_tor(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 603: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_modules_strap_distance_to_conductor from WEST plugin\n");
+		status = ic_antennas_modules_strap_distance_to_conductor(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 604: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_ids_properties_comment from WEST plugin\n");
+		status = ic_antennas_ids_properties_comment(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 605: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_name from WEST plugin\n");
+		status = ic_antennas_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 606: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_identifier from WEST plugin\n");
+		status = ic_antennas_identifier(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 607: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_module_name from WEST plugin\n");
+		status = ic_antennas_module_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 608: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_module_identifier from WEST plugin\n");
+		status = ic_antennas_module_identifier(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 609: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_module_matching_element_name from WEST plugin\n");
+		status = ic_antennas_module_matching_element_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 610: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_module_matching_element_identifier from WEST plugin\n");
+		status = ic_antennas_module_matching_element_identifier(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 611: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_module_pressure_name from WEST plugin\n");
+		status = ic_antennas_module_pressure_name(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 612: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_module_pressure_identifier from WEST plugin\n");
+		status = ic_antennas_module_pressure_identifier(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 613: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of ic_antennas_modules_strap_outline_z from WEST plugin\n");
+		status = ic_antennas_modules_strap_outline_z(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 700: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of lh_antennas_ids_properties_comment from WEST plugin\n");
+		status = lh_antennas_ids_properties_comment(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 900: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of magnetics_bpol_probe_area from WEST plugin\n");
+		status = magnetics_bpol_probe_area(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 901: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of magnetics_bpol_probe_length from WEST plugin\n");
+		status = magnetics_bpol_probe_length(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 902: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of magnetics_bpol_probe_turns from WEST plugin\n");
+		status = magnetics_bpol_probe_turns(shotNumber, data_block, nodeIndices);
+		break;
+	}
+	case 903: {
+		UDA_LOG(UDA_LOG_DEBUG, "Case of interferometer_channel_line_of_sight_first_point_r from WEST plugin\n");
+		status = interferometer_channel_line_of_sight_first_point_r(shotNumber, data_block, nodeIndices);
+		break;
+	}	
+
+	}
+
+	free(fun_name);
+	free(TOP_collections_parameters);
+	free(attributes);
+	free(normalizationAttributes);
+	return status;
+}
+
+
+Longint shape_of_tsmat_collect(Longint shotNumber, char* TOP_collections_parameters, DATA_BLOCK* data_block)
+{
+	//Get the number of parameters collections
+	Longint collectionsCount;
+
+	UDA_LOG(UDA_LOG_DEBUG, "Calling getTopCollectionsCount() from WEST plugin for shape_of_tsmat_collect case\n");
+	getTopCollectionsCount(TOP_collections_parameters, &collectionsCount);
+
+	UDA_LOG(UDA_LOG_DEBUG, "Collections count: %ld", collectionsCount);
+
+	UDA_LOG(UDA_LOG_DEBUG, "Calling tokenizeFunCollect() from WEST plugin\n");
+
+	//Get the total size by adding all collections lengths
+	Longint i;
+	Longint parametersSize = 0;
+	for (i = 0; i < collectionsCount; i++) {
+		char* command = NULL;
+		UDA_LOG(UDA_LOG_DEBUG, "Calling getCommand() from WEST plugin for shape_of_tsmat_collect case\n");
+		getCommand(i, &command, TOP_collections_parameters); //get one command
+		UDA_LOG(UDA_LOG_DEBUG, "Command : %s\n", command);
+		Longint nb_val = 0;
+		UDA_LOG(UDA_LOG_DEBUG, "Calling getShapeOf() from WEST plugin for shape_of_tsmat_collect case\n");
+		Longint status = getShapeOf(command, shotNumber, &nb_val, 0);
+		if (status != 0)
+			return status;
+		UDA_LOG(UDA_LOG_DEBUG, "nb_val: %ld", nb_val);
+		UDA_LOG(UDA_LOG_DEBUG, "after getShapeOf\n");
+		parametersSize += nb_val;
+	}
+
+	//setReturnDataIntScalar(data_block, parametersSize, NULL);
+	return 0;
+}
+
+Longint shape_of_tsmat_collect2(Longint shotNumber, char* TOP_collections_parameters, DATA_BLOCK* data_block)
+{
+	//Get the number of parameters collections
+	Longint collectionsCount;
+
+	UDA_LOG(UDA_LOG_DEBUG, "Calling getTopCollectionsCount() from WEST plugin for shape_of_tsmat_collect2 case\n");
+	getTopCollectionsCount(TOP_collections_parameters, &collectionsCount);
+
+	UDA_LOG(UDA_LOG_DEBUG, "Collections count: %ld", collectionsCount);
+
+	UDA_LOG(UDA_LOG_DEBUG, "Calling tokenizeFunCollect() from WEST plugin\n");
+
+	//Get the total size by adding all collections lengths
+	Longint i;
+	Longint parametersSize = 0;
+	for (i = 0; i < collectionsCount; i++) {
+		char* command = NULL;
+		UDA_LOG(UDA_LOG_DEBUG, "Calling getCommand() from WEST plugin for shape_of_tsmat_collect2 case\n");
+		getCommand(i, &command, TOP_collections_parameters); //get one command
+		UDA_LOG(UDA_LOG_DEBUG, "Command : %s\n", command);
+		Longint nb_val = 0;
+		UDA_LOG(UDA_LOG_DEBUG, "Calling getShapeOf() from WEST plugin for shape_of_tsmat_collect2 case\n");
+		Longint status = getShapeOf(command, shotNumber, &nb_val, 2);
+		if (status != 0)
+			return status;
+		UDA_LOG(UDA_LOG_DEBUG, "TEST:: --> nb_val: %ld\n", nb_val);
+		UDA_LOG(UDA_LOG_DEBUG, "TEST:: -> after getShapeOf\n");
+		parametersSize += nb_val;
+	}
+
+	//setReturnDataIntScalar(data_block, parametersSize, NULL);
+	return 0;
+}
+
+Longint getShapeOf(const char* command, Longint shotNumber, Longint* nb_val, Longint option)
+{
+
+	char* prod_name = NULL; //DMAG, ...
+	char* object_name = NULL;
+	char* param_name = NULL;
+	char* flag = NULL;
+
+	UDA_LOG(UDA_LOG_DEBUG, "TEST:: In getShapeOf, calling tokenizeCommand with command: %s\n", command);
+
+	//Tokenize mapfun string to get function parameters, return type and arguments (#1, #2,...) to use
+	tokenizeCommand(command, &prod_name, &object_name, &param_name, &flag);
+	char *ptr = NULL;
+	//get the size of available data
+	UDA_LOG(UDA_LOG_DEBUG, "TEST:: DEBUG : prod_name: %s\n", prod_name);
+	UDA_LOG(UDA_LOG_DEBUG, "TEST:: DEBUG : object: %s\n", object_name);
+	UDA_LOG(UDA_LOG_DEBUG, "TEST:: DEBUG : param: %s\n", param_name);
+	int val_nb = 1;
+    int format;
+	Longint status = tsrqparm((char**) &ptr, nb_val, shotNumber, prod_name, object_name, param_name, val_nb, &format);
+	UDA_LOG(UDA_LOG_DEBUG, "TEST:: tsrqparm status: %ld\n", status);
+	UDA_LOG(UDA_LOG_DEBUG, "TEST:: tsrqparm nb_val: %ld\n", *nb_val);
+	
+	if (status != 0) {
+		UDA_LOG(UDA_LOG_DEBUG, "TEST:: Error calling tsrqparm\n");
+		int err = 901;
+		UDA_LOG(UDA_LOG_ERROR, "%s: %s: %s: %s, shot:%ld\n", "WEST:ERROR: unable to get shape of static data", prod_name, object_name, param_name, shotNumber);
+		free(prod_name);
+		free(object_name);
+		free(param_name);
+		free(flag);
+		free(ptr);
+		addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: unable to get shape of static data", err, "");
+		return status;
+	}
+
+	UDA_LOG(UDA_LOG_DEBUG,"TEST:: INT16=%d\n", INT16);
+        UDA_LOG(UDA_LOG_DEBUG,"TEST:: OCTET=%d\n", OCTET);
+        UDA_LOG(UDA_LOG_DEBUG,"TEST:: INT32=%d\n", INT32);
+
+        UDA_LOG(UDA_LOG_DEBUG,"TEST:: format=%d\n", format);
+
+	if (option == 2 && (format==INT16 || format==OCTET)) {
+	  short *v = (short *) ptr; 
+	  *nb_val = (int) *v;
+	  UDA_LOG(UDA_LOG_DEBUG, "TEST:: short from getShapeOf, nb_val=%d\n", *nb_val);
+	}
+        else if (option == 2 && format==INT32) {
+           int *v = (int *) ptr;
+           *nb_val = *v;    
+           UDA_LOG(UDA_LOG_DEBUG, "TEST::int from getShapeOf, nb_val=%d\n", *nb_val);     
+        }
+        else if (option==2) { 
+           int err = 901;
+           UDA_LOG(UDA_LOG_ERROR, "WEST:ERROR: getShapeOf: Unexpected datatype returned by tsrqparm!");
+		   free(prod_name);
+		   free(object_name);
+		   free(param_name);
+		   free(flag);
+		   free(ptr);
+           addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: getShapeOf: Unexpected datatype returned by tsrqparm!", err, "");
+        }
+
+	free(prod_name);
+	free(object_name);
+	free(param_name);
+	free(flag);
+	free(ptr);
+	return 0;
+}
+
+void execute_setchannels_validity(Longint* unvalid_channels_list, Longint unvalid_channels_size, char* attributes,
+		Longint shotNumber, DATA_BLOCK* data_block, Longint* nodeIndices)
+{
+	Longint requestedIndex = getNumIDAMIndex(attributes, nodeIndices);
+	Longint channel_number = requestedIndex + 1; //TODO TO CHECK
+	UDA_LOG(UDA_LOG_DEBUG, "channel number : %ld\n", channel_number);
+
+	if (isChannelValid(channel_number, unvalid_channels_list, unvalid_channels_size)) {
+		UDA_LOG(UDA_LOG_DEBUG, "valid channel number : %ld\n", channel_number);
+		//setReturnDataIntScalar(data_block, 0, NULL);
+	} else {
+		UDA_LOG(UDA_LOG_DEBUG, "unvalid channel number : %ld\n", channel_number);
+		//setReturnDataIntScalar(data_block, -1, NULL);
+	}
+}
+
+Longint execute_setvalue_collect(const char* TOP_collections_parameters, char* attributes,
+		Longint shotNumber, Longint* nodeIndices, char* normalizationAttributes)
+{
+
+	Longint collectionsCount;
+	getTopCollectionsCount(TOP_collections_parameters, &collectionsCount);
+
+	Longint* l;
+	l = (Longint*)calloc(collectionsCount, sizeof(Longint));
+
+	Longint i;
+	Longint status = -1;
+	for (i = 0; i < collectionsCount; i++) {
+		char* command = NULL;
+		status = getCommand(i, &command, TOP_collections_parameters);
+		if (status == -1) {
+			int err = 901;
+			//UDA_LOG(UDA_LOG_ERROR, "%s", "WEST:ERROR: unable to get the shapeof command");
+			free(command);
+			free(l);
+			addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: unable to get the shapeof command", err, "");
+			
+			return status;
+		}
+
+		Longint nb_val = 0;
+		status = getShapeOf(command, shotNumber, &nb_val, 0);
+		if (status != 0){  
+			free(command);
+			return status;
+		}	
+		l[i] = nb_val;
+	}
+
+	Longint requestedIndex = getNumIDAMIndex(attributes, nodeIndices);
+
+	Longint searchedArray;
+	Longint searchedArrayIndex;
+
+	searchIndices(requestedIndex, l, &searchedArray, &searchedArrayIndex);
+	UDA_LOG(UDA_LOG_DEBUG, "searchedArray : %ld\n", searchedArray);
+	UDA_LOG(UDA_LOG_DEBUG, "searchedArrayIndex : %ld\n", searchedArrayIndex);
+
+	char* command = NULL;
+	status = getCommand(searchedArray, &command, TOP_collections_parameters);
+	if (status != 0){  
+		free(command);
+		return status;
+	}	
+
+	char* value;
+	getValueCollect(command, &value, nodeIndices);
+	UDA_LOG(UDA_LOG_DEBUG, "Command : %s\n", command);
+
+	Longint data_type;
+	status = getReturnType(attributes, &data_type);
+	if (status != 0){  
+		free(value);
+		free(command);
+		return status;
+	}	
+
+	char* buffer = setBuffer(data_type, value);
+
+	UDA_LOG(UDA_LOG_DEBUG, "Found value: %s\n", value);
+
+	Double normalizationFactor = 1;
+	status = getNormalizationFactor(&normalizationFactor, normalizationAttributes);
+	if (status != 0){  
+		free(value);
+		free(command);
+		free(buffer);
+		return status;
+	}	
+
+	//setStaticValue(data_type, data_block, buffer, 0, normalizationFactor);
+
+	free(value);
+	free(command);
+	free(buffer);
+	return 0;
+}
+
+
+char* setBuffer(Longint data_type, const char* value)
+{
+	char* buffer = NULL;
+
+	if (data_type == UDA_TYPE_FLOAT) {
+		UDA_LOG(UDA_LOG_DEBUG, "UDA_TYPE_FLOAT requested from WEST plugin\n");
+		buffer = (char*) malloc(sizeof(float));
+		float* f_buf = (float*)buffer;
+		*f_buf = atof(value);
+		UDA_LOG(UDA_LOG_DEBUG, "Testing float value : %f\n", *f_buf);
+	} else if (data_type == UDA_TYPE_DOUBLE) {
+		UDA_LOG(UDA_LOG_DEBUG, "UDA_TYPE_DOUBLE requested from WEST plugin\n");
+		buffer = (char*) malloc(sizeof(double));
+		double* f_buf = (double*)buffer;
+		*f_buf = atof(value);
+	} else if (data_type == UDA_TYPE_INT) {
+		UDA_LOG(UDA_LOG_DEBUG, "UDA_TYPE_INT requested from WEST plugin\n");
+		buffer = (char*) malloc(sizeof(Longint));
+		Longint* i_buf = (Longint*)buffer;
+		*i_buf = atoi(value);
+	} else if (data_type == UDA_TYPE_STRING) {
+		UDA_LOG(UDA_LOG_DEBUG, "UDA_TYPE_STRING requested from WEST plugin\n");
+		buffer = strdup(value);
+	} else {
+		int err = 901;
+		UDA_LOG(UDA_LOG_DEBUG, "Unsupported data type in setBuffer(): %ld\n", data_type);
+		//UDA_LOG(UDA_LOG_ERROR, "%s", "WEST:ERROR: unsupported data type");
+		addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: unsupported data type", err, "");
+	}
+
+	return buffer;
+}
+
+Longint execute_tsmat_collect(const char* TOP_collections_parameters, char* attributes,
+		Longint shotNumber, Longint* nodeIndices, char* normalizationAttributes)
+{
+	Longint collectionsCount;
+	getTopCollectionsCount(TOP_collections_parameters, &collectionsCount);
+
+	Longint* l;
+	l = (Longint*)calloc(collectionsCount, sizeof(Longint));
+
+	Longint i;
+	Longint status = -1;
+	for (i = 0; i < collectionsCount; i++) {
+		char* command = NULL;
+		status = getCommand(i, &command, TOP_collections_parameters);
+		if (status == -1) {
+			int err = 901;
+			//UDA_LOG(UDA_LOG_ERROR, "%s", "WEST:ERROR: unable to get the shapeof command");
+			free(l);
+			addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: unable to get the shapeof command", err, "");
+			
+			return status;
+		}
+
+		Longint nb_val = 0;
+		status = getShapeOf(command, shotNumber, &nb_val, 0);
+		if (status != 0){
+			free(command);
+			free(l);
+			return status;	
+		} 
+		l[i] = nb_val;
+	}
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, searching requestedIndex... %s\n", "");
+	Longint requestedIndex = getNumIDAMIndex(attributes, nodeIndices);
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, after searching requestedIndex --> %ld\n", requestedIndex);
+
+	Longint searchedArray;
+	Longint searchedArrayIndex;
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, searching index array for requested index: %ld\n",
+			requestedIndex);
+	searchIndices(requestedIndex, l, &searchedArray, &searchedArrayIndex);
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, searched array:%ld\n", searchedArray);
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, searched array index:%ld\n", searchedArrayIndex);
+
+	char* command = NULL;
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, getting command from TOP_collections_parameters: %s\n",
+			TOP_collections_parameters);
+	status = getCommand(searchedArray, &command, TOP_collections_parameters);
+	if (status != 0){
+		free(command);
+		free(l);
+		return status;
+	} 
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, after getting command...\n");
+
+	char* prod_name = NULL;     //DMAG, ...
+	char* object_name = NULL;   //GMAG_BNORM, ...
+	char* param_name = NULL;    //PosR, ...
+	char* flag = NULL;          //'Null' or blank
+
+	Longint data_type;
+	status = getReturnType(attributes, &data_type);
+	if (status != 0){
+		free(command);
+		free(l);
+		return status;
+	}  
+
+	//Tokenize mapfun string to get function parameters
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, tokenizing command... %s\n", command);
+	tokenizeCommand(command, &prod_name, &object_name, &param_name, &flag);
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, afetr tokenizing command...\n");
+
+	char* value = NULL;
+	Longint val_nb = l[searchedArray];
+	Longint nb_val;
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, flag: %s\n", flag);
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, checking if flag is Null...\n");
+
+	if (flag != NULL && strncmp("Null", flag, 4) == 0) {
+		UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, setting value for Null flag...\n");
+		Longint data_type;
+		status = getReturnType(attributes, &data_type);
+		if (status != 0)
+			return status;
+		value = setBuffer(data_type, "0"); //we put zero for 'Null' flag
+		searchedArrayIndex = 0;
+	} else {
+		//Reading static parameters using TSLib
+		UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, reading static parameters for param. name: %s\n",
+				param_name);
+                int format;
+		status = tsrqparm(&value, &nb_val, shotNumber, prod_name, object_name, param_name, val_nb, &format);
+		if (status != 0) {
+			int err = 901;
+			UDA_LOG(UDA_LOG_ERROR, "%s,shot:%ld\n", "WEST:ERROR: unable to read static data",shotNumber);
+			
+			free(command);
+			free(prod_name);
+			free(object_name);
+			free(param_name);
+			free(flag);
+			free(value);
+			free(l);
+			addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: unable to read static data", err, "");
+			return status;
+		}
+                if ( (data_type == UDA_TYPE_DOUBLE && format != REEL32) 
+                      || (data_type == UDA_TYPE_FLOAT && format != REEL16) ) {   
+                     int err = 901;
+                     UDA_LOG(UDA_LOG_ERROR, "WEST:ERROR: execute_tsmat_collect: Unexpected datatype returned by tsrqparm!");
+                     addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: execute_tsmat_collect: Unexpected datatype returned by tsrqparm!", err, "");
+	         }
+        }
+	Double normalizationFactor = 1;
+	status = getNormalizationFactor(&normalizationFactor, normalizationAttributes);
+	if (status != 0){
+		free(command);
+		free(prod_name);
+		free(object_name);
+		free(param_name);
+		free(flag);
+		free(value);
+		free(l);
+		return status;
+	} 
+		
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, setting static value... %s\n", "");
+
+	//setStaticValue(data_type, data_block, value, searchedArrayIndex, normalizationFactor);
+
+	free(command);
+	free(prod_name);
+	free(object_name);
+	free(param_name);
+	free(value);
+	free(flag);
+	free(l);
+	return 0;
+}
+
+Longint execute_tsmat_collect_for_poloidal_angle(const char* TOP_collections_parameters, char* attributes,
+		Longint shotNumber, DATA_BLOCK* data_block, Longint* nodeIndices, char* normalizationAttributes)
+{
+	Longint collectionsCount;
+	getTopCollectionsCount(TOP_collections_parameters, &collectionsCount);
+
+	Longint* l;
+	l = (Longint*)calloc(collectionsCount, sizeof(Longint));
+
+	Longint i;
+	Longint status = -1;
+	for (i = 0; i < collectionsCount; i++) {
+		char* command = NULL;
+		status = getCommand(i, &command, TOP_collections_parameters);
+		if (status == -1) {
+			int err = 901;
+			//UDA_LOG(UDA_LOG_ERROR, "%s", "WEST:ERROR: unable to get the shapeof command");
+			free(l);
+			addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: unable to get the shapeof command", err, "");
+			
+			return status;
+		}
+
+		Longint nb_val = 0;
+		status = getShapeOf(command, shotNumber, &nb_val, 0);
+		if (status != 0){ 
+			free(command);
+			return status;
+		} 
+			
+		l[i] = nb_val;
+	}
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, searching requestedIndex... %s\n", "");
+	Longint requestedIndex = getNumIDAMIndex(attributes, nodeIndices);
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, after searching requestedIndex --> %ld\n", requestedIndex);
+
+	Longint searchedArray;
+	Longint searchedArrayIndex;
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, searching index array for requested index: %ld\n",
+			requestedIndex);
+	searchIndices(requestedIndex, l, &searchedArray, &searchedArrayIndex);
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, searched array:%ld\n", searchedArray);
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, searched array index:%ld\n", searchedArrayIndex);
+
+	char* command = NULL;
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, getting command from TOP_collections_parameters: %s\n",
+			TOP_collections_parameters);
+	status = getCommand(searchedArray, &command, TOP_collections_parameters);
+	if (status != 0)
+		return status;
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, after getting command...\n");
+
+	char* prod_name = NULL;     //DMAG, ...
+	char* object_name = NULL;   //GMAG_BNORM, ...
+	char* param_name = NULL;    //PosR, ...
+	char* flag = NULL;          //'Null' or blank
+
+	Longint data_type;
+	status = getReturnType(attributes, &data_type);
+	if (status != 0)
+		return status;
+
+	//Tokenize mapfun string to get function parameters
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, tokenizing command... %s\n", command);
+	tokenizeCommand(command, &prod_name, &object_name, &param_name, &flag);
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, afetr tokenizing command...\n");
+
+	char* value = NULL;
+	Longint val_nb = l[searchedArray];
+	Longint nb_val;
+
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, flag: %s\n", flag);
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, checking if flag is Null...\n");
+
+	if (flag != NULL && strncmp("Null", flag, 4) == 0) {
+		UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, setting value for Null flag...\n");
+		Longint data_type;
+		status = getReturnType(attributes, &data_type);
+		if (status != 0)
+			return status;
+		value = setBuffer(data_type, "0"); //we put zero for 'Null' flag
+		searchedArrayIndex = 0;
+	} else {
+		//Reading static parameters using TSLib
+		UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, reading static parameters for param. name: %s\n",
+				param_name);
+                int format;
+		status = tsrqparm(&value, &nb_val, shotNumber, prod_name, object_name, param_name, val_nb, &format);
+		if (status != 0) {
+			int err = 901;
+			UDA_LOG(UDA_LOG_ERROR, "%s,shot:%ld\n", "WEST:ERROR: unable to read static data",shotNumber);
+			addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: unable to read static data", err, "");
+			free(command);
+			free(prod_name);
+			free(object_name);
+			free(param_name);
+			free(flag);
+			free(value);
+			free(l);
+			return status;
+		}
+	}
+
+	Double normalizationFactor = 1;
+	status = getNormalizationFactor(&normalizationFactor, normalizationAttributes);
+	if (status != 0)
+		return status;
+	UDA_LOG(UDA_LOG_DEBUG, "In execute_tsmat_collect, setting static value... %s\n", "");
+
+
+	Double* pt_Double = (Double*)value;
+	//Transforming angle by poloidal_angle = 360 - poloidal_angle (angle values in ARCAD are in degrees)
+	//normalizationFactor is provided by the UDA mapping file
+	//setReturnDataDoubleScalar(data_block, (360 - pt_Double[searchedArrayIndex]) * normalizationFactor, NULL);
+
+	free(command);
+	free(prod_name);
+	free(object_name);
+	free(param_name);
+	free(value);
+	free(flag);
+	free(l);
+	return 0;
+}
+
+void setPatchedStaticValue(DATA_BLOCK* data_block, char* object_name, Longint data_type, char* value, Longint searchedArrayIndex, Double  normalizationFactor) {
+	if (strncmp("GMAG_BTANG", object_name, 10) == 0) //TODO Temporary patch, will be removed soon
+		set_BTANG_StaticValue(data_type, data_block, value, searchedArrayIndex, normalizationFactor);
+	else
+		setStaticValue(data_type, data_block, value, searchedArrayIndex, normalizationFactor);
+}
+
+Longint execute_tsmat_without_idam_index(const char* TOP_collections_parameters, char* attributes,
+		Longint shotNumber, DATA_BLOCK* data_block, char* normalizationAttributes)
+{
+	char* command;
+	Longint status = getCommand(0, &command, TOP_collections_parameters);
+	if (status != 0)
+		return status;
+	char* prod_name = NULL;     //DMAG, ...
+	char* object_name = NULL;   //GMAG_BNORM, ...
+	char* param_name = NULL;    //PosR, ..
+	char* flag = NULL;
+
+	Longint data_type;
+	status = getReturnType(attributes, &data_type);
+	if (status != 0)
+		return status;
+
+	//Tokenize mapfun string to get function parameters
+	tokenizeCommand(command, &prod_name, &object_name, &param_name, &flag);
+
+	Longint val_nb = 0;
+	status = getShapeOf(command, shotNumber, &val_nb, 0);
+	if (status != 0)
+		return status;
+	char* value = NULL;
+	Longint nb_val;
+
+	//Reading static parameters using TSLib
+	int format;
+	status = tsrqparm(&value, &nb_val, shotNumber, prod_name, object_name, param_name, val_nb, &format);
+	if (status != 0) {
+		int err = 901;
+		//UDA_LOG(UDA_LOG_ERROR, "%s", "WEST:ERROR: unable to read static data");
+		addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: Unable to read static data", err, "");
+		free(command);
+		free(prod_name);
+		free(object_name);
+		free(param_name);
+		free(value);
+		free(flag);
+		return status;
+	}
+
+	Longint rank;
+	getRank(attributes, &rank);
+
+	if (rank == 0) {
+		Double normalizationFactor = 1;
+		getNormalizationFactor(&normalizationFactor, normalizationAttributes);
+		setStaticValue(data_type, data_block, value, 0, normalizationFactor);
+	} else if (rank == 1) {
+		Double normalizationFactor = 1;
+		getNormalizationFactor(&normalizationFactor, normalizationAttributes);
+		setStatic1DValue(data_type, data_block, value, val_nb, normalizationFactor);
+	} else {
+		int err = 901;
+		UDA_LOG(UDA_LOG_DEBUG, "Unsupported rank from execute_tsmat_without_idam_index()\n");
+		//UDA_LOG(UDA_LOG_ERROR, "%s", "WEST:ERROR: unsupported data type");
+		addIdamError(UDA_CODE_ERROR_TYPE, "WEST:ERROR: unsupported data type", err, "");
+		free(command);
+		free(prod_name);
+		free(object_name);
+		free(param_name);
+		free(value);
+		free(flag);
+		return -1;
+	}
+
+	free(command);
+	free(prod_name);
+	free(object_name);
+	free(param_name);
+	free(value);
+	free(flag);
+	return 0;
+}
+
+//Cast the results returned by tsmat according to the type of the data and set IDAM data
+void setStatic1DValue(Longint data_type, DATA_BLOCK* data_block, char* value, Longint val_nb, Double normalizationFactor)
+{
+	if (data_type == UDA_TYPE_DOUBLE) {
+		UDA_LOG(UDA_LOG_DEBUG, "handling Double 1D in setStatic1DValue()\n");
+
+		char val_nb_str[10];
+		sprintf(val_nb_str, "%ld", val_nb);
+		UDA_LOG(UDA_LOG_DEBUG, "val_nb : %s\n", val_nb_str);
+
+		if (val_nb == 0) {
+			int err = 901;
+			addIdamError(UDA_CODE_ERROR_TYPE, __func__, err, "WEST:ERROR: val_nb is equals to 0 !");
+		}
+
+		data_block->data_type = UDA_TYPE_DOUBLE;
+		data_block->data = (char*) malloc(val_nb * sizeof(Double));
+		Double* pt_Double = (Double*)value;
+		multiplyDouble(pt_Double, normalizationFactor, val_nb);
+		UDA_LOG(UDA_LOG_DEBUG, "handling Double 1D in setStatic1DValue21()\n");
+		*((Double*)data_block->data) = *pt_Double;
+		UDA_LOG(UDA_LOG_DEBUG, "handling Double 1D in setStatic1DValue22()\n");
+	} else if (data_type == UDA_TYPE_INT) {
+		UDA_LOG(UDA_LOG_DEBUG, "handling int 1D in setStatic1DValue()\n");
+		data_block->data_type = UDA_TYPE_INT;
+		data_block->data = (char*) malloc(val_nb * sizeof(int));
+		int* pt_int = (int*)value;
+		multiplyInt(pt_int, normalizationFactor, val_nb);
+		*((int*)data_block->data) = *pt_int;
+		UDA_LOG(UDA_LOG_DEBUG, "handling int 1D in setStatic1DValue2()\n");
+	} else {
+		int err = 901;
+		UDA_LOG(UDA_LOG_DEBUG, "Unsupported data type from setStatic1DValue()\n");
+		//UDA_LOG(UDA_LOG_ERROR, "%s", "WEST:ERROR: unsupported data type");
+		addIdamError(UDA_CODE_ERROR_TYPE, __func__, err, "WEST:ERROR: unsupported data type");
+	}
+}
+
