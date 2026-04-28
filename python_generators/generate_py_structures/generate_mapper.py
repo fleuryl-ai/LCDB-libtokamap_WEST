@@ -61,6 +61,29 @@ public:
         if "int64_t" in type_name: return "std::type_index{typeid(int64_t)}"
         if "int" in type_name: return "std::type_index{typeid(int)}"
         return "std::type_index{typeid(void)}"
+    
+    def get_data_type(type_name):
+        # Types Non-signés (du plus grand au plus petit)
+        if "uint64_t" in type_name: return "libtokamap::DataType::UInt64"
+        if "uint32_t" in type_name: return "libtokamap::DataType::UInt32"
+        if "uint16_t" in type_name: return "libtokamap::DataType::UInt16"
+        if "uint8_t" in type_name:  return "libtokamap::DataType::UInt8"
+        
+        # Types Signés (du plus grand au plus petit)
+        if "int64_t" in type_name:  return "libtokamap::DataType::Int64"
+        if "int32_t" in type_name:  return "libtokamap::DataType::Int32"
+        if "int16_t" in type_name:  return "libtokamap::DataType::Int16"
+        if "int8_t" or "std::string" in type_name:   return "libtokamap::DataType::Int8"
+        
+        # Cas particulier "int" (souvent mappé sur Int32 par défaut)
+        if "int" in type_name:      return "libtokamap::DataType::Int32"
+        
+        # Virgule flottante
+        if "double" in type_name:   return "libtokamap::DataType::Double"
+        if "float" in type_name:    return "libtokamap::DataType::Float"
+        
+        # Valeur par défaut si rien n'est trouvé
+        return "libtokamap::DataType::Unknown"
 
     def process_struct(struct_name, path_var, indent_level):
         nonlocal var_counter
@@ -119,7 +142,9 @@ public:
             else:
                 # Leaf field
                 leaf_path_expr = f'{path_var} + "/{field.name}"'
-                typeid_str = get_typeid_string(field.type_name)
+               # typeid_str = get_typeid_string(field.type_name)
+                typeid_str = get_data_type(field.type_name)
+                
                 rank = field.rank
                 
                 effective_rank = rank
@@ -163,7 +188,7 @@ private:
     }
 
     void map_field(libtokamap::MappingHandler& mapping_handler, nlohmann::json& trace, const std::string& mapping,
-                 const std::string& path, int shot, const std::type_index& data_type, int rank)
+                 const std::string& path, int shot, libtokamap::DataType data_type, int rank)
     {
         nlohmann::json extra_attributes = {{"shot", shot}};
 

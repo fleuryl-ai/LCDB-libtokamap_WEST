@@ -19,23 +19,23 @@ public:
 
         // Structure: ids_properties
         std::string path_ids_properties_2_1 = root_path + "/ids_properties";
-            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/comment", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/name", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/homogeneous_time", shot, std::type_index{typeid(int)}, 0);
+            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/comment", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/name", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/homogeneous_time", shot, libtokamap::DataType::Int8, 0);
 
             // Structure: occurrence_type
             std::string path_occurrence_type_3_2 = path_ids_properties_2_1 + "/occurrence_type";
-                map_field(mapping_handler, trace, mapping, path_occurrence_type_3_2 + "/name", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_occurrence_type_3_2 + "/index", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_occurrence_type_3_2 + "/description", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/provider", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/creation_date", shot, std::type_index{typeid(char)}, 1);
+                map_field(mapping_handler, trace, mapping, path_occurrence_type_3_2 + "/name", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_occurrence_type_3_2 + "/index", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_occurrence_type_3_2 + "/description", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/provider", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_ids_properties_2_1 + "/creation_date", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: version_put
             std::string path_version_put_3_3 = path_ids_properties_2_1 + "/version_put";
-                map_field(mapping_handler, trace, mapping, path_version_put_3_3 + "/data_dictionary", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_version_put_3_3 + "/access_layer", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_version_put_3_3 + "/access_layer_language", shot, std::type_index{typeid(char)}, 1);
+                map_field(mapping_handler, trace, mapping, path_version_put_3_3 + "/data_dictionary", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_version_put_3_3 + "/access_layer", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_version_put_3_3 + "/access_layer_language", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: provenance
             std::string path_provenance_3_4 = path_ids_properties_2_1 + "/provenance";
@@ -44,37 +44,37 @@ public:
                 uint64_t size_node_4_5 = map_dimension(mapping_handler, trace, mapping, path_provenance_3_4 + "/node", shot);
                 for (uint64_t i_node_4_5 = 0; i_node_4_5 < size_node_4_5; ++i_node_4_5) {
                     std::string path_node_4_5 = path_provenance_3_4 + "/node" + "[" + std::to_string(i_node_4_5) + "]";
-                    map_field(mapping_handler, trace, mapping, path_node_4_5 + "/path", shot, std::type_index{typeid(char)}, 1);
+                    map_field(mapping_handler, trace, mapping, path_node_4_5 + "/path", shot, libtokamap::DataType::Int8, 1);
 
                     // Array: reference
                     uint64_t size_reference_5_6 = map_dimension(mapping_handler, trace, mapping, path_node_4_5 + "/reference", shot);
                     for (uint64_t i_reference_5_6 = 0; i_reference_5_6 < size_reference_5_6; ++i_reference_5_6) {
                         std::string path_reference_5_6 = path_node_4_5 + "/reference" + "[" + std::to_string(i_reference_5_6) + "]";
-                        map_field(mapping_handler, trace, mapping, path_reference_5_6 + "/name", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_reference_5_6 + "/timestamp", shot, std::type_index{typeid(char)}, 1);
+                        map_field(mapping_handler, trace, mapping, path_reference_5_6 + "/name", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_reference_5_6 + "/timestamp", shot, libtokamap::DataType::Int8, 1);
                     }
 
                     // Array: put_operation
                     uint64_t size_put_operation_5_7 = map_dimension(mapping_handler, trace, mapping, path_node_4_5 + "/put_operation", shot);
                     for (uint64_t i_put_operation_5_7 = 0; i_put_operation_5_7 < size_put_operation_5_7; ++i_put_operation_5_7) {
                         std::string path_put_operation_5_7 = path_node_4_5 + "/put_operation" + "[" + std::to_string(i_put_operation_5_7) + "]";
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/name", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/description", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/version", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/name", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/description", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/version", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_7 + "/parameters", shot, libtokamap::DataType::Int8, 1);
 
                         // Array: library
                         uint64_t size_library_6_8 = map_dimension(mapping_handler, trace, mapping, path_put_operation_5_7 + "/library", shot);
                         for (uint64_t i_library_6_8 = 0; i_library_6_8 < size_library_6_8; ++i_library_6_8) {
                             std::string path_library_6_8 = path_put_operation_5_7 + "/library" + "[" + std::to_string(i_library_6_8) + "]";
-                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/name", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/description", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/version", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/name", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/description", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/version", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_8 + "/parameters", shot, libtokamap::DataType::Int8, 1);
                         }
                     }
 
@@ -82,23 +82,23 @@ public:
                     uint64_t size_readback_5_9 = map_dimension(mapping_handler, trace, mapping, path_node_4_5 + "/readback", shot);
                     for (uint64_t i_readback_5_9 = 0; i_readback_5_9 < size_readback_5_9; ++i_readback_5_9) {
                         std::string path_readback_5_9 = path_node_4_5 + "/readback" + "[" + std::to_string(i_readback_5_9) + "]";
-                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/name", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/description", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/version", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/name", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/description", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/version", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_9 + "/parameters", shot, libtokamap::DataType::Int8, 1);
 
                         // Array: library
                         uint64_t size_library_6_10 = map_dimension(mapping_handler, trace, mapping, path_readback_5_9 + "/library", shot);
                         for (uint64_t i_library_6_10 = 0; i_library_6_10 < size_library_6_10; ++i_library_6_10) {
                             std::string path_library_6_10 = path_readback_5_9 + "/library" + "[" + std::to_string(i_library_6_10) + "]";
-                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/name", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/description", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/version", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/name", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/description", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/version", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_10 + "/parameters", shot, libtokamap::DataType::Int8, 1);
                         }
                     }
 
@@ -106,23 +106,23 @@ public:
                     uint64_t size_get_operation_5_11 = map_dimension(mapping_handler, trace, mapping, path_node_4_5 + "/get_operation", shot);
                     for (uint64_t i_get_operation_5_11 = 0; i_get_operation_5_11 < size_get_operation_5_11; ++i_get_operation_5_11) {
                         std::string path_get_operation_5_11 = path_node_4_5 + "/get_operation" + "[" + std::to_string(i_get_operation_5_11) + "]";
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/name", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/description", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/version", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/name", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/description", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/version", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_11 + "/parameters", shot, libtokamap::DataType::Int8, 1);
 
                         // Array: library
                         uint64_t size_library_6_12 = map_dimension(mapping_handler, trace, mapping, path_get_operation_5_11 + "/library", shot);
                         for (uint64_t i_library_6_12 = 0; i_library_6_12 < size_library_6_12; ++i_library_6_12) {
                             std::string path_library_6_12 = path_get_operation_5_11 + "/library" + "[" + std::to_string(i_library_6_12) + "]";
-                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/name", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/description", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/version", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/name", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/description", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/version", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_12 + "/parameters", shot, libtokamap::DataType::Int8, 1);
                         }
                     }
                 }
@@ -134,37 +134,37 @@ public:
                 uint64_t size_node_4_14 = map_dimension(mapping_handler, trace, mapping, path_plugins_3_13 + "/node", shot);
                 for (uint64_t i_node_4_14 = 0; i_node_4_14 < size_node_4_14; ++i_node_4_14) {
                     std::string path_node_4_14 = path_plugins_3_13 + "/node" + "[" + std::to_string(i_node_4_14) + "]";
-                    map_field(mapping_handler, trace, mapping, path_node_4_14 + "/path", shot, std::type_index{typeid(char)}, 1);
+                    map_field(mapping_handler, trace, mapping, path_node_4_14 + "/path", shot, libtokamap::DataType::Int8, 1);
 
                     // Array: reference
                     uint64_t size_reference_5_15 = map_dimension(mapping_handler, trace, mapping, path_node_4_14 + "/reference", shot);
                     for (uint64_t i_reference_5_15 = 0; i_reference_5_15 < size_reference_5_15; ++i_reference_5_15) {
                         std::string path_reference_5_15 = path_node_4_14 + "/reference" + "[" + std::to_string(i_reference_5_15) + "]";
-                        map_field(mapping_handler, trace, mapping, path_reference_5_15 + "/name", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_reference_5_15 + "/timestamp", shot, std::type_index{typeid(char)}, 1);
+                        map_field(mapping_handler, trace, mapping, path_reference_5_15 + "/name", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_reference_5_15 + "/timestamp", shot, libtokamap::DataType::Int8, 1);
                     }
 
                     // Array: put_operation
                     uint64_t size_put_operation_5_16 = map_dimension(mapping_handler, trace, mapping, path_node_4_14 + "/put_operation", shot);
                     for (uint64_t i_put_operation_5_16 = 0; i_put_operation_5_16 < size_put_operation_5_16; ++i_put_operation_5_16) {
                         std::string path_put_operation_5_16 = path_node_4_14 + "/put_operation" + "[" + std::to_string(i_put_operation_5_16) + "]";
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/name", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/description", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/version", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/name", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/description", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/version", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_put_operation_5_16 + "/parameters", shot, libtokamap::DataType::Int8, 1);
 
                         // Array: library
                         uint64_t size_library_6_17 = map_dimension(mapping_handler, trace, mapping, path_put_operation_5_16 + "/library", shot);
                         for (uint64_t i_library_6_17 = 0; i_library_6_17 < size_library_6_17; ++i_library_6_17) {
                             std::string path_library_6_17 = path_put_operation_5_16 + "/library" + "[" + std::to_string(i_library_6_17) + "]";
-                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/name", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/description", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/version", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/name", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/description", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/version", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_17 + "/parameters", shot, libtokamap::DataType::Int8, 1);
                         }
                     }
 
@@ -172,23 +172,23 @@ public:
                     uint64_t size_readback_5_18 = map_dimension(mapping_handler, trace, mapping, path_node_4_14 + "/readback", shot);
                     for (uint64_t i_readback_5_18 = 0; i_readback_5_18 < size_readback_5_18; ++i_readback_5_18) {
                         std::string path_readback_5_18 = path_node_4_14 + "/readback" + "[" + std::to_string(i_readback_5_18) + "]";
-                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/name", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/description", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/version", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/name", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/description", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/version", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_readback_5_18 + "/parameters", shot, libtokamap::DataType::Int8, 1);
 
                         // Array: library
                         uint64_t size_library_6_19 = map_dimension(mapping_handler, trace, mapping, path_readback_5_18 + "/library", shot);
                         for (uint64_t i_library_6_19 = 0; i_library_6_19 < size_library_6_19; ++i_library_6_19) {
                             std::string path_library_6_19 = path_readback_5_18 + "/library" + "[" + std::to_string(i_library_6_19) + "]";
-                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/name", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/description", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/version", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/name", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/description", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/version", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_19 + "/parameters", shot, libtokamap::DataType::Int8, 1);
                         }
                     }
 
@@ -196,455 +196,455 @@ public:
                     uint64_t size_get_operation_5_20 = map_dimension(mapping_handler, trace, mapping, path_node_4_14 + "/get_operation", shot);
                     for (uint64_t i_get_operation_5_20 = 0; i_get_operation_5_20 < size_get_operation_5_20; ++i_get_operation_5_20) {
                         std::string path_get_operation_5_20 = path_node_4_14 + "/get_operation" + "[" + std::to_string(i_get_operation_5_20) + "]";
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/name", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/description", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/version", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/name", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/description", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/version", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                        map_field(mapping_handler, trace, mapping, path_get_operation_5_20 + "/parameters", shot, libtokamap::DataType::Int8, 1);
 
                         // Array: library
                         uint64_t size_library_6_21 = map_dimension(mapping_handler, trace, mapping, path_get_operation_5_20 + "/library", shot);
                         for (uint64_t i_library_6_21 = 0; i_library_6_21 < size_library_6_21; ++i_library_6_21) {
                             std::string path_library_6_21 = path_get_operation_5_20 + "/library" + "[" + std::to_string(i_library_6_21) + "]";
-                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/name", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/description", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/version", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/name", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/description", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/version", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                            map_field(mapping_handler, trace, mapping, path_library_6_21 + "/parameters", shot, libtokamap::DataType::Int8, 1);
                         }
                     }
                 }
 
                 // Structure: infrastructure_put
                 std::string path_infrastructure_put_4_22 = path_plugins_3_13 + "/infrastructure_put";
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/name", shot, std::type_index{typeid(char)}, 1);
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/description", shot, std::type_index{typeid(char)}, 1);
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/version", shot, std::type_index{typeid(char)}, 1);
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/repository", shot, std::type_index{typeid(char)}, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/name", shot, libtokamap::DataType::Int8, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/description", shot, libtokamap::DataType::Int8, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/version", shot, libtokamap::DataType::Int8, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_put_4_22 + "/repository", shot, libtokamap::DataType::Int8, 1);
 
                 // Structure: infrastructure_get
                 std::string path_infrastructure_get_4_23 = path_plugins_3_13 + "/infrastructure_get";
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/name", shot, std::type_index{typeid(char)}, 1);
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/description", shot, std::type_index{typeid(char)}, 1);
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/version", shot, std::type_index{typeid(char)}, 1);
-                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/repository", shot, std::type_index{typeid(char)}, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/name", shot, libtokamap::DataType::Int8, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/description", shot, libtokamap::DataType::Int8, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/version", shot, libtokamap::DataType::Int8, 1);
+                    map_field(mapping_handler, trace, mapping, path_infrastructure_get_4_23 + "/repository", shot, libtokamap::DataType::Int8, 1);
 
         // Array: flux_loop
         uint64_t size_flux_loop_2_24 = map_dimension(mapping_handler, trace, mapping, root_path + "/flux_loop", shot);
         for (uint64_t i_flux_loop_2_24 = 0; i_flux_loop_2_24 < size_flux_loop_2_24; ++i_flux_loop_2_24) {
             std::string path_flux_loop_2_24 = root_path + "/flux_loop" + "[" + std::to_string(i_flux_loop_2_24) + "]";
-            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/name", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/description", shot, std::type_index{typeid(char)}, 1);
+            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/name", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/description", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: type
             std::string path_type_3_25 = path_flux_loop_2_24 + "/type";
-                map_field(mapping_handler, trace, mapping, path_type_3_25 + "/name", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_type_3_25 + "/index", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_type_3_25 + "/description", shot, std::type_index{typeid(char)}, 1);
+                map_field(mapping_handler, trace, mapping, path_type_3_25 + "/name", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_type_3_25 + "/index", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_type_3_25 + "/description", shot, libtokamap::DataType::Int8, 1);
 
             // Array: position
             uint64_t size_position_3_26 = map_dimension(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/position", shot);
             for (uint64_t i_position_3_26 = 0; i_position_3_26 < size_position_3_26; ++i_position_3_26) {
                 std::string path_position_3_26 = path_flux_loop_2_24 + "/position" + "[" + std::to_string(i_position_3_26) + "]";
-                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/r", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/phi", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/phi_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/phi_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/z", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/r", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/phi", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/phi_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/phi_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/z", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_26 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: first_point
                 std::string path_first_point_4_27 = path_position_3_26 + "/first_point";
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_27 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: second_point
                 std::string path_second_point_4_28 = path_position_3_26 + "/second_point";
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_28 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
             }
-            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/indices_differential", shot, std::type_index{typeid(int)}, 1);
-            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/area", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/area_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/area_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/gm9", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/gm9_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/gm9_error_lower", shot, std::type_index{typeid(double)}, 0);
+            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/indices_differential", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/area", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/area_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/area_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/gm9", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/gm9_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_flux_loop_2_24 + "/gm9_error_lower", shot, libtokamap::DataType::Int8, 0);
 
             // Structure: flux
             std::string path_flux_3_29 = path_flux_loop_2_24 + "/flux";
-                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/data", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/validity_timed", shot, std::type_index{typeid(int)}, 1);
-                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/validity", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/time", shot, std::type_index{typeid(double)}, 1);
+                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/data", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/validity_timed", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/validity", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_flux_3_29 + "/time", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: voltage
             std::string path_voltage_3_30 = path_flux_loop_2_24 + "/voltage";
-                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/data", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/validity_timed", shot, std::type_index{typeid(int)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/validity", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/time", shot, std::type_index{typeid(double)}, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/data", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/validity_timed", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/validity", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_30 + "/time", shot, libtokamap::DataType::Int8, 1);
         }
 
         // Array: b_field_pol_probe
         uint64_t size_b_field_pol_probe_2_31 = map_dimension(mapping_handler, trace, mapping, root_path + "/b_field_pol_probe", shot);
         for (uint64_t i_b_field_pol_probe_2_31 = 0; i_b_field_pol_probe_2_31 < size_b_field_pol_probe_2_31; ++i_b_field_pol_probe_2_31) {
             std::string path_b_field_pol_probe_2_31 = root_path + "/b_field_pol_probe" + "[" + std::to_string(i_b_field_pol_probe_2_31) + "]";
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/name", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/description", shot, std::type_index{typeid(char)}, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/name", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/description", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: type
             std::string path_type_3_32 = path_b_field_pol_probe_2_31 + "/type";
-                map_field(mapping_handler, trace, mapping, path_type_3_32 + "/name", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_type_3_32 + "/index", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_type_3_32 + "/description", shot, std::type_index{typeid(char)}, 1);
+                map_field(mapping_handler, trace, mapping, path_type_3_32 + "/name", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_type_3_32 + "/index", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_type_3_32 + "/description", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: position
             std::string path_position_3_33 = path_b_field_pol_probe_2_31 + "/position";
-                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/r", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/phi", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/phi_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/phi_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/z", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/r", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/phi", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/phi_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/phi_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/z", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_33 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: first_point
                 std::string path_first_point_4_34 = path_position_3_33 + "/first_point";
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_34 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: second_point
                 std::string path_second_point_4_35 = path_position_3_33 + "/second_point";
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/poloidal_angle", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/poloidal_angle_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/poloidal_angle_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/toroidal_angle", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/toroidal_angle_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/toroidal_angle_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/indices_differential", shot, std::type_index{typeid(int)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/bandwidth_3db", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/bandwidth_3db_error_upper", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/bandwidth_3db_error_lower", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/area", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/area_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/area_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/length", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/length_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/length_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/turns", shot, std::type_index{typeid(int)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_35 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/poloidal_angle", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/poloidal_angle_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/poloidal_angle_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/toroidal_angle", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/toroidal_angle_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/toroidal_angle_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/indices_differential", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/bandwidth_3db", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/bandwidth_3db_error_upper", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/bandwidth_3db_error_lower", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/area", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/area_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/area_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/length", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/length_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/length_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_pol_probe_2_31 + "/turns", shot, libtokamap::DataType::Int8, 0);
 
             // Structure: field
             std::string path_field_3_36 = path_b_field_pol_probe_2_31 + "/field";
-                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/data", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/validity_timed", shot, std::type_index{typeid(int)}, 1);
-                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/validity", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/time", shot, std::type_index{typeid(double)}, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/data", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/validity_timed", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/validity", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_field_3_36 + "/time", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: voltage
             std::string path_voltage_3_37 = path_b_field_pol_probe_2_31 + "/voltage";
-                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/data", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/validity_timed", shot, std::type_index{typeid(int)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/validity", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/time", shot, std::type_index{typeid(double)}, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/data", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/validity_timed", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/validity", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_37 + "/time", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: non_linear_response
             std::string path_non_linear_response_3_38 = path_b_field_pol_probe_2_31 + "/non_linear_response";
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_linear", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_linear_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_linear_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_non_linear", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_non_linear_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_non_linear_error_lower", shot, std::type_index{typeid(double)}, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_linear", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_linear_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_linear_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_non_linear", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_non_linear_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_38 + "/b_field_non_linear_error_lower", shot, libtokamap::DataType::Int8, 1);
         }
-        map_field(mapping_handler, trace, mapping, root_path + "/b_field_pol_probe_equivalent", shot, std::type_index{typeid(int)}, 2);
+        map_field(mapping_handler, trace, mapping, root_path + "/b_field_pol_probe_equivalent", shot, libtokamap::DataType::Int8, 2);
 
         // Array: b_field_phi_probe
         uint64_t size_b_field_phi_probe_2_39 = map_dimension(mapping_handler, trace, mapping, root_path + "/b_field_phi_probe", shot);
         for (uint64_t i_b_field_phi_probe_2_39 = 0; i_b_field_phi_probe_2_39 < size_b_field_phi_probe_2_39; ++i_b_field_phi_probe_2_39) {
             std::string path_b_field_phi_probe_2_39 = root_path + "/b_field_phi_probe" + "[" + std::to_string(i_b_field_phi_probe_2_39) + "]";
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/name", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/description", shot, std::type_index{typeid(char)}, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/name", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/description", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: type
             std::string path_type_3_40 = path_b_field_phi_probe_2_39 + "/type";
-                map_field(mapping_handler, trace, mapping, path_type_3_40 + "/name", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_type_3_40 + "/index", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_type_3_40 + "/description", shot, std::type_index{typeid(char)}, 1);
+                map_field(mapping_handler, trace, mapping, path_type_3_40 + "/name", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_type_3_40 + "/index", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_type_3_40 + "/description", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: position
             std::string path_position_3_41 = path_b_field_phi_probe_2_39 + "/position";
-                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/r", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/phi", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/phi_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/phi_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/z", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/r", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/phi", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/phi_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/phi_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/z", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_41 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: first_point
                 std::string path_first_point_4_42 = path_position_3_41 + "/first_point";
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_42 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: second_point
                 std::string path_second_point_4_43 = path_position_3_41 + "/second_point";
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/poloidal_angle", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/poloidal_angle_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/poloidal_angle_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/toroidal_angle", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/toroidal_angle_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/toroidal_angle_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/indices_differential", shot, std::type_index{typeid(int)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/bandwidth_3db", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/bandwidth_3db_error_upper", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/bandwidth_3db_error_lower", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/area", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/area_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/area_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/length", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/length_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/length_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/turns", shot, std::type_index{typeid(int)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_43 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/poloidal_angle", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/poloidal_angle_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/poloidal_angle_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/toroidal_angle", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/toroidal_angle_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/toroidal_angle_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/indices_differential", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/bandwidth_3db", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/bandwidth_3db_error_upper", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/bandwidth_3db_error_lower", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/area", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/area_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/area_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/length", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/length_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/length_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_b_field_phi_probe_2_39 + "/turns", shot, libtokamap::DataType::Int8, 0);
 
             // Structure: field
             std::string path_field_3_44 = path_b_field_phi_probe_2_39 + "/field";
-                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/data", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/validity_timed", shot, std::type_index{typeid(int)}, 1);
-                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/validity", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/time", shot, std::type_index{typeid(double)}, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/data", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/validity_timed", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/validity", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_field_3_44 + "/time", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: voltage
             std::string path_voltage_3_45 = path_b_field_phi_probe_2_39 + "/voltage";
-                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/data", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/validity_timed", shot, std::type_index{typeid(int)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/validity", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/time", shot, std::type_index{typeid(double)}, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/data", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/validity_timed", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/validity", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_45 + "/time", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: non_linear_response
             std::string path_non_linear_response_3_46 = path_b_field_phi_probe_2_39 + "/non_linear_response";
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_linear", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_linear_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_linear_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_non_linear", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_non_linear_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_non_linear_error_lower", shot, std::type_index{typeid(double)}, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_linear", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_linear_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_linear_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_non_linear", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_non_linear_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_non_linear_response_3_46 + "/b_field_non_linear_error_lower", shot, libtokamap::DataType::Int8, 1);
         }
 
         // Array: rogowski_coil
         uint64_t size_rogowski_coil_2_47 = map_dimension(mapping_handler, trace, mapping, root_path + "/rogowski_coil", shot);
         for (uint64_t i_rogowski_coil_2_47 = 0; i_rogowski_coil_2_47 < size_rogowski_coil_2_47; ++i_rogowski_coil_2_47) {
             std::string path_rogowski_coil_2_47 = root_path + "/rogowski_coil" + "[" + std::to_string(i_rogowski_coil_2_47) + "]";
-            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/name", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/description", shot, std::type_index{typeid(char)}, 1);
+            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/name", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/description", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: measured_quantity
             std::string path_measured_quantity_3_48 = path_rogowski_coil_2_47 + "/measured_quantity";
-                map_field(mapping_handler, trace, mapping, path_measured_quantity_3_48 + "/name", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_measured_quantity_3_48 + "/index", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_measured_quantity_3_48 + "/description", shot, std::type_index{typeid(char)}, 1);
+                map_field(mapping_handler, trace, mapping, path_measured_quantity_3_48 + "/name", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_measured_quantity_3_48 + "/index", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_measured_quantity_3_48 + "/description", shot, libtokamap::DataType::Int8, 1);
 
             // Array: position
             uint64_t size_position_3_49 = map_dimension(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/position", shot);
             for (uint64_t i_position_3_49 = 0; i_position_3_49 < size_position_3_49; ++i_position_3_49) {
                 std::string path_position_3_49 = path_rogowski_coil_2_47 + "/position" + "[" + std::to_string(i_position_3_49) + "]";
-                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/r", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/phi", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/phi_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/phi_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/z", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/r", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/phi", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/phi_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/phi_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/z", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_49 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: first_point
                 std::string path_first_point_4_50 = path_position_3_49 + "/first_point";
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_50 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: second_point
                 std::string path_second_point_4_51 = path_position_3_49 + "/second_point";
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_51 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
             }
-            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/indices_compound", shot, std::type_index{typeid(int)}, 1);
-            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/area", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/area_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/area_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/turns_per_metre", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/turns_per_metre_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/turns_per_metre_error_lower", shot, std::type_index{typeid(double)}, 0);
+            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/indices_compound", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/area", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/area_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/area_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/turns_per_metre", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/turns_per_metre_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_rogowski_coil_2_47 + "/turns_per_metre_error_lower", shot, libtokamap::DataType::Int8, 0);
 
             // Structure: current
             std::string path_current_3_52 = path_rogowski_coil_2_47 + "/current";
-                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/data", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/validity_timed", shot, std::type_index{typeid(int)}, 1);
-                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/validity", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/time", shot, std::type_index{typeid(double)}, 1);
+                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/data", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/validity_timed", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/validity", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_current_3_52 + "/time", shot, libtokamap::DataType::Int8, 1);
         }
 
         // Array: shunt
         uint64_t size_shunt_2_53 = map_dimension(mapping_handler, trace, mapping, root_path + "/shunt", shot);
         for (uint64_t i_shunt_2_53 = 0; i_shunt_2_53 < size_shunt_2_53; ++i_shunt_2_53) {
             std::string path_shunt_2_53 = root_path + "/shunt" + "[" + std::to_string(i_shunt_2_53) + "]";
-            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/name", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/description", shot, std::type_index{typeid(char)}, 1);
+            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/name", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/description", shot, libtokamap::DataType::Int8, 1);
 
             // Structure: position
             std::string path_position_3_54 = path_shunt_2_53 + "/position";
-                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/r", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/phi", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/phi_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/phi_error_lower", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/z", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/r", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/phi", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/phi_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/phi_error_lower", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/z", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_position_3_54 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: first_point
                 std::string path_first_point_4_55 = path_position_3_54 + "/first_point";
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_first_point_4_55 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
 
                 // Structure: second_point
                 std::string path_second_point_4_56 = path_position_3_54 + "/second_point";
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/r", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/r_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/r_error_lower", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/z", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/z_error_upper", shot, std::type_index{typeid(double)}, 0);
-                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/z_error_lower", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/resistance", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/resistance_error_upper", shot, std::type_index{typeid(double)}, 0);
-            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/resistance_error_lower", shot, std::type_index{typeid(double)}, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/r", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/r_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/r_error_lower", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/z", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/z_error_upper", shot, libtokamap::DataType::Int8, 0);
+                    map_field(mapping_handler, trace, mapping, path_second_point_4_56 + "/z_error_lower", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/resistance", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/resistance_error_upper", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/resistance_error_lower", shot, libtokamap::DataType::Int8, 0);
 
             // Structure: voltage
             std::string path_voltage_3_57 = path_shunt_2_53 + "/voltage";
-                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/data", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/validity_timed", shot, std::type_index{typeid(int)}, 1);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/validity", shot, std::type_index{typeid(int)}, 0);
-                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/time", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/divertor_index", shot, std::type_index{typeid(int)}, 0);
-            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/target_index", shot, std::type_index{typeid(int)}, 0);
-            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/tile_index", shot, std::type_index{typeid(int)}, 0);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/data", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/validity_timed", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/validity", shot, libtokamap::DataType::Int8, 0);
+                map_field(mapping_handler, trace, mapping, path_voltage_3_57 + "/time", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/divertor_index", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/target_index", shot, libtokamap::DataType::Int8, 0);
+            map_field(mapping_handler, trace, mapping, path_shunt_2_53 + "/tile_index", shot, libtokamap::DataType::Int8, 0);
         }
 
         // Array: ip
         uint64_t size_ip_2_58 = map_dimension(mapping_handler, trace, mapping, root_path + "/ip", shot);
         for (uint64_t i_ip_2_58 = 0; i_ip_2_58 < size_ip_2_58; ++i_ip_2_58) {
             std::string path_ip_2_58 = root_path + "/ip" + "[" + std::to_string(i_ip_2_58) + "]";
-            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/method_name", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/data", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/time", shot, std::type_index{typeid(double)}, 1);
+            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/method_name", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/data", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_ip_2_58 + "/time", shot, libtokamap::DataType::Int8, 1);
         }
 
         // Array: diamagnetic_flux
         uint64_t size_diamagnetic_flux_2_59 = map_dimension(mapping_handler, trace, mapping, root_path + "/diamagnetic_flux", shot);
         for (uint64_t i_diamagnetic_flux_2_59 = 0; i_diamagnetic_flux_2_59 < size_diamagnetic_flux_2_59; ++i_diamagnetic_flux_2_59) {
             std::string path_diamagnetic_flux_2_59 = root_path + "/diamagnetic_flux" + "[" + std::to_string(i_diamagnetic_flux_2_59) + "]";
-            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/method_name", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/data", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/data_error_upper", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/data_error_lower", shot, std::type_index{typeid(double)}, 1);
-            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/time", shot, std::type_index{typeid(double)}, 1);
+            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/method_name", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/data", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/data_error_upper", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/data_error_lower", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_diamagnetic_flux_2_59 + "/time", shot, libtokamap::DataType::Int8, 1);
         }
-        map_field(mapping_handler, trace, mapping, root_path + "/latency", shot, std::type_index{typeid(double)}, 0);
-        map_field(mapping_handler, trace, mapping, root_path + "/latency_error_upper", shot, std::type_index{typeid(double)}, 0);
-        map_field(mapping_handler, trace, mapping, root_path + "/latency_error_lower", shot, std::type_index{typeid(double)}, 0);
+        map_field(mapping_handler, trace, mapping, root_path + "/latency", shot, libtokamap::DataType::Int8, 0);
+        map_field(mapping_handler, trace, mapping, root_path + "/latency_error_upper", shot, libtokamap::DataType::Int8, 0);
+        map_field(mapping_handler, trace, mapping, root_path + "/latency_error_lower", shot, libtokamap::DataType::Int8, 0);
 
         // Structure: code
         std::string path_code_2_60 = root_path + "/code";
-            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/name", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/description", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/commit", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/version", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/repository", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/parameters", shot, std::type_index{typeid(char)}, 1);
-            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/output_flag", shot, std::type_index{typeid(int)}, 1);
+            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/name", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/description", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/commit", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/version", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/repository", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/parameters", shot, libtokamap::DataType::Int8, 1);
+            map_field(mapping_handler, trace, mapping, path_code_2_60 + "/output_flag", shot, libtokamap::DataType::Int8, 1);
 
             // Array: library
             uint64_t size_library_3_61 = map_dimension(mapping_handler, trace, mapping, path_code_2_60 + "/library", shot);
             for (uint64_t i_library_3_61 = 0; i_library_3_61 < size_library_3_61; ++i_library_3_61) {
                 std::string path_library_3_61 = path_code_2_60 + "/library" + "[" + std::to_string(i_library_3_61) + "]";
-                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/name", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/description", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/commit", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/version", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/repository", shot, std::type_index{typeid(char)}, 1);
-                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/parameters", shot, std::type_index{typeid(char)}, 1);
+                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/name", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/description", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/commit", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/version", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/repository", shot, libtokamap::DataType::Int8, 1);
+                map_field(mapping_handler, trace, mapping, path_library_3_61 + "/parameters", shot, libtokamap::DataType::Int8, 1);
             }
-        map_field(mapping_handler, trace, mapping, root_path + "/time", shot, std::type_index{typeid(double)}, 1);
+        map_field(mapping_handler, trace, mapping, root_path + "/time", shot, libtokamap::DataType::Int8, 1);
     }
 
 private:
@@ -676,7 +676,7 @@ private:
     }
 
     void map_field(libtokamap::MappingHandler& mapping_handler, nlohmann::json& trace, const std::string& mapping,
-                 const std::string& path, int shot, const std::type_index& data_type, int rank)
+                 const std::string& path, int shot, libtokamap::DataType data_type, int rank)
     {
         nlohmann::json extra_attributes = {{"shot", shot}};
 

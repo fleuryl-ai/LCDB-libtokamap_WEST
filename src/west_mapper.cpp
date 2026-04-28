@@ -27,17 +27,19 @@ int build_mapping(int shot)
         std::cout << "[DEBUG] Initializing MappingHandler\n";
         libtokamap::MappingHandler mapping_handler;
 
-        auto root = std::filesystem::path{__FILE__}.parent_path().parent_path();
+        /*auto root = std::filesystem::path{__FILE__}.parent_path().parent_path();
         auto build_root = root.parent_path().parent_path() / "build" / "examples" / "simple_mapper";
 
-        
+        std::filesystem::path config_path = build_root / "config.toml";*/
 
-        std::filesystem::path config_path = build_root / "config.toml";
+
+        std::filesystem::path config_path = "/ZONE_TRAVAIL/LF218007/libtokamap_west/libtokamap-west-datasource/config/config.toml";
+
         printf("Loading mapping configuration from '%s'\n", config_path.c_str());
         mapping_handler.init(config_path);
 
-        auto west_data_source = std::make_unique<WESTDataSource>(build_root);
-        mapping_handler.register_data_source("WEST", std::move(west_data_source));
+        /*auto west_data_source = std::make_unique<WESTDataSource>(build_root);
+        mapping_handler.register_data_source("WEST", std::move(west_data_source));*/
 
         const char* experiment = "WEST";
 
