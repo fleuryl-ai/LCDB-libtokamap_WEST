@@ -1,0 +1,9 @@
+{
+  "metadata": {
+    "experiment": "west",
+    "author": "L. Fleury",
+    "version": "1.0.1"
+  },
+  "partitions": [],
+  "groups": ["magnetics"]
+}

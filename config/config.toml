@@ -1,18 +1,19 @@
-mapping_directory = "/ZONE_TRAVAIL/LF218007/libtokamap_west/libtokamap-west-datasource/config/mappings"
-schemas_directory = "/ZONE_TRAVAIL/LF218007/libtokamap_west/libtokamap-west-datasource/config/schemas"
+
+mapping_directory = "./config/mappings"
+schemas_directory = "./config/schemas"
 
 trace_enabled = true
 cache_enabled = true
 
-#custom_function_libraries = [
-#    "/ZONE_TRAVAIL/LF218007/libtokamap/build/examples/simple_mapper/libcustom_library.so"
-#]
+custom_function_libraries = [] 
 
 [data_source_factories]
-# json_factory = "/ZONE_TRAVAIL/LF218007/libtokamap/build/examples/simple_mapper/libwest_data_source.so"
 
-west_factory = "/ZONE_TRAVAIL/LF218007/libtokamap_west/libtokamap-west-datasource/build/libwest_data_source.so"
+west_factory = "./build/libwest_data_source.so"
 
 [data_sources.WEST]
 factory = "west_factory"
-# args.data_root = "/ZONE_TRAVAIL/LF218007/libtokamap/examples/simple_mapper/data"
+args.host = "uda2.hpc.l"
+args.port = 59876
+args.plugin_name = "UDA"
+args.data_root = "/ZONE_TRAVAIL/LF218007/libtokamap_west/libtokamap-west-datasource/config"
