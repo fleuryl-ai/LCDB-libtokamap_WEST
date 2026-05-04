@@ -1,0 +1,10 @@
+From the root project, here is an example with the magnetics IDS.
+
+Generate the python mappers:
+
+python3 python_generators/generate_py_structures/generate_python_mapper.py magnetics python_generators/generate_py_structures/magnetics_structures.py -o west_magnetics_mapper_gen.py
+
+
+Execute these mappers:
+
+python3 ./python/west_magnetics_mapper_gen.py --shot 57420 --config config/config.toml
