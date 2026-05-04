@@ -164,7 +164,8 @@ private:
                  const std::string& path, int shot)
     {
         // This function is for getting array sizes. We expect a scalar integer.
-        std::type_index data_type = std::type_index{typeid(uint64_t)};
+        libtokamap::DataType data_type = libtokamap::DataType::UInt64;
+
         int rank = 0;
         nlohmann::json extra_attributes = {{"shot", shot}};
 
@@ -175,12 +176,14 @@ private:
                 trace[path] = result.trace();
             }
 
-            if (result.type_index() == std::type_index{typeid(uint64_t)}) {
+            if (result.data_type() == libtokamap::DataType::UInt64) {
                 return *std::bit_cast<uint64_t*>(result.buffer());
             }
-            if (result.type_index() == std::type_index{typeid(int)}) {
+
+            if (result.data_type() == libtokamap::DataType::Int32) {
                 return static_cast<uint64_t>(*std::bit_cast<int*>(result.buffer()));
             }
+
         } catch (const std::exception& e) {
             // std::cerr << "Warning: could not map dimension for '" << path << "': " << e.what() << std::endl;
         }

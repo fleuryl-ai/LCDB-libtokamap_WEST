@@ -19,6 +19,9 @@
 // This prevents the include inside the anonymous namespace below from making it local.
 #include "ts_rqparam.h"
 
+// Inclusion du fichier généré contenant les fonctions et la map
+#include "../src/west_magnetics_handlers.cpp" 
+
 namespace
 {
 
@@ -28,9 +31,6 @@ Longint tsrqparm(char** pt_char_address, Longint* nb_val, Longint num_choc, cons
 {
     return ::tsrqparm(pt_char_address, nb_val, num_choc, nom_prod, nom_objet, nom_param, val_nb, format);
 }
-
-// Inclusion du fichier généré contenant les fonctions et la map
-#include "../src/west_magnetics_handlers.cpp" 
 
 constexpr auto number_re = ctll::fixed_string{R"(\d+)"};
 
@@ -85,9 +85,11 @@ libtokamap::TypedDataArray WESTDataSource::get(const libtokamap::DataSourceArgs&
     std::vector<int> indices;
 
     if (map_args.contains("shot")) {
-            int shot_int = map_args.at("shot").get<int>();
+            //int shot_int = map_args.at("shot").get<int>();
+            //int shot_number = arguments.extra_attributes["shot"].get<int>();
+            //printf("shot = %d\n ", shot_number);
     } else {
-        //throw libtokamap::DataSourceError("Missing 'shot' argument");
+        ///throw libtokamap::DataSourceError("Missing 'shot' argument");
     }
 
     printf("Calling parse_signal for '%s'\n", signal.c_str());

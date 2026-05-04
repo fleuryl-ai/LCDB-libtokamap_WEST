@@ -25,7 +25,7 @@ set( EXT_HEADERS
 
 set( SOURCES
     src/west_data_source.cpp
-    src/west_magnetics_handlers.cpp
+  #  src/west_magnetics_handlers.cpp
     ${EXT_HEADERS}
 )
 

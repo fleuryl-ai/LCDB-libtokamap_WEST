@@ -11,8 +11,7 @@
 
 using Longint = int;
 Longint tsrqparm(char** pt_char_address, Longint* nb_val, Longint num_choc, const char* nom_prod, const char* nom_objet, const char* nom_param, Longint val_nb, int *format);
-
-
+Longint lit_traite(char* nomsigp, Longint numchoc, Longint occ, Longint rang[], Double** X, Double** Y, Longint* maxreel);
 
 // Definition of the function pointer type for handlers
 using SignalHandler = libtokamap::TypedDataArray (*)(const libtokamap::DataSourceArgs&, const std::vector<int>&);
@@ -1553,6 +1552,13 @@ libtokamap::TypedDataArray get_flux_loop(const libtokamap::DataSourceArgs& args,
     Longint* nb_val = &nb_val_storage;
 	Longint status = tsrqparm((char**) &ptr, nb_val, shotNumber, prod_name, object_name, param_name, val_nb, &format);
 
+    std::cout << "--- Debug DataSourceArgs ---" << std::endl;
+
+    //auto shot = libtokamap::get_arg<std::string>(args, "shot");
+    
+
+    //std::cout << "--- Shot = " << shot << std::endl;
+    
     /*printf("TEST:: tsrqparm format: %d\n", format);
     printf("TEST:: tsrqparm status: %ld\n", status);
     printf("TEST:: tsrqparm nb_val: %ld\n", *nb_val);
@@ -1597,20 +1603,53 @@ libtokamap::TypedDataArray get_flux_loop_description(const libtokamap::DataSourc
 
 libtokamap::TypedDataArray get_flux_loop_flux_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
 {
-    // TODO: Implement logic for flux_loop[#]/flux/data
-    // Example: int idx0 = indices[0];
+    // 1. Construct the signal name dynamically
+    // IMAS indices are 0-based, so we add 1 to match "GMAG_FLXLOOP!1", "!2", etc.
+    int loop_number = indices[0] + 1;
+    char s[64];
+    snprintf(s, sizeof(s), "GMAG_FLXLOOP!%d", loop_number);
 
-    // Prepare buffer for double (1D to 6D)
-    std::vector<size_t> shape = {1}; // TODO: Set dimensions
-    size_t size = 1; // TODO: Calculate total size
-    // for (auto dim : shape) size *= dim;
+    // Initialize variables for lit_traite
+    Longint len = 0;
+    Double* time = NULL;
+    Double* data = NULL;
+    Longint rang[2] = { 0, 0 };
+    Longint occ = 0;
+   //Longint numchoc = args.shot; // Use the dynamic shot number from the request
+    Longint numchoc = 54178;
 
-    auto* buffer = new double[size];
+    printf("Reading signal %s for shot %ld\n", s, (long)numchoc);
+    
+    // Call the processing/reading function
+    Longint cr = lit_traite(s, numchoc, occ, rang, &time, &data, &len);
+    
+    if (cr != 0 || data == NULL) {
+        throw libtokamap::MappingError("Failed to read signal " + std::string(s));
+    }
 
-    // TODO: Fill buffer
-    // buffer[0] = ...;
+    // 2. Set dimensions and size (1D: Temporal profile)
+    // The total length 'len' is returned by lit_traite
+    size_t total_size = static_cast<size_t>(len);
+    std::vector<size_t> shape = { total_size };
 
-    return libtokamap::TypedDataArray(buffer, size, shape);
+    // 3. Allocate buffer for libtokamap
+    // Note: libtokamap usually takes ownership of this pointer
+    double* buffer = new double[total_size];
+
+    // 4. Fill the buffer
+    // Copy data from lit_traite's output (Double*) to our new buffer (double*)
+    for (size_t i = 0; i < total_size; ++i) {
+        buffer[i] = static_cast<double>(data[i]);
+    }
+
+    printf("Successfully read %zu points for %s\n", total_size, s);
+
+    // IMPORTANT: If lit_traite allocates memory internally (e.g., using malloc),
+    // you must release 'time' and 'data' after the copy to prevent memory leaks.
+    if (time) free(time);
+    if (data) free(data);
+
+    return libtokamap::TypedDataArray(buffer, total_size, shape);
 }
 
 libtokamap::TypedDataArray get_flux_loop_flux_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
