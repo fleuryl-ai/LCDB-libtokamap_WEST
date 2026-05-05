@@ -1,2 +1,5 @@
 build*/
 install/
+log
+trace.json
+python_generators/generate_py_structures/__pycache__/magnetics_structures.cpython-311.pyc
