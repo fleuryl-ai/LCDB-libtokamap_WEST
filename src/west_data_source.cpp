@@ -78,19 +78,22 @@ libtokamap::TypedDataArray WESTDataSource::get(const libtokamap::DataSourceArgs&
         throw libtokamap::ParameterError{"required argument 'signal' not provided"};
     }
 
+    /*if (arguments.extra_attributes.contains("shot")) {
+    } */
+    if (!arguments.global_data.contains("shot")) {
+        throw libtokamap::ParameterError{"Extra attribute 'shot' was not provided in the mapping call"};
+        //printf("shot not found...\n" );
+    }
+    else{
+        //int numchoc = arguments.global_data["shot"].get<int>();
+        //printf("shot found...: %d\n", numchoc );
+    } 
+
     std::string signal = map_args.at("signal");
     printf("-->signal = '%s'\n", signal.c_str());
 
     std::string func_name_key;
     std::vector<int> indices;
-
-    if (map_args.contains("shot")) {
-            //int shot_int = map_args.at("shot").get<int>();
-            //int shot_number = arguments.extra_attributes["shot"].get<int>();
-            //printf("shot = %d\n ", shot_number);
-    } else {
-        ///throw libtokamap::DataSourceError("Missing 'shot' argument");
-    }
 
     printf("Calling parse_signal for '%s'\n", signal.c_str());
     parse_signal(signal, func_name_key, indices);
@@ -99,7 +102,7 @@ libtokamap::TypedDataArray WESTDataSource::get(const libtokamap::DataSourceArgs&
     if (auto it = signal_dispatcher.find(func_name_key); it != signal_dispatcher.end()) {
         // Appel de la fonction trouvée en lui passant les arguments
         printf("Calling handler for signal '%s'\n", signal.c_str());
-        return it->second(map_args, indices);
+        return it->second(map_args, arguments, indices);
     }
 
     // Gestion du cas où le signal n'est pas connu

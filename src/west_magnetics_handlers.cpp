@@ -5,47 +5,46 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+
 #include "west_data_access/west_utilities.cpp"
-//#include "west_data_access/west_xml.cpp"
-// #include "west_data_access/ts_rqparam.h"
 
 using Longint = int;
 Longint tsrqparm(char** pt_char_address, Longint* nb_val, Longint num_choc, const char* nom_prod, const char* nom_objet, const char* nom_param, Longint val_nb, int *format);
 Longint lit_traite(char* nomsigp, Longint numchoc, Longint occ, Longint rang[], Double** X, Double** Y, Longint* maxreel);
 
 // Definition of the function pointer type for handlers
-using SignalHandler = libtokamap::TypedDataArray (*)(const libtokamap::DataSourceArgs&, const std::vector<int>&);
+using SignalHandler = libtokamap::TypedDataArray (*)(const libtokamap::DataSourceArgs&, const libtokamap::MapArguments& arguments, const std::vector<int>&);
 
 // Function Stubs
-libtokamap::TypedDataArray get_b_field_phi_probe(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_area(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_area(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/area
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_area_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_area_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/area_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_area_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_area_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/area_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_bandwidth_3db(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_bandwidth_3db(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/bandwidth_3db
     // Example: int idx0 = indices[0];
@@ -63,7 +62,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_bandwidth_3db(const libtokamap:
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_bandwidth_3db_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_bandwidth_3db_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/bandwidth_3db_error_lower
     // Example: int idx0 = indices[0];
@@ -81,7 +80,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_bandwidth_3db_error_lower(const
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_bandwidth_3db_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_bandwidth_3db_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/bandwidth_3db_error_upper
     // Example: int idx0 = indices[0];
@@ -99,14 +98,14 @@ libtokamap::TypedDataArray get_b_field_phi_probe_bandwidth_3db_error_upper(const
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_field_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_field_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/field/data
     // Example: int idx0 = indices[0];
@@ -124,7 +123,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_field_data(const libtokamap::Da
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_field_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_field_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/field/data_error_lower
     // Example: int idx0 = indices[0];
@@ -142,7 +141,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_field_data_error_lower(const li
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_field_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_field_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/field/data_error_upper
     // Example: int idx0 = indices[0];
@@ -160,7 +159,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_field_data_error_upper(const li
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_field_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_field_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/field/time
     // Example: int idx0 = indices[0];
@@ -178,14 +177,14 @@ libtokamap::TypedDataArray get_b_field_phi_probe_field_time(const libtokamap::Da
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_field_validity(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_field_validity(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/field/validity
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_field_validity_timed(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_field_validity_timed(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/field/validity_timed
     // Example: int idx0 = indices[0];
@@ -203,7 +202,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_field_validity_timed(const libt
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_indices_differential(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_indices_differential(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/indices_differential
     // Example: int idx0 = indices[0];
@@ -221,35 +220,35 @@ libtokamap::TypedDataArray get_b_field_phi_probe_indices_differential(const libt
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_length(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_length(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/length
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_length_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_length_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/length_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_length_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_length_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/length_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_linear(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_linear(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/non_linear_response/b_field_linear
     // Example: int idx0 = indices[0];
@@ -267,7 +266,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_lin
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_linear_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_linear_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/non_linear_response/b_field_linear_error_lower
     // Example: int idx0 = indices[0];
@@ -285,7 +284,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_lin
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_linear_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_linear_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/non_linear_response/b_field_linear_error_upper
     // Example: int idx0 = indices[0];
@@ -303,7 +302,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_lin
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_non_linear(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_non_linear(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/non_linear_response/b_field_non_linear
     // Example: int idx0 = indices[0];
@@ -321,7 +320,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_non
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_non_linear_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_non_linear_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/non_linear_response/b_field_non_linear_error_lower
     // Example: int idx0 = indices[0];
@@ -339,7 +338,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_non
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_non_linear_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_non_linear_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/non_linear_response/b_field_non_linear_error_upper
     // Example: int idx0 = indices[0];
@@ -357,224 +356,224 @@ libtokamap::TypedDataArray get_b_field_phi_probe_non_linear_response_b_field_non
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_poloidal_angle(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_poloidal_angle(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/poloidal_angle
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_poloidal_angle_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_poloidal_angle_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/poloidal_angle_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_poloidal_angle_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_poloidal_angle_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/poloidal_angle_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/first_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/first_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/first_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/first_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/first_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/first_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_phi(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_phi(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/phi
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/phi_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/phi_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/second_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/second_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/second_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/second_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/second_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/second_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_position_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_position_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/position/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_toroidal_angle(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_toroidal_angle(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/toroidal_angle
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_toroidal_angle_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_toroidal_angle_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/toroidal_angle_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_toroidal_angle_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_toroidal_angle_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/toroidal_angle_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_turns(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_turns(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/turns
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_type_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_type_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/type/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_type_index(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_type_index(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/type/index
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_type_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_type_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/type/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_voltage_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_voltage_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/voltage/data
     // Example: int idx0 = indices[0];
@@ -592,7 +591,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_voltage_data(const libtokamap::
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_voltage_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_voltage_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/voltage/data_error_lower
     // Example: int idx0 = indices[0];
@@ -610,7 +609,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_voltage_data_error_lower(const 
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_voltage_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_voltage_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/voltage/data_error_upper
     // Example: int idx0 = indices[0];
@@ -628,7 +627,7 @@ libtokamap::TypedDataArray get_b_field_phi_probe_voltage_data_error_upper(const 
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_voltage_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_voltage_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/voltage/time
     // Example: int idx0 = indices[0];
@@ -646,14 +645,14 @@ libtokamap::TypedDataArray get_b_field_phi_probe_voltage_time(const libtokamap::
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_voltage_validity(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_voltage_validity(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/voltage/validity
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_phi_probe_voltage_validity_timed(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_phi_probe_voltage_validity_timed(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_phi_probe[#]/voltage/validity_timed
     // Example: int idx0 = indices[0];
@@ -671,35 +670,35 @@ libtokamap::TypedDataArray get_b_field_phi_probe_voltage_validity_timed(const li
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_area(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_area(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/area
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_area_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_area_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/area_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_area_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_area_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/area_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_bandwidth_3db(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_bandwidth_3db(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/bandwidth_3db
     // Example: int idx0 = indices[0];
@@ -717,7 +716,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_bandwidth_3db(const libtokamap:
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_bandwidth_3db_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_bandwidth_3db_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/bandwidth_3db_error_lower
     // Example: int idx0 = indices[0];
@@ -735,7 +734,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_bandwidth_3db_error_lower(const
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_bandwidth_3db_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_bandwidth_3db_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/bandwidth_3db_error_upper
     // Example: int idx0 = indices[0];
@@ -753,14 +752,14 @@ libtokamap::TypedDataArray get_b_field_pol_probe_bandwidth_3db_error_upper(const
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_field_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_field_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/field/data
     // Example: int idx0 = indices[0];
@@ -778,7 +777,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_field_data(const libtokamap::Da
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_field_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_field_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/field/data_error_lower
     // Example: int idx0 = indices[0];
@@ -796,7 +795,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_field_data_error_lower(const li
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_field_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_field_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/field/data_error_upper
     // Example: int idx0 = indices[0];
@@ -814,7 +813,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_field_data_error_upper(const li
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_field_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_field_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/field/time
     // Example: int idx0 = indices[0];
@@ -832,14 +831,14 @@ libtokamap::TypedDataArray get_b_field_pol_probe_field_time(const libtokamap::Da
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_field_validity(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_field_validity(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/field/validity
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_field_validity_timed(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_field_validity_timed(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/field/validity_timed
     // Example: int idx0 = indices[0];
@@ -857,7 +856,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_field_validity_timed(const libt
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_indices_differential(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_indices_differential(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/indices_differential
     // Example: int idx0 = indices[0];
@@ -875,35 +874,35 @@ libtokamap::TypedDataArray get_b_field_pol_probe_indices_differential(const libt
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_length(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_length(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/length
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_length_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_length_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/length_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_length_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_length_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/length_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_linear(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_linear(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/non_linear_response/b_field_linear
     // Example: int idx0 = indices[0];
@@ -921,7 +920,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_lin
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_linear_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_linear_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/non_linear_response/b_field_linear_error_lower
     // Example: int idx0 = indices[0];
@@ -939,7 +938,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_lin
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_linear_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_linear_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/non_linear_response/b_field_linear_error_upper
     // Example: int idx0 = indices[0];
@@ -957,7 +956,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_lin
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_non_linear(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_non_linear(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/non_linear_response/b_field_non_linear
     // Example: int idx0 = indices[0];
@@ -975,7 +974,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_non
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_non_linear_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_non_linear_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/non_linear_response/b_field_non_linear_error_lower
     // Example: int idx0 = indices[0];
@@ -993,7 +992,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_non
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_non_linear_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_non_linear_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/non_linear_response/b_field_non_linear_error_upper
     // Example: int idx0 = indices[0];
@@ -1011,224 +1010,224 @@ libtokamap::TypedDataArray get_b_field_pol_probe_non_linear_response_b_field_non
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_poloidal_angle(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_poloidal_angle(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/poloidal_angle
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_poloidal_angle_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_poloidal_angle_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/poloidal_angle_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_poloidal_angle_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_poloidal_angle_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/poloidal_angle_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/first_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/first_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/first_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/first_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/first_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/first_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_phi(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_phi(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/phi
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/phi_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/phi_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/second_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/second_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/second_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/second_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/second_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/second_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_position_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_position_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/position/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_toroidal_angle(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_toroidal_angle(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/toroidal_angle
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_toroidal_angle_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_toroidal_angle_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/toroidal_angle_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_toroidal_angle_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_toroidal_angle_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/toroidal_angle_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_turns(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_turns(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/turns
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_type_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_type_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/type/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_type_index(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_type_index(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/type/index
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_type_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_type_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/type/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_voltage_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_voltage_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/voltage/data
     // Example: int idx0 = indices[0];
@@ -1246,7 +1245,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_voltage_data(const libtokamap::
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_voltage_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_voltage_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/voltage/data_error_lower
     // Example: int idx0 = indices[0];
@@ -1264,7 +1263,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_voltage_data_error_lower(const 
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_voltage_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_voltage_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/voltage/data_error_upper
     // Example: int idx0 = indices[0];
@@ -1282,7 +1281,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_voltage_data_error_upper(const 
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_voltage_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_voltage_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/voltage/time
     // Example: int idx0 = indices[0];
@@ -1300,14 +1299,14 @@ libtokamap::TypedDataArray get_b_field_pol_probe_voltage_time(const libtokamap::
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_voltage_validity(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_voltage_validity(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/voltage/validity
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_voltage_validity_timed(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_voltage_validity_timed(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe[#]/voltage/validity_timed
     // Example: int idx0 = indices[0];
@@ -1325,7 +1324,7 @@ libtokamap::TypedDataArray get_b_field_pol_probe_voltage_validity_timed(const li
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_b_field_pol_probe_equivalent(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_b_field_pol_probe_equivalent(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for b_field_pol_probe_equivalent
     // Example: int idx0 = indices[0];
@@ -1343,77 +1342,77 @@ libtokamap::TypedDataArray get_b_field_pol_probe_equivalent(const libtokamap::Da
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_code_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_library(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_library(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/library
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_code_library_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_library_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/library[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_library_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_library_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/library[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_library_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_library_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/library[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_library_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_library_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/library[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_library_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_library_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/library[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_library_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_library_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/library[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_output_flag(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_output_flag(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/output_flag
     // Example: int idx0 = indices[0];
@@ -1431,35 +1430,35 @@ libtokamap::TypedDataArray get_code_output_flag(const libtokamap::DataSourceArgs
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_code_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_code_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_code_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for code/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_diamagnetic_flux(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_diamagnetic_flux(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for diamagnetic_flux
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_diamagnetic_flux_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_diamagnetic_flux_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for diamagnetic_flux[#]/data
     // Example: int idx0 = indices[0];
@@ -1477,7 +1476,7 @@ libtokamap::TypedDataArray get_diamagnetic_flux_data(const libtokamap::DataSourc
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_diamagnetic_flux_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_diamagnetic_flux_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for diamagnetic_flux[#]/data_error_lower
     // Example: int idx0 = indices[0];
@@ -1495,7 +1494,7 @@ libtokamap::TypedDataArray get_diamagnetic_flux_data_error_lower(const libtokama
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_diamagnetic_flux_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_diamagnetic_flux_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for diamagnetic_flux[#]/data_error_upper
     // Example: int idx0 = indices[0];
@@ -1513,14 +1512,14 @@ libtokamap::TypedDataArray get_diamagnetic_flux_data_error_upper(const libtokama
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_diamagnetic_flux_method_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_diamagnetic_flux_method_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for diamagnetic_flux[#]/method_name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_diamagnetic_flux_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_diamagnetic_flux_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for diamagnetic_flux[#]/time
     // Example: int idx0 = indices[0];
@@ -1538,7 +1537,7 @@ libtokamap::TypedDataArray get_diamagnetic_flux_time(const libtokamap::DataSourc
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     const char* prod_name = "DMAG";
     const char* object_name = "GMAG_FLXLOOP";
@@ -1547,15 +1546,10 @@ libtokamap::TypedDataArray get_flux_loop(const libtokamap::DataSourceArgs& args,
 	char *ptr = NULL;
 	int val_nb = 1;
     int format;
-    int shotNumber = 54178;
+    int numchoc = arguments.global_data["shot"].get<int>();
     Longint nb_val_storage = 0;
     Longint* nb_val = &nb_val_storage;
-	Longint status = tsrqparm((char**) &ptr, nb_val, shotNumber, prod_name, object_name, param_name, val_nb, &format);
-
-    std::cout << "--- Debug DataSourceArgs ---" << std::endl;
-
-    //auto shot = libtokamap::get_arg<std::string>(args, "shot");
-    
+	Longint status = tsrqparm((char**) &ptr, nb_val, numchoc, prod_name, object_name, param_name, val_nb, &format);
 
     //std::cout << "--- Shot = " << shot << std::endl;
     
@@ -1572,36 +1566,35 @@ libtokamap::TypedDataArray get_flux_loop(const libtokamap::DataSourceArgs& args,
     return libtokamap::TypedDataArray{nb_loop};
 }
 
-libtokamap::TypedDataArray get_flux_loop_area(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_area(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/area
     // Example: int idx0 = indices[0];
-    printf("Calling get_flux_loop_area\n");
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_area_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_area_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/area_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_area_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_area_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/area_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_flux_loop_flux_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_flux_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // 1. Construct the signal name dynamically
     // IMAS indices are 0-based, so we add 1 to match "GMAG_FLXLOOP!1", "!2", etc.
@@ -1615,8 +1608,7 @@ libtokamap::TypedDataArray get_flux_loop_flux_data(const libtokamap::DataSourceA
     Double* data = NULL;
     Longint rang[2] = { 0, 0 };
     Longint occ = 0;
-   //Longint numchoc = args.shot; // Use the dynamic shot number from the request
-    Longint numchoc = 54178;
+    int numchoc = arguments.global_data["shot"].get<int>();
 
     printf("Reading signal %s for shot %ld\n", s, (long)numchoc);
     
@@ -1652,7 +1644,7 @@ libtokamap::TypedDataArray get_flux_loop_flux_data(const libtokamap::DataSourceA
     return libtokamap::TypedDataArray(buffer, total_size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_flux_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_flux_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/flux/data_error_lower
     // Example: int idx0 = indices[0];
@@ -1670,7 +1662,7 @@ libtokamap::TypedDataArray get_flux_loop_flux_data_error_lower(const libtokamap:
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_flux_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_flux_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/flux/data_error_upper
     // Example: int idx0 = indices[0];
@@ -1688,7 +1680,7 @@ libtokamap::TypedDataArray get_flux_loop_flux_data_error_upper(const libtokamap:
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_flux_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_flux_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/flux/time
     // Example: int idx0 = indices[0];
@@ -1706,14 +1698,14 @@ libtokamap::TypedDataArray get_flux_loop_flux_time(const libtokamap::DataSourceA
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_flux_validity(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_flux_validity(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/flux/validity
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_flux_validity_timed(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_flux_validity_timed(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/flux/validity_timed
     // Example: int idx0 = indices[0];
@@ -1731,28 +1723,28 @@ libtokamap::TypedDataArray get_flux_loop_flux_validity_timed(const libtokamap::D
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_gm9(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_gm9(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/gm9
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_gm9_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_gm9_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/gm9_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_gm9_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_gm9_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/gm9_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_indices_differential(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_indices_differential(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/indices_differential
     // Example: int idx0 = indices[0];
@@ -1770,198 +1762,189 @@ libtokamap::TypedDataArray get_flux_loop_indices_differential(const libtokamap::
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/name
     // Example: int idx0 = indices[0];
-    char* TOP_collections_parameters = NULL; //example : TOP_collections_parameters = DMAG:GMAG_BNORM:PosR, DMAG:GMAG_BTANG:PosR, ...
-	char* attributes = NULL; //example : attributes = rank:Double:#1 (rank=0,1 , type = Double, #1 = second IDAM index)
-	char* normalizationAttributes = NULL; //example : multiply:cste:3     (multiply value by constant factor equals to 3)
-	const char* mapfun = "set_value_collect;DINTRPOL:LIDRT:CHANNEL:Id:#0;0:string:#0";
-
-	//tokenizeFunParameters(mapfun, &TOP_collections_parameters, &attributes, &normalizationAttributes);
-    int shotNumber;
-    Longint* node_indices;
-	//Longint status = execute_setvalue_collect(TOP_collections_parameters, attributes, shotNumber, node_indices, normalizationAttributes);
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_first_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_first_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/first_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/first_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/first_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_first_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_first_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/first_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/first_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/first_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_phi(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_phi(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/phi
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/phi_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/phi_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_second_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_second_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/second_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/second_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/second_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_second_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_second_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/second_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/second_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/second_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_position_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_position_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/position[#]/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_type_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_type_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/type/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_flux_loop_type_index(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_type_index(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/type/index
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_type_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_type_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/type/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_flux_loop_voltage_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_voltage_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/voltage/data
     // Example: int idx0 = indices[0];
@@ -1979,7 +1962,7 @@ libtokamap::TypedDataArray get_flux_loop_voltage_data(const libtokamap::DataSour
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_voltage_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_voltage_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/voltage/data_error_lower
     // Example: int idx0 = indices[0];
@@ -1997,7 +1980,7 @@ libtokamap::TypedDataArray get_flux_loop_voltage_data_error_lower(const libtokam
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_voltage_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_voltage_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/voltage/data_error_upper
     // Example: int idx0 = indices[0];
@@ -2015,7 +1998,7 @@ libtokamap::TypedDataArray get_flux_loop_voltage_data_error_upper(const libtokam
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_voltage_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_voltage_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/voltage/time
     // Example: int idx0 = indices[0];
@@ -2033,14 +2016,14 @@ libtokamap::TypedDataArray get_flux_loop_voltage_time(const libtokamap::DataSour
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_flux_loop_voltage_validity(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_voltage_validity(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/voltage/validity
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_flux_loop_voltage_validity_timed(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_flux_loop_voltage_validity_timed(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for flux_loop[#]/voltage/validity_timed
     // Example: int idx0 = indices[0];
@@ -2058,817 +2041,819 @@ libtokamap::TypedDataArray get_flux_loop_voltage_validity_timed(const libtokamap
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_ids_properties_comment(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_comment(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/comment
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_creation_date(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_creation_date(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/creation_date
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_homogeneous_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_homogeneous_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
-    return libtokamap::TypedDataArray{1};
+    // TODO: Implement logic for ids_properties/homogeneous_time
+    // Example: int idx0 = indices[0];
+    return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_occurrence_type_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_occurrence_type_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/occurrence_type/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_occurrence_type_index(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_occurrence_type_index(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/occurrence_type/index
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_occurrence_type_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_occurrence_type_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/occurrence_type/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_get/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_get/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_get/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_get/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_get_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_get/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_put/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_put/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_put/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_put/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_infrastructure_put_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/infrastructure_put/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/library
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/library[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/library[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/library[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/library[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/library[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_library_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/library[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_get_operation_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/get_operation[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_path(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_path(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/path
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/library
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/library[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/library[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/library[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/library[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/library[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_library_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/library[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_put_operation_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/put_operation[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/library
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/library[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/library[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/library[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/library[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/library[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_library_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/library[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_readback_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/readback[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_reference(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_reference(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/reference
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_reference_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_reference_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/reference[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_plugins_node_reference_timestamp(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_plugins_node_reference_timestamp(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/plugins/node[#]/reference[#]/timestamp
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/library
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/library[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/library[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/library[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/library[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/library[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_library_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/library[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_get_operation_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/get_operation[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_path(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_path(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/path
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/library
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/library[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/library[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/library[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/library[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/library[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_library_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/library[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_put_operation_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/put_operation[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/library
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_commit(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_commit(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/library[#]/commit
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/library[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/library[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/library[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/library[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_library_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/library[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_parameters(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_parameters(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/parameters
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_repository(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_repository(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/repository
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_version(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_readback_version(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/readback[#]/version
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_reference(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_reference(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/reference
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_reference_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_reference_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/reference[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provenance_node_reference_timestamp(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provenance_node_reference_timestamp(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provenance/node[#]/reference[#]/timestamp
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_provider(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_provider(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/provider
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_version_put_access_layer(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_version_put_access_layer(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/version_put/access_layer
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_version_put_access_layer_language(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_version_put_access_layer_language(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/version_put/access_layer_language
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ids_properties_version_put_data_dictionary(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ids_properties_version_put_data_dictionary(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ids_properties/version_put/data_dictionary
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ip(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ip(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ip
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_ip_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ip_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ip[#]/data
     // Example: int idx0 = indices[0];
@@ -2886,7 +2871,7 @@ libtokamap::TypedDataArray get_ip_data(const libtokamap::DataSourceArgs& args, c
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_ip_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ip_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ip[#]/data_error_lower
     // Example: int idx0 = indices[0];
@@ -2904,7 +2889,7 @@ libtokamap::TypedDataArray get_ip_data_error_lower(const libtokamap::DataSourceA
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_ip_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ip_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ip[#]/data_error_upper
     // Example: int idx0 = indices[0];
@@ -2922,14 +2907,14 @@ libtokamap::TypedDataArray get_ip_data_error_upper(const libtokamap::DataSourceA
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_ip_method_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ip_method_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ip[#]/method_name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_ip_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_ip_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for ip[#]/time
     // Example: int idx0 = indices[0];
@@ -2947,56 +2932,56 @@ libtokamap::TypedDataArray get_ip_time(const libtokamap::DataSourceArgs& args, c
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_latency(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_latency(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for latency
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_latency_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_latency_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for latency_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_latency_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_latency_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for latency_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_area(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_area(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/area
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_area_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_area_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/area_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_area_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_area_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/area_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_current_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_current_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/current/data
     // Example: int idx0 = indices[0];
@@ -3014,7 +2999,7 @@ libtokamap::TypedDataArray get_rogowski_coil_current_data(const libtokamap::Data
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_current_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_current_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/current/data_error_lower
     // Example: int idx0 = indices[0];
@@ -3032,7 +3017,7 @@ libtokamap::TypedDataArray get_rogowski_coil_current_data_error_lower(const libt
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_current_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_current_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/current/data_error_upper
     // Example: int idx0 = indices[0];
@@ -3050,7 +3035,7 @@ libtokamap::TypedDataArray get_rogowski_coil_current_data_error_upper(const libt
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_current_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_current_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/current/time
     // Example: int idx0 = indices[0];
@@ -3068,14 +3053,14 @@ libtokamap::TypedDataArray get_rogowski_coil_current_time(const libtokamap::Data
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_current_validity(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_current_validity(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/current/validity
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_current_validity_timed(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_current_validity_timed(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/current/validity_timed
     // Example: int idx0 = indices[0];
@@ -3093,14 +3078,14 @@ libtokamap::TypedDataArray get_rogowski_coil_current_validity_timed(const libtok
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_indices_compound(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_indices_compound(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/indices_compound
     // Example: int idx0 = indices[0];
@@ -3118,420 +3103,420 @@ libtokamap::TypedDataArray get_rogowski_coil_indices_compound(const libtokamap::
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_measured_quantity_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_measured_quantity_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/measured_quantity/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_measured_quantity_index(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_measured_quantity_index(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/measured_quantity/index
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_measured_quantity_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_measured_quantity_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/measured_quantity/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_first_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_first_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/first_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/first_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/first_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_first_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_first_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/first_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/first_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/first_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_phi(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_phi(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/phi
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/phi_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/phi_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_second_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_second_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/second_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/second_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/second_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_second_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_second_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/second_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/second_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/second_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_position_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_position_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/position[#]/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_turns_per_metre(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_turns_per_metre(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/turns_per_metre
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_turns_per_metre_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_turns_per_metre_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/turns_per_metre_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_rogowski_coil_turns_per_metre_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_rogowski_coil_turns_per_metre_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for rogowski_coil[#]/turns_per_metre_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_shunt_description(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_description(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/description
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_shunt_divertor_index(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_divertor_index(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/divertor_index
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_shunt_name(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_name(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/name
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{std::string{""}};
 }
 
-libtokamap::TypedDataArray get_shunt_position_first_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_first_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/first_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_first_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/first_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_first_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/first_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_first_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_first_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/first_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_first_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/first_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_first_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/first_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_phi(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_phi(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/phi
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_phi_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/phi_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_phi_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/phi_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_second_point_r(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_second_point_r(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/second_point/r
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_second_point_r_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/second_point/r_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_second_point_r_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/second_point/r_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_second_point_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_second_point_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/second_point/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_second_point_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/second_point/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_second_point_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/second_point/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_z(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_z(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/z
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_z_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_z_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/z_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_position_z_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_position_z_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/position/z_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_resistance(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_resistance(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/resistance
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_resistance_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_resistance_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/resistance_error_lower
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_resistance_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_resistance_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/resistance_error_upper
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0.0};
 }
 
-libtokamap::TypedDataArray get_shunt_target_index(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_target_index(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/target_index
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_shunt_tile_index(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_tile_index(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/tile_index
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_shunt_voltage_data(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_voltage_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/voltage/data
     // Example: int idx0 = indices[0];
@@ -3549,7 +3534,7 @@ libtokamap::TypedDataArray get_shunt_voltage_data(const libtokamap::DataSourceAr
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_shunt_voltage_data_error_lower(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_voltage_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/voltage/data_error_lower
     // Example: int idx0 = indices[0];
@@ -3567,7 +3552,7 @@ libtokamap::TypedDataArray get_shunt_voltage_data_error_lower(const libtokamap::
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_shunt_voltage_data_error_upper(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_voltage_data_error_upper(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/voltage/data_error_upper
     // Example: int idx0 = indices[0];
@@ -3585,7 +3570,7 @@ libtokamap::TypedDataArray get_shunt_voltage_data_error_upper(const libtokamap::
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_shunt_voltage_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_voltage_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/voltage/time
     // Example: int idx0 = indices[0];
@@ -3603,14 +3588,14 @@ libtokamap::TypedDataArray get_shunt_voltage_time(const libtokamap::DataSourceAr
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_shunt_voltage_validity(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_voltage_validity(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/voltage/validity
     // Example: int idx0 = indices[0];
     return libtokamap::TypedDataArray{0};
 }
 
-libtokamap::TypedDataArray get_shunt_voltage_validity_timed(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_shunt_voltage_validity_timed(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for shunt[#]/voltage/validity_timed
     // Example: int idx0 = indices[0];
@@ -3628,7 +3613,7 @@ libtokamap::TypedDataArray get_shunt_voltage_validity_timed(const libtokamap::Da
     return libtokamap::TypedDataArray(buffer, size, shape);
 }
 
-libtokamap::TypedDataArray get_time(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+libtokamap::TypedDataArray get_time(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
     // TODO: Implement logic for time
     // Example: int idx0 = indices[0];

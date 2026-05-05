@@ -114,7 +114,7 @@ def generate_handlers(ids_name, structures_file, mapping_file, output_file):
 
         # Generate function stub
         if is_array:
-            func_code = f"""libtokamap::TypedDataArray {func_name}(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+            func_code = f"""libtokamap::TypedDataArray {func_name}(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {{
     // TODO: Implement logic for {path}
     // Example: int idx0 = indices[0];
@@ -133,7 +133,7 @@ def generate_handlers(ids_name, structures_file, mapping_file, output_file):
 }}"""
         else:
             default_val = get_default_return_value(py_type)
-            func_code = f"""libtokamap::TypedDataArray {func_name}(const libtokamap::DataSourceArgs& args, const std::vector<int>& indices)
+            func_code = f"""libtokamap::TypedDataArray {func_name}(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {{
     // TODO: Implement logic for {path}
     // Example: int idx0 = indices[0];
@@ -155,7 +155,7 @@ def generate_handlers(ids_name, structures_file, mapping_file, output_file):
 #include <vector>
 
 // Definition of the function pointer type for handlers
-using SignalHandler = libtokamap::TypedDataArray (*)(const libtokamap::DataSourceArgs&, const std::vector<int>&);
+using SignalHandler = libtokamap::TypedDataArray (*)(const libtokamap::DataSourceArgs&, const libtokamap::MapArguments& arguments, const std::vector<int>&);
 
 // Function Stubs
 """
