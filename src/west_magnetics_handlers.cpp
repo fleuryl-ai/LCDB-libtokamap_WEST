@@ -1539,6 +1539,7 @@ libtokamap::TypedDataArray get_diamagnetic_flux_time(const libtokamap::DataSourc
 
 libtokamap::TypedDataArray get_flux_loop(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
+    // BEGIN USER CODE: get_flux_loop
     const char* prod_name = "DMAG";
     const char* object_name = "GMAG_FLXLOOP";
     const char* param_name = "longueuri";
@@ -1564,6 +1565,7 @@ libtokamap::TypedDataArray get_flux_loop(const libtokamap::DataSourceArgs& args,
 
     int nb_loop = (int) (*ptr);
     return libtokamap::TypedDataArray{nb_loop};
+    // END USER CODE: get_flux_loop
 }
 
 libtokamap::TypedDataArray get_flux_loop_area(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
@@ -1596,6 +1598,7 @@ libtokamap::TypedDataArray get_flux_loop_description(const libtokamap::DataSourc
 
 libtokamap::TypedDataArray get_flux_loop_flux_data(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
 {
+    // BEGIN USER CODE: get_flux_loop_flux_data
     // 1. Construct the signal name dynamically
     // IMAS indices are 0-based, so we add 1 to match "GMAG_FLXLOOP!1", "!2", etc.
     int loop_number = indices[0] + 1;
@@ -1642,6 +1645,7 @@ libtokamap::TypedDataArray get_flux_loop_flux_data(const libtokamap::DataSourceA
     if (data) free(data);
 
     return libtokamap::TypedDataArray(buffer, total_size, shape);
+    // END USER CODE: get_flux_loop_flux_data
 }
 
 libtokamap::TypedDataArray get_flux_loop_flux_data_error_lower(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)

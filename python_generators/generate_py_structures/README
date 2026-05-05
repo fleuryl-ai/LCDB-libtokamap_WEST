@@ -3,5 +3,6 @@ python generate_structures.py distributions distributions.xml
 
 
 python generate_json_mappings.py magnetics magnetics_structures.py -o mappings.json --data-source WEST
-python generate_handlers.py magnetics magnetics_structures.py mappings.json
+python generate_handlers.py magnetics magnetics_structures.py mappings.json --schema-version 4.0.1
+
 

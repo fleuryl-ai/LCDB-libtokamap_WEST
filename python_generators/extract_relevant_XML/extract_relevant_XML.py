@@ -82,6 +82,24 @@ def extract_ids(input_file, output_file, ids_name, fields=None):
     # Create a new root element with the same tag and attributes
     new_root = ET.Element(root.tag, attrib=root.attrib)
 
+    # 1. Extract version from original file
+    # version_elem = None
+    # # Try non-namespaced version
+    # version_elem = root.find('version')
+    # if version_elem is None and namespaces:
+    #     for ns in namespaces.values():
+    #         version_elem = root.find(f'{{{ns}}}version')
+    #         if version_elem is not None:
+    #             break
+    
+    # if version_elem is not None:
+    #     print(f"Found version: {version_elem.text}")
+    #     # Add a copy of the version element to the new root
+    #     new_version = ET.SubElement(new_root, version_elem.tag, attrib=version_elem.attrib)
+    #     new_version.text = version_elem.text
+    # else:
+    #     print("Warning: Version element not found in source.")
+
     # Find and copy the specified IDS element
     ids_found = False
     # Try non-namespaced IDS first
@@ -137,7 +155,7 @@ def extract_ids(input_file, output_file, ids_name, fields=None):
                     
                     if fields:
                         new_ids = ET.Element('IDS', attrib=ids_elem.attrib)
-                        for field in fields:  # Fixed typo: 'KE fields' -> 'fields'
+                        for field in fields:
                             field_elem = find_element_by_path(ids_elem, field, namespaces)
                             if field_elem is not None:
                                 print(f"Found field '{field}' with attributes: {field_elem.attrib}")

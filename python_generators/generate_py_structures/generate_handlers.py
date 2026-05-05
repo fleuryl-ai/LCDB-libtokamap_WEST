@@ -71,7 +71,43 @@ def map_path_to_function_name(path):
         clean = clean[1:]
     return f"get_{clean}"
 
-def generate_handlers(ids_name, structures_file, mapping_file, output_file):
+def extract_user_code(file_path):
+    """Extracts user-defined code blocks from an existing file with metadata."""
+    user_blocks = {}
+    if not os.path.exists(file_path):
+        return user_blocks
+
+    with open(file_path, 'r') as f:
+        content = f.read()
+
+    # Symmetrical pattern: matches // BEGIN USER CODE: <tag> ... // END USER CODE: <tag>
+    # The <tag> can be "[func_name] [Path: ...] [Version: ...]" or just "func_name"
+    pattern = r'// BEGIN USER CODE: (?P<tag>.*?) *\n(?P<code>.*?)\n\s*// END USER CODE: (?P=tag)'
+    matches = re.finditer(pattern, content, re.DOTALL)
+    for match in matches:
+        tag = match.group('tag').strip()
+        code = match.group('code')
+        
+        # Extract function name and version from the tag
+        # Try bracketed format first: [name] [Path: ...] [Version: ...]
+        name_match = re.search(r'^\[([\w\d_]+)\]', tag)
+        if name_match:
+            func_name = name_match.group(1)
+            version_match = re.search(r'\[Version: ([\w\d._+-]+)\]', tag)
+            version = version_match.group(1) if version_match else "unknown"
+        else:
+            # Fallback to simple format: name
+            func_name = tag.split()[0]
+            version = "unknown"
+            
+        user_blocks[func_name] = {"code": code, "version": version}
+    
+    return user_blocks
+
+def generate_handlers(ids_name, structures_file, mapping_file, output_file, schema_version):
+    print(f"Reading existing user code from {output_file}...")
+    user_blocks = extract_user_code(output_file)
+
     print("Loading structures...")
     structures_map = load_structures(ids_name, structures_file)
     
@@ -82,21 +118,15 @@ def generate_handlers(ids_name, structures_file, mapping_file, output_file):
     functions = []
     dispatcher_entries = []
 
-    print("Generating handlers...")
+    print(f"Generating handlers for IDS version: {schema_version}...")
     for path, info in sorted(mappings.items()):
         if not isinstance(info, dict):
             continue
             
-        # We process both DATA_SOURCE (leaves) and DIMENSION (array sizes)
-        # provided they use the WEST data source.
         map_type = info.get("map_type", info.get("MAP_TYPE"))
         data_source = info.get("DATA_SOURCE")
         
-        # Check if it's a JSON source mapping
         if data_source != "WEST":
-            # For DIMENSION, the DATA_SOURCE might be implicit or in the referenced probe.
-            # But based on your mappings.json, DIMENSION probes point to a hidden key starting with _.
-            # We will process the hidden key instead if it exists.
             if map_type == "DIMENSION":
                 continue
             if map_type != "DATA_SOURCE":
@@ -105,17 +135,31 @@ def generate_handlers(ids_name, structures_file, mapping_file, output_file):
         func_name = map_path_to_function_name(path)
         py_type, is_array = get_field_info(path, ids_name, structures_map)
         
-        # Determine base type for buffer allocation
         base_type = py_type
         if "std::vector" in base_type:
             match = re.search(r'<([\w: ]+)>', base_type)
             if match: base_type = match.group(1)
         base_type = base_type.replace('*', '')
 
-        # Generate function stub
-        if is_array:
-            func_code = f"""libtokamap::TypedDataArray {func_name}(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
-{{
+        # Check if we have existing user code for this function
+        existing_data = user_blocks.get(func_name)
+        
+        tag_id = f"[{func_name}] [Path: {path}] [Version: {schema_version}]"
+        
+        if existing_data:
+            user_code = existing_data["code"]
+            old_version = existing_data["version"]
+            
+            # Migration logic
+            if old_version != schema_version and old_version != "unknown":
+                if f"MIGRATED FROM {old_version}" not in user_code:
+                    user_code = f"    // MIGRATED FROM {old_version}\n" + user_code
+            
+            func_body = f"    // BEGIN USER CODE: {tag_id}\n{user_code}\n    // END USER CODE: {tag_id}"
+        else:
+            # Default implementation
+            if is_array:
+                func_body = f"""    // BEGIN USER CODE: {tag_id}
     // TODO: Implement logic for {path}
     // Example: int idx0 = indices[0];
 
@@ -130,24 +174,26 @@ def generate_handlers(ids_name, structures_file, mapping_file, output_file):
     // buffer[0] = ...;
 
     return libtokamap::TypedDataArray(buffer, size, shape);
-}}"""
-        else:
-            default_val = get_default_return_value(py_type)
-            func_code = f"""libtokamap::TypedDataArray {func_name}(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
-{{
+    // END USER CODE: {tag_id}"""
+            else:
+                default_val = get_default_return_value(py_type)
+                func_body = f"""    // BEGIN USER CODE: {tag_id}
     // TODO: Implement logic for {path}
     // Example: int idx0 = indices[0];
     return {default_val};
-}}"""
-        functions.append(func_code)
+    // END USER CODE: {tag_id}"""
 
-        # Generate dispatcher entry
-        # The key in the map is the function name, matching the 'signal' arg in the updated mappings.json
+        func_code = f"""libtokamap::TypedDataArray {func_name}(const libtokamap::DataSourceArgs& args, const libtokamap::MapArguments& arguments, const std::vector<int>& indices)
+{{
+{func_body}
+}}"""
+        
+        functions.append(func_code)
         dispatcher_entries.append(f'    {{"{func_name}", {func_name}}}')
 
-    # Construct the final file content
-    content = """// Auto-generated handlers for WESTDataSource
+    content = f"""// Auto-generated handlers for WESTDataSource
 // Generated by generate_handlers.py
+// IDS Version: {schema_version}
 
 #include <libtokamap.hpp>
 #include <string>
@@ -173,7 +219,6 @@ const std::unordered_map<std::string, SignalHandler> signal_dispatcher = {
         f.write(content)
     
     print(f"Successfully generated handlers in '{output_file}'")
-    print("Don't forget to update your mappings.json so that 'signal' matches the function names (e.g. 'get_flux_loop_name')!")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate C++ handler stubs and dispatcher map for WESTDataSource.")
@@ -181,6 +226,7 @@ if __name__ == "__main__":
     parser.add_argument("structures_file", type=str, help="Path to the Python structures file.")
     parser.add_argument("mapping_file", type=str, help="Path to the JSON mapping file.")
     parser.add_argument("-o", "--output", dest="output_file", help="Output C++ file. Defaults to 'west_<ids_name>_handlers.cpp'.")
+    parser.add_argument("--schema-version", dest="schema_version", default="unknown", help="Version of the IDS schema.")
     
     args = parser.parse_args()
 
@@ -188,4 +234,4 @@ if __name__ == "__main__":
     if not output_file:
         output_file = f"west_{args.ids_name}_handlers.cpp"
 
-    generate_handlers(args.ids_name, args.structures_file, args.mapping_file, output_file)
+    generate_handlers(args.ids_name, args.structures_file, args.mapping_file, output_file, args.schema_version)
